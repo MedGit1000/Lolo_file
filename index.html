@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>خلطات لولو — زيت الباروكة لتكثيف الشعر</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#16a34a",
+              "secondary": "#f59e0b",
+              "background-light": "#f7f7f7",
+              "background-dark": "#111827",
+              "text-light": "#111827",
+              "text-dark": "#f7f7f7",
+            },
+            fontFamily: {
+              "display": ["Manrope", "Noto Sans Arabic", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "8px",
+              "lg": "12px",
+              "xl": "16px",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', 'Noto Sans Arabic', sans-serif;
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>
+    html{ scroll-behavior: smooth; }
+  </style>
+  <style>
+    .reveal{opacity:0; transform: translateY(16px); transition: opacity .4s ease, transform .4s ease;}
+    .reveal.is-visible{opacity:1; transform: translateY(0);}  
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display">
+<div class="relative w-full flex flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar / Header -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-800">
+  <button id="menuButton" class="flex items-center justify-center h-10 w-10 rounded-md hover:bg-black/5 dark:hover:bg-white/10">
+    <span class="material-symbols-outlined text-text-light dark:text-text-dark">menu</span>
+  </button>
+  <div class="flex-1 flex justify-center">
+    <img src="assets/lolo.png" alt="خلطات لولو" class="h-8 sm:h-10 object-contain"/>
+  </div>
+  <div class="flex items-center gap-2">
+    <button id="themeToggle" class="flex items-center justify-center h-9 w-9 rounded-full hover:bg-black/5 dark:hover:bg-white/10" title="Toggle theme">
+      <span class="material-symbols-outlined text-text-light dark:text-text-dark">dark_mode</span>
+    </button>
+    <button id="langToggle" class="flex items-center justify-center h-9 px-3 rounded-full bg-white/80 dark:bg-white/10 text-sm font-semibold border border-gray-200 dark:border-gray-700">
+      AR
+    </button>
+    <!-- Cart removed for WhatsApp ordering -->
+  </div>
+</div>
+
+<!-- Sidebar Navigation -->
+<aside id="sidebar" class="fixed inset-y-0 right-0 w-72 max-w-[85vw] translate-x-full transition-transform duration-300 ease-out bg-white dark:bg-background-dark border-l border-gray-200 dark:border-gray-800 z-50 shadow-xl">
+  <div class="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
+    <h3 class="font-bold" data-i18n="menu">القائمة</h3>
+    <button id="closeSidebar" class="h-9 w-9 grid place-items-center rounded-md hover:bg-black/5 dark:hover:bg-white/10">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <nav class="p-4 space-y-2">
+    <a href="#hero" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_home">الرئيسية</a>
+    <a href="#bundles" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_products">العروض</a>
+    <a href="#benefits" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_benefits">الفوائد</a>
+    <a href="#howto" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_how">طريقة الاستعمال</a>
+    <a href="#contact" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_contact">تواصل</a>
+  </nav>
+</aside>
+<!-- Hero Section -->
+<div id="hero" class="@container">
+  <div class="@[480px]:p-4">
+    <div class="relative flex min-h-[70vh] flex-col gap-6 @[480px]:gap-8 items-center justify-center p-6 text-center overflow-hidden rounded-xl">
+      <video class="absolute inset-0 w-full h-full object-cover -z-10" src="assets/Olive Oil.mp4" poster="assets/lolo.png" autoplay muted loop playsinline></video>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70 -z-10"></div>
+      <div class="flex flex-col gap-2">
+        <h1 class="text-white text-4xl font-black tracking-[-0.03em] @[480px]:text-5xl" data-i18n="hero_title">شعرك، أقوى من أي وقت</h1>
+        <h2 class="text-white/90 text-sm @[480px]:text-base" data-i18n="hero_sub">زيت الباروكة بخلاصة الأعشاب لتكثيف وطول ولمعان</h2>
+      </div>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="#bundles" class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold" data-i18n="shop_now">طلبي الآن</a>
+        <button id="whatsappCTA" class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white/90 text-text-light text-base font-bold" data-i18n="whatsapp">سولي عبر واتساب</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Stats / Trust Bar -->
+<div class="flex flex-wrap gap-4 p-4 reveal">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
+<span class="material-symbols-outlined text-secondary text-3xl">local_shipping</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_shipping">توصيل مجاني</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_shipping_sub">على جميع الطلبات</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
+<span class="material-symbols-outlined text-secondary text-3xl">payments</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_cod">الدفع عند الاستلام</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_cod_sub">ادفعي عند وصول طلبك</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
+<span class="material-symbols-outlined text-secondary text-3xl">support_agent</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_support">دعم 24/7</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_support_sub">نحن هنا للمساعدة</p>
+</div>
+</div>
+<!-- Benefits (Lolo) -->
+<section id="benefits" class="px-4 py-10 reveal">
+  <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="benefits_title">علاش تختاري خلطات لولو؟</h2>
+  <div class="grid gap-4 sm:grid-cols-3 max-w-5xl mx-auto">
+    <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-4 text-center">
+      <img src="assets/HYALURONIC ACID.png" class="w-16 h-16 object-contain mx-auto" alt="زيت الباروكة"/>
+      <h3 class="mt-3 font-bold" data-i18n="b1_title">زيت الباروكة</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="b1_desc">كيقوي البصيلات ويوقف التساقط ويحفز نمو الخُلفة.</p>
+    </div>
+    <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-4 text-center">
+      <img src="assets/lolo.png" class="w-16 h-16 object-contain mx-auto" alt="أعشاب طبيعية"/>
+      <h3 class="mt-3 font-bold" data-i18n="b2_title">خلاصة الأعشاب</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="b2_desc">ترطيب عميق ولمعان وحماية من التقصف.</p>
+    </div>
+    <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-4 text-center">
+      <img src="assets/a_beautiful_photo_of_the_product_or.jpeg" class="w-16 h-16 object-cover rounded mx-auto" alt="كثافة وطول"/>
+      <h3 class="mt-3 font-bold" data-i18n="b3_title">كثافة وطول</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="b3_desc">ملء الفراغات وطول ملحوظ مع الاستعمال المنتظم.</p>
+    </div>
+  </div>
+</section>
+<!-- FAQ -->
+<section id="faq" class="px-4 py-12 sm:py-16 reveal">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-center text-2xl font-extrabold mb-6">الأسئلة الشائعة</h2>
+    <div class="space-y-4">
+      <details class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-4">
+        <summary class="cursor-pointer font-semibold">لمن مناسب هاد الزيت؟</summary>
+        <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">مناسب لجميع أنواع الشعر، حتى المصبوغ والجاف.</p>
+      </details>
+      <details class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-4">
+        <summary class="cursor-pointer font-semibold">كيفاش نستعملو؟</summary>
+        <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">من الجذور للأطراف مع مساج خفيف، خليه ساعتين على الأقل قبل الغسيل، جوج مرات فالأسبوع.</p>
+      </details>
+      <details class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-4">
+        <summary class="cursor-pointer font-semibold">واش كاين التوصيل؟</summary>
+        <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">التوصيل متوفر لجميع مدن المغرب وخارج المغرب، والدفع عند الاستلام داخل المغرب.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Bundles / Offers -->
+<section id="bundles" class="px-4 py-10 reveal">
+  <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="bundles_title">العروض</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+    <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 shadow-sm">
+      <img src="assets/lolo.png" alt="زجاجة واحدة" class="h-48 w-full object-contain p-4"/>
+      <div class="p-4 text-center">
+        <h3 class="font-bold" data-i18n="bndl1">زجاجة واحدة</h3>
+        <p class="font-extrabold text-primary text-lg">149 د.م</p>
+        <button class="mt-3 w-full h-10 rounded-md bg-primary text-white font-semibold" data-wa="1" data-i18n="order_whatsapp">اطلبي عبر واتساب</button>
+      </div>
+    </div>
+    <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 shadow-sm">
+      <img src="assets/lolo_1st_post.png" alt="عرض جوج قنينات" class="h-48 w-full object-cover"/>
+      <div class="p-4 text-center">
+        <h3 class="font-bold" data-i18n="bndl2">عرض: زوج قنينات</h3>
+        <p class="font-extrabold text-primary text-lg">279 د.م</p>
+        <button class="mt-3 w-full h-10 rounded-md bg-primary text-white font-semibold" data-wa="2" data-i18n="order_whatsapp">اطلبي عبر واتساب</button>
+      </div>
+    </div>
+    <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 shadow-sm">
+      <img src="assets/a_beautiful_photo_of_a_model_with.jpeg" alt="باك 3 قنينات" class="h-48 w-full object-cover"/>
+      <div class="p-4 text-center">
+        <h3 class="font-bold" data-i18n="bndl3">باك 3 قنينات</h3>
+        <p class="font-extrabold text-primary text-lg">399 د.م</p>
+        <button class="mt-3 w-full h-10 rounded-md bg-primary text-white font-semibold" data-wa="3" data-i18n="order_whatsapp">اطلبي عبر واتساب</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How To Use -->
+<section id="howto" class="px-4 py-10 reveal">
+  <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="how_title">طريقة الاستعمال</h2>
+  <div class="max-w-3xl mx-auto grid gap-4 sm:grid-cols-3">
+    <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-text-light/5 text-center">
+      <span class="material-symbols-outlined text-secondary text-3xl">spa</span>
+      <p class="mt-2 text-sm" data-i18n="how_1">ديري الزيت من الجذور للأطراف مع مساج خفيف.</p>
+    </div>
+    <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-text-light/5 text-center">
+      <span class="material-symbols-outlined text-secondary text-3xl">schedule</span>
+      <p class="mt-2 text-sm" data-i18n="how_2">خليه ساعتين على الأقل قبل الغسيل.</p>
+    </div>
+    <div class="rounded-lg border border-gray-200 dark:border-gray-700 p-4 bg-white dark:bg-text-light/5 text-center">
+      <span class="material-symbols-outlined text-secondary text-3xl">repeat</span>
+      <p class="mt-2 text-sm" data-i18n="how_3">استعمليه جوج المرات فالأسبوع و شاهدي الفرق.</p>
+    </div>
+  </div>
+</section>
+<!-- Lookbook Videos -->
+<!-- Lookbook Videos -->
+<section id="lookbook" class="px-4 py-12 sm:py-16 reveal">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="lookbook_title">فيديوهات العرض</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <video class="w-full aspect-video" src="assets/Olive Oil.mp4" controls playsinline muted preload="metadata" poster="assets/lolo.png"></video>
+      </div>
+      <div class="rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <video class="w-full aspect-video" src="assets/مفاتيح سحرية من خلطات لولو.mp4" controls playsinline muted preload="metadata" poster="assets/lolo.png"></video>
+      </div>
+    </div>
+  </div>
+  </section>
+
+<!-- Social Proof Section -->
+<div class="bg-white dark:bg-text-light/5 py-12 reveal">
+<h2 class="text-text-light dark:text-text-dark text-center text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6" data-i18n="social_proof">زبائننا الراضون</h2>
+<div class="grid grid-cols-3 gap-1 px-4">
+<img class="aspect-square w-full object-cover" alt="نتائج زيت خلطات لولو" src="assets/a_beautiful_photo_of_a_model_with.jpeg" loading="lazy" decoding="async"/>
+<img class="aspect-square w-full object-cover" alt="منتج زيت الشعر" src="assets/a_beautiful_photo_of_the_product_or.jpeg" loading="lazy" decoding="async"/>
+<img class="aspect-square w-full object-cover" alt="علامة خلطات لولو" src="assets/lolo.png" loading="lazy" decoding="async"/>
+</div>
+<div class="p-4 mt-4 text-center">
+<p class="text-text-light/80 dark:text-text-dark/80 italic" data-i18n="testimonial_body">"حيت جربتو، لاحظت الفرق فالتساقط من أول أسابيع!"</p>
+<p class="mt-2 font-bold text-text-light dark:text-text-dark" data-i18n="testimonial_author">- زبونة من كازا</p>
+</div>
+</div>
+<!-- About & Craft Section -->
+<section id="ingredients" class="px-4 py-12 sm:py-16 bg-background-light/50 dark:bg-background-dark/40 reveal">
+  <div class="mx-auto max-w-5xl grid gap-8 sm:grid-cols-2 items-center">
+    <img class="rounded-lg shadow-sm aspect-[4/3] object-contain bg-white p-4" src="assets/HYALURONIC ACID.png" alt="مكونات زيت خلطات لولو" loading="lazy" decoding="async"/>
+    <div class="space-y-4">
+      <h2 class="text-2xl font-extrabold">المكونات الرئيسية</h2>
+      <div class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+        <div>
+          <h3 class="font-bold">زيت الباروكة</h3>
+          <p>مكون أساسي يقوي بصيلات الشعر، يوقف التساقط ويحفز نمو الخُلفة.</p>
+        </div>
+        <div>
+          <h3 class="font-bold">خلاصة الأعشاب الطبيعية</h3>
+          <p>مزيج مغذي يعيد الحيوية واللمعان، يرطب بعمق ويحمي من التقصف.</p>
+        </div>
+        <div>
+          <h3 class="font-bold">كثافة وطول مثاليين</h3>
+          <p>تركيبة فريدة تملأ الفراغات وتمنح طولاً وكثافة مع الاستعمال المنتظم.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Ad Section -->
+<section id="blog" class="px-4 py-12 sm:py-16 reveal">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="blog_title">من المدونة</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <a href="#" class="group rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="assets/lolo_1st_post.png" alt="فوائد زيت الباروكة" loading="lazy" decoding="async"/>
+        <div class="p-4">
+          <h3 class="font-bold" data-i18n="blog_1_title">فوائد زيت الباروكة لتكثيف الشعر</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="blog_1_teaser">تعرفي على كيفاش كيعاون على ملء الفراغات وتقوية الجذور.</p>
+        </div>
+      </a>
+      <a href="#" class="group rounded-lg overflow-hidden bg-white dark:bg-text-light/5 border border-gray-200 dark:border-gray-700 shadow-sm">
+        <img class="h-44 w-full object-cover group-hover:scale-105 transition" src="assets/a_beautiful_photo_of_a_model_with.jpeg" alt="روتين العناية بالشعر" loading="lazy" decoding="async"/>
+        <div class="p-4">
+          <h3 class="font-bold" data-i18n="blog_2_title">روتين بسيط لعناية يومية بشعرك</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="blog_2_teaser">خطوات سهلة باش ترجعي اللمعان والحيوية لشعرك.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Checkout Form -->
+<div id="contact" class="p-4 sm:p-6 lg:p-8 reveal">
+<div class="mx-auto max-w-lg rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-6 shadow-sm">
+<h2 class="text-center text-2xl font-bold text-text-light dark:text-text-dark sm:text-3xl" data-i18n="cta_title">اطلبي الآن</h2>
+<p class="mx-auto mt-2 max-w-md text-center text-text-light/70 dark:text-text-dark/70" data-i18n="cta_sub">املئي النموذج أدناه وسنتصل بك للتأكيد</p>
+<form id="contactForm" action="#" class="mt-8 space-y-4" novalidate>
+<div>
+<label class="sr-only" for="name">الاسم الكامل</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="name" placeholder="الاسم الكامل" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="phone">رقم الهاتف</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="phone" placeholder="رقم الهاتف" type="tel"/>
+</div>
+<div>
+<label class="sr-only" for="city">المدينة</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="city" placeholder="المدينة" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="address">العنوان</label>
+<textarea class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="address" placeholder="العنوان" rows="3"></textarea>
+</div>
+<button class="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white" type="submit" data-i18n="confirm_order">تأكيد الطلب</button>
+</form>
+</div>
+</div>
+<!-- Mini-cart and Quick View removed for WhatsApp-first flow -->
+
+<!-- Footer -->
+<footer class="bg-white dark:bg-text-light/5">
+<div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center gap-6 text-center">
+<h2 class="text-xl font-bold leading-tight text-text-light dark:text-text-dark" data-i18n="brand">خلطات لولو</h2>
+<p class="max-w-md text-gray-500 dark:text-gray-400" data-i18n="footer_about">زيت طبيعي لتكثيف وإطالة الشعر بخلاصة زيت الباروكة والأعشاب.</p>
+<form class="w-full max-w-md grid grid-cols-[1fr_auto] gap-2">
+  <input type="email" class="rounded-md border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-3 text-sm" placeholder="بريدك الإلكتروني" data-i18n-ph="newsletter_ph"/>
+  <button class="rounded-md bg-primary text-white px-4" type="button" data-i18n="subscribe">اشتركي</button>
+  <p class="col-span-2 text-xs text-gray-500" data-i18n="newsletter_note">لا رسائل إزعاج، فقط جديدنا وأفضل العروض.</p>
+ </form>
+<ul class="flex flex-wrap justify-center gap-6 md:gap-8">
+<li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="faq">الأسئلة الشائعة</a></li>
+<li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="shipping">سياسة الشحن</a></li>
+<li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="privacy">سياسة الخصوصية</a></li>
+</ul>
+<div class="flex justify-center gap-4">
+<a class="text-gray-700 dark:text-gray-200 hover:text-primary" href="#"><span class="sr-only">Instagram</span><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-gray-700 dark:text-gray-200 hover:text-primary" href="#"><span class="sr-only">Facebook</span><span class="material-symbols-outlined">social_leaderboard</span></a>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400">© 2025. <span data-i18n="brand">خلطات لولو</span>. <span data-i18n="rights">كل الحقوق محفوظة.</span></p>
+</div>
+</div>
+</footer>
+<!-- Scripts: i18n, cart, quick view, animations -->
+<script>
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+  // i18n dictionary
+  const i18n = {
+    ar: {
+      brand: 'خلطات لولو',
+      menu: 'القائمة',
+      nav_home: 'الرئيسية',
+      nav_products: 'العروض',
+      nav_benefits: 'الفوائد',
+      nav_how: 'طريقة الاستعمال',
+      nav_contact: 'تواصل',
+      hero_title: 'شعرك، أقوى من أي وقت',
+      hero_sub: 'زيت الباروكة بخلاصة الأعشاب لتكثيف وطول ولمعان',
+      shop_now: 'طلبي الآن',
+      whatsapp: 'سولي عبر واتساب',
+      usp_shipping: 'توصيل لكل المدن',
+      usp_shipping_sub: 'الدفع عند الاستلام',
+      usp_cod: 'منتج طبيعي 100%',
+      usp_cod_sub: 'صنع في المغرب',
+      usp_support: 'دعم 24/7',
+      usp_support_sub: 'نحن هنا للمساعدة',
+      
+      
+      buy_now: 'اشتري الآن',
+      social_proof: 'زبائننا الراضون',
+      testimonial_body: '"جودة رائعة وتصميمات فريدة! وصلتني طلبيتي بسرعة. شكراً لكم."',
+      testimonial_author: '- فاطمة، من الدار البيضاء',
+      lookbook_title: 'فيديوهات العرض',
+      
+      blog_title: 'من المدونة',
+      blog_1_title: 'فوائد زيت الباروكة لتكثيف الشعر',
+      blog_1_teaser: 'تعرفي على كيفاش كيعاون على ملء الفراغات وتقوية الجذور.',
+      blog_2_title: 'روتين بسيط لعناية يومية بشعرك',
+      blog_2_teaser: 'خطوات سهلة باش ترجعي اللمعان والحيوية لشعرك.',
+      cta_title: 'اطلبي الآن',
+      cta_sub: 'املئي النموذج أدناه وسنتصل بك للتأكيد',
+      confirm_order: 'تأكيد الطلب',
+      cart_title: 'سلة المشتريات',
+      total: 'الإجمالي',
+      place_order: 'تأكيد الطلب',
+      order_received: 'شكراً! تم استلام طلبك. سنعاود الاتصال قريباً.',
+      footer_about: 'زيت طبيعي لتكثيف وإطالة الشعر بخلاصة زيت الباروكة والأعشاب.',
+      faq: 'الأسئلة الشائعة',
+      shipping: 'سياسة الشحن',
+      privacy: 'سياسة الخصوصية',
+      rights: 'كل الحقوق محفوظة.',
+      newsletter_ph: 'بريدك الإلكتروني',
+      subscribe: 'اشترك',
+      newsletter_note: 'غير الجديد والعروض، بلا سبام.',
+      name_ph: 'الاسم الكامل',
+      phone_ph: 'رقم الهاتف',
+      city_ph: 'المدينة',
+      address_ph: 'العنوان',
+      
+      wa_order: 'اطلب عبر واتساب',
+      required_error: 'يرجى ملء الحقول المطلوبة',
+      phone_error: 'رقم الهاتف غير صالح',
+    },
+    fr: {
+      brand: 'Lolo Blends',
+      menu: 'Menu',
+      nav_home: 'Home',
+      nav_products: 'Bundles',
+      nav_benefits: 'Benefits',
+      nav_how: 'How to use',
+      nav_contact: 'Contact',
+      hero_title: 'Stronger hair, every day',
+      hero_sub: 'Barouka oil + herbs for density, length and shine',
+      shop_now: 'Order Now',
+      whatsapp: 'Ask on WhatsApp',
+      usp_shipping: 'Nationwide delivery',
+      usp_shipping_sub: 'Cash on delivery',
+      usp_cod: '100% Natural',
+      usp_cod_sub: 'Made in Morocco',
+      usp_support: 'Support 24/7',
+      usp_support_sub: 'Nous sommes là pour vous',
+      
+      
+      buy_now: 'Acheter',
+      social_proof: 'Happy Customers',
+      testimonial_body: '“Noticed less shedding in the first weeks!”',
+      testimonial_author: '- Customer from Casa',
+      lookbook_title: 'Lookbook',
+      blog_title: 'Blog',
+      blog_1_title: 'Barouka oil benefits for density',
+      blog_1_teaser: 'How it helps regrowth and strengthens roots.',
+      blog_2_title: 'Simple daily hair care routine',
+      blog_2_teaser: 'Easy steps to restore shine and vitality.',
+      
+      blog_title: 'Du blog',
+      blog_1_title: 'Comment styliser un sac marocain ?',
+      blog_1_teaser: 'Conseils pratiques pour chaque occasion.',
+      blog_2_title: 'Entretenir vos chaussures en cuir',
+      blog_2_teaser: 'Les garder éclatantes plus longtemps.',
+      cta_title: 'Order Now',
+      cta_sub: 'Leave your info and we will call you',
+      confirm_order: 'Confirm',
+      cart_title: 'Cart',
+      total: 'Total',
+      place_order: 'Passer la commande',
+      order_received: 'Merci ! Nous vous contacterons très bientôt.' ,
+      footer_about: 'Des sacs et chaussures faits avec amour au Maroc.',
+      faq: 'FAQ',
+      shipping: 'Livraison',
+      privacy: 'Confidentialité',
+      rights: 'All rights reserved.',
+      newsletter_ph: 'Your email',
+      subscribe: 'Subscribe',
+      newsletter_note: 'No spam — just news and offers.',
+      name_ph: 'Full name',
+      phone_ph: 'Phone',
+      city_ph: 'City',
+      address_ph: 'Address',
+      
+      wa_order: 'Commander via WhatsApp',
+      required_error: 'Veuillez remplir les champs requis',
+      phone_error: 'Numéro de téléphone invalide',
+    }
+  };
+
+  // No catalog grid in this theme
+
+  let currentLang = localStorage.getItem('lang') || document.documentElement.lang || 'ar';
+  const whatsappNumber = '212600000000';
+
+  function applyI18n(lang) {
+    $$('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key]) el.textContent = i18n[lang][key];
+    });
+    $$('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      if (i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
+    });
+    // Direction
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    $('#langToggle').textContent = lang === 'ar' ? 'AR' : 'EN';
+    // No product names to sync in this theme
+    localStorage.setItem('lang', lang);
+    // No grid to render
+  }
+
+  $('#langToggle').addEventListener('click', () => {
+    currentLang = currentLang === 'ar' ? 'fr' : 'ar';
+    applyI18n(currentLang);
+  });
+
+  // Currency formatting MAD (for future pricing if needed)
+  function formatMAD(value) {
+    const locale = currentLang === 'ar' ? 'ar-MA' : 'fr-MA';
+    try {
+      return new Intl.NumberFormat(locale, { style: 'currency', currency: 'MAD' }).format(value);
+    } catch (e) {
+      return (currentLang==='ar' ? value + ' د.م' : 'MAD ' + value);
+    }
+  }
+  function formatAllPrices() {
+    $$('.price').forEach(el => {
+      const v = parseFloat(el.dataset.price || '0');
+      el.textContent = formatMAD(v);
+    });
+    $('#qmPrice') && ($('#qmPrice').textContent = $('#qmPrice').dataset.val ? formatMAD(parseFloat($('#qmPrice').dataset.val)) : '');
+    $('#cartTotal') && ($('#cartTotal').textContent = formatMAD(cart.total()));
+  }
+
+  // Sidebar
+  const sidebar = $('#sidebar');
+  $('#menuButton').addEventListener('click',()=> sidebar.classList.remove('translate-x-full'));
+  $('#closeSidebar').addEventListener('click',()=> sidebar.classList.add('translate-x-full'));
+  $$('#sidebar a').forEach(a=> a.addEventListener('click',()=> sidebar.classList.add('translate-x-full')));
+
+  // Mini-cart
+  const miniCart = null;
+
+  // No cart persistence in this theme
+
+  // No products/allProducts
+
+  function renderCart(){}
+
+  // No product grid
+
+  // No legacy grid
+
+  // Quick View
+  const qm = null, qmc = null;
+  function openQuick(id){}
+  function closeQuick(){}
+
+  // Reveal animations
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+    })
+  }, { threshold: 0.1 });
+  $$('.reveal').forEach(el=> io.observe(el));
+
+  // Filters interactions
+  const filtersWrap = document.getElementById('filters');
+  if (filtersWrap){
+    filtersWrap.addEventListener('click', (e)=>{
+      const btn = e.target.closest('.filter-chip');
+      if(!btn) return;
+      currentFilter = btn.dataset.filter;
+      $$('#filters .filter-chip').forEach(b=> b.classList.remove('bg-primary/20','dark:bg-primary/30','text-primary'));
+      btn.classList.add('bg-primary/20','dark:bg-primary/30','text-primary');
+      
+    });
+  }
+
+  // Hide legacy static products grid and filters (none in this theme)
+  try{
+    const header = document.getElementById('products');
+    const oldFilters = header && header.nextElementSibling;
+    const oldGrid = oldFilters && oldFilters.nextElementSibling;
+    if (oldFilters && oldFilters.classList.contains('flex')) oldFilters.style.display='none';
+    if (oldGrid && oldGrid.classList.contains('grid')) oldGrid.style.display='none';
+  }catch{}
+
+  // Theme persistence + toggle
+  function applyTheme(theme){
+    if(theme==='dark'){ document.documentElement.classList.add('dark'); }
+    else { document.documentElement.classList.remove('dark'); }
+    localStorage.setItem('theme', theme);
+    const icon = document.querySelector('#themeToggle .material-symbols-outlined');
+    if (icon) icon.textContent = theme==='dark' ? 'light_mode' : 'dark_mode';
+  }
+  applyTheme(localStorage.getItem('theme') || 'light');
+  document.getElementById('themeToggle')?.addEventListener('click', ()=>{
+    const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+    applyTheme(next);
+  });
+
+  // WhatsApp integration
+  function openWhatsApp(message){
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+  function buildCartMessage(){
+    return currentLang==='ar' ? 'السلام عليكم، بغيت نطلب زيت الشعر من خلطات لولو.' : 'Hello, I want to order Lolo hair oil.';
+  }
+  document.getElementById('whatsappCTA')?.addEventListener('click', ()=>{
+    const msg = cart.count()>0 ? buildCartMessage() : (currentLang==='ar' ? 'السلام عليكم، بغيت نسول على زيت الشعر من خلطات لولو.' : 'Hello, I’d like to ask about Lolo hair oil.');
+    openWhatsApp(msg);
+  });
+  // Bundle buttons
+  document.querySelectorAll('[data-wa]')?.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const pack = btn.getAttribute('data-wa');
+      const msg = currentLang==='ar' ? `السلام عليكم، بغيت نطلب باك رقم ${pack} من خلطات لولو.` : `Hello, I want to order bundle ${pack} from Lolo Blends.`;
+      openWhatsApp(msg);
+    });
+  });
+
+  // Basic validation helpers
+  function markInvalid(el){ el.classList.add('ring-2','ring-red-500'); }
+  function clearInvalid(el){ el.classList.remove('ring-2','ring-red-500'); }
+  function validPhone(v){ return /^(?:\+?212|0)(?:6|7)\d{8}$/.test(v.trim()); }
+
+  // Contact form validation
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm){
+    contactForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name=document.getElementById('name'), phone=document.getElementById('phone'), city=document.getElementById('city'), addr=document.getElementById('address');
+      [name,phone,city,addr].forEach(clearInvalid);
+      if(!name.value || !phone.value){ if(!name.value) markInvalid(name); if(!phone.value) markInvalid(phone); alert(i18n[currentLang].required_error); return; }
+      if(!validPhone(phone.value)){ markInvalid(phone); alert(i18n[currentLang].phone_error); return; }
+      alert(i18n[currentLang].order_received); contactForm.reset();
+    });
+  }
+
+  // Initial
+  applyI18n(currentLang);
+  formatAllPrices();
+  // No grid/cart to init
+
+  // Submit COD (demo + validation)
+  $('#submitCOD').addEventListener('click', ()=> {
+    const fields = Array.from($('#codForm').querySelectorAll('input,textarea'));
+    fields.forEach(clearInvalid);
+    const [n,p,c,a] = fields;
+    if(!n.value || !p.value){ if(!n.value) markInvalid(n); if(!p.value) markInvalid(p); alert(i18n[currentLang].required_error); return; }
+    if(!validPhone(p.value)){ markInvalid(p); alert(i18n[currentLang].phone_error); return; }
+    alert(i18n[currentLang].order_received);
+    
+    cart.items = {}; renderCart();
+  });
+</script>
+</div>
+</body></html>
