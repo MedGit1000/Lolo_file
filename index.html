@@ -1,67 +1,63 @@
 <!DOCTYPE html>
-
-<html class="light" dir="rtl" lang="ar"><head>
+<html class="light" dir="rtl" lang="ar">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>خلطات لولو — زيت الباروكة لتكثيف الشعر</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#16a34a",
-              "secondary": "#f59e0b",
-              "background-light": "#f7f7f7",
-              "background-dark": "#111827",
-              "text-light": "#111827",
-              "text-dark": "#f7f7f7",
-            },
-            fontFamily: {
-              "display": ["Manrope", "Noto Sans Arabic", "sans-serif"]
-            },
-            borderRadius: {
-              "DEFAULT": "8px",
-              "lg": "12px",
-              "xl": "16px",
-              "full": "9999px"
-            },
-          },
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#16a34a",
+          "secondary": "#f59e0b",
+          "background-light": "#f7f7f7",
+          "background-dark": "#111827",
+          "text-light": "#111827",
+          "text-dark": "#f7f7f7",
         },
-      }
-    </script>
+        fontFamily: {
+          "display": ["Manrope", "Noto Sans Arabic", "sans-serif"]
+        },
+        borderRadius: {
+          "DEFAULT": "8px",
+          "lg": "12px",
+          "xl": "16px",
+          "full": "9999px"
+        },
+      },
+    },
+  }
+</script>
 <style>
-        body {
-            font-family: 'Manrope', 'Noto Sans Arabic', sans-serif;
-        }
-        .material-symbols-outlined {
-          font-variation-settings:
-          'FILL' 0,
-          'wght' 400,
-          'GRAD' 0,
-          'opsz' 24
-        }
-    </style>
-  <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  <style>
-    html{ scroll-behavior: smooth; }
-  </style>
-  <style>
-    .reveal{opacity:0; transform: translateY(16px); transition: opacity .4s ease, transform .4s ease;}
-    .reveal.is-visible{opacity:1; transform: translateY(0);}  
-  </style>
-  </head>
+  body {
+    font-family: 'Manrope', 'Noto Sans Arabic', sans-serif;
+    min-height: max(884px, 100dvh);
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  html { scroll-behavior: smooth; }
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
 <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display">
 <div class="relative w-full flex flex-col group/design-root overflow-x-hidden">
+
 <!-- Top App Bar / Header -->
 <div class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-800">
   <button id="menuButton" class="flex items-center justify-center h-10 w-10 rounded-md hover:bg-black/5 dark:hover:bg-white/10">
@@ -74,9 +70,7 @@
     <button id="themeToggle" class="flex items-center justify-center h-9 w-9 rounded-full hover:bg-black/5 dark:hover:bg-white/10" title="Toggle theme">
       <span class="material-symbols-outlined text-text-light dark:text-text-dark">dark_mode</span>
     </button>
-    <button id="langToggle" class="flex items-center justify-center h-9 px-3 rounded-full bg-white/80 dark:bg-white/10 text-sm font-semibold border border-gray-200 dark:border-gray-700">
-      AR
-    </button>
+    <button id="langToggle" class="flex items-center justify-center h-9 px-3 rounded-full bg-white/80 dark:bg-white/10 text-sm font-semibold border border-gray-200 dark:border-gray-700">AR</button>
     <button id="cartButton" class="relative flex items-center justify-center h-10 w-10 rounded-md hover:bg-black/5 dark:hover:bg-white/10">
       <span class="material-symbols-outlined text-text-light dark:text-text-dark">shopping_bag</span>
       <span id="cartCount" class="absolute -top-1 -left-1 text-[11px] px-1.5 py-0.5 rounded-full bg-primary text-white hidden">0</span>
@@ -100,6 +94,7 @@
     <a href="#contact" class="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10" data-i18n="nav_contact">تواصل</a>
   </nav>
 </aside>
+
 <!-- Hero Section -->
 <div id="hero" class="@container">
   <div class="@[480px]:p-4">
@@ -117,25 +112,27 @@
     </div>
   </div>
 </div>
+
 <!-- Stats / Trust Bar -->
 <div class="flex flex-wrap gap-4 p-4 reveal">
-<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
-<span class="material-symbols-outlined text-secondary text-3xl">local_shipping</span>
-<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_shipping">توصيل مجاني</p>
-<p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_shipping_sub">على جميع الطلبات</p>
+  <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
+    <span class="material-symbols-outlined text-secondary text-3xl">local_shipping</span>
+    <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_shipping">توصيل مجاني</p>
+    <p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_shipping_sub">على جميع الطلبات</p>
+  </div>
+  <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
+    <span class="material-symbols-outlined text-secondary text-3xl">payments</span>
+    <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_cod">الدفع عند الاستلام</p>
+    <p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_cod_sub">ادفعي عند وصول طلبك</p>
+  </div>
+  <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
+    <span class="material-symbols-outlined text-secondary text-3xl">support_agent</span>
+    <p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_support">دعم 24/7</p>
+    <p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_support_sub">نحن هنا للمساعدة</p>
+  </div>
 </div>
-<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
-<span class="material-symbols-outlined text-secondary text-3xl">payments</span>
-<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_cod">الدفع عند الاستلام</p>
-<p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_cod_sub">ادفعي عند وصول طلبك</p>
-</div>
-<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 text-center items-center">
-<span class="material-symbols-outlined text-secondary text-3xl">support_agent</span>
-<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal" data-i18n="usp_support">دعم 24/7</p>
-<p class="text-text-light/70 dark:text-text-dark/70 text-sm" data-i18n="usp_support_sub">نحن هنا للمساعدة</p>
-</div>
-</div>
-<!-- Benefits (Lolo) -->
+
+<!-- Benefits -->
 <section id="benefits" class="px-4 py-10 reveal">
   <h2 class="text-center text-2xl font-extrabold mb-6" data-i18n="benefits_title">علاش تختاري خلطات لولو؟</h2>
   <div class="grid gap-4 sm:grid-cols-3 max-w-5xl mx-auto">
@@ -156,6 +153,7 @@
     </div>
   </div>
 </section>
+
 <!-- Results & Reviews -->
 <section id="results" class="px-4 py-12 sm:py-16 reveal">
   <div class="mx-auto max-w-5xl">
@@ -203,13 +201,14 @@
 <!-- About Brand -->
 <section id="about-lolo" class="px-4 py-12 sm:py-16 reveal">
   <div class="mx-auto max-w-5xl grid gap-6 sm:grid-cols-2 items-center">
-    <img src="assets/oil_product1.jpeg" alt="Lolo Blends" class="rounded-lg shadow-sm object-cover aspect-[4/3]" loading="lazy">
+    <img src="assets/oil_product1.jpeg" alt="Lolo Blends" class="rounded-lg shadow-sm object-cover aspect-[4/3]" loading="lazy"/>
     <div class="space-y-3">
       <h2 class="text-2xl font-extrabold" data-i18n="about2_title">عن خلطات لولو</h2>
       <p class="text-sm text-gray-700 dark:text-gray-300 leading-7" data-i18n="about2_body">بدينا من وصفات طبيعية مجرّبة داخل المغرب، وطوّرنا تركيبة زيت الباروكة بخلاصة أعشاب باش نقدّمو حل عملي وفعّال لمشكل التساقط والفراغات. كنآمنو أن العناية بالشعر خاصها تكون بسيطة، طبيعية وممتعة.</p>
     </div>
   </div>
 </section>
+
 <!-- FAQ -->
 <section id="faq" class="px-4 py-12 sm:py-16 reveal">
   <div class="mx-auto max-w-3xl">
@@ -241,9 +240,9 @@
         <h3 class="font-bold" data-i18n="bndl1">زجاجة واحدة</h3>
         <p class="font-extrabold text-primary text-lg">149 د.م</p>
         <div class="mt-3 grid grid-cols-3 gap-2">
-          <button class="h-10 rounded-md bg-primary text-white font-semibold" data-add-bundle="b1" data-i18n="add_to_cart">أضف للسلة</button>
-          <button class="h-10 rounded-md border border-gray-200 dark:border-gray-700" data-normal="b1" data-i18n="normal_order">طلب عادي</button>
-          <button class="h-10 rounded-md bg-green-600 text-white font-semibold" data-wa="1" data-i18n="order_whatsapp">اطلبي واتساب</button>
+          <button class="h-10 rounded-md bg-primary text-white font-semibold text-xs" data-add-bundle="b1" data-i18n="add_to_cart">أضف للسلة</button>
+          <button class="h-10 rounded-md border border-gray-200 dark:border-gray-700 text-xs" data-normal="b1" data-i18n="normal_order">طلب عادي</button>
+          <button class="h-10 rounded-md bg-green-600 text-white font-semibold text-xs" data-wa="1" data-i18n="order_whatsapp">واتساب</button>
         </div>
       </div>
     </div>
@@ -253,9 +252,9 @@
         <h3 class="font-bold" data-i18n="bndl2">عرض: زوج قنينات</h3>
         <p class="font-extrabold text-primary text-lg">279 د.م</p>
         <div class="mt-3 grid grid-cols-3 gap-2">
-          <button class="h-10 rounded-md bg-primary text-white font-semibold" data-add-bundle="b2" data-i18n="add_to_cart">أضف للسلة</button>
-          <button class="h-10 rounded-md border border-gray-200 dark:border-gray-700" data-normal="b2" data-i18n="normal_order">طلب عادي</button>
-          <button class="h-10 rounded-md bg-green-600 text-white font-semibold" data-wa="2" data-i18n="order_whatsapp">اطلبي واتساب</button>
+          <button class="h-10 rounded-md bg-primary text-white font-semibold text-xs" data-add-bundle="b2" data-i18n="add_to_cart">أضف للسلة</button>
+          <button class="h-10 rounded-md border border-gray-200 dark:border-gray-700 text-xs" data-normal="b2" data-i18n="normal_order">طلب عادي</button>
+          <button class="h-10 rounded-md bg-green-600 text-white font-semibold text-xs" data-wa="2" data-i18n="order_whatsapp">واتساب</button>
         </div>
       </div>
     </div>
@@ -265,9 +264,9 @@
         <h3 class="font-bold" data-i18n="bndl3">باك 3 قنينات</h3>
         <p class="font-extrabold text-primary text-lg">399 د.م</p>
         <div class="mt-3 grid grid-cols-3 gap-2">
-          <button class="h-10 rounded-md bg-primary text-white font-semibold" data-add-bundle="b3" data-i18n="add_to_cart">أضف للسلة</button>
-          <button class="h-10 rounded-md border border-gray-200 dark:border-gray-700" data-normal="b3" data-i18n="normal_order">طلب عادي</button>
-          <button class="h-10 rounded-md bg-green-600 text-white font-semibold" data-wa="3" data-i18n="order_whatsapp">اطلبي واتساب</button>
+          <button class="h-10 rounded-md bg-primary text-white font-semibold text-xs" data-add-bundle="b3" data-i18n="add_to_cart">أضف للسلة</button>
+          <button class="h-10 rounded-md border border-gray-200 dark:border-gray-700 text-xs" data-normal="b3" data-i18n="normal_order">طلب عادي</button>
+          <button class="h-10 rounded-md bg-green-600 text-white font-semibold text-xs" data-wa="3" data-i18n="order_whatsapp">واتساب</button>
         </div>
       </div>
     </div>
@@ -292,7 +291,7 @@
     </div>
   </div>
 </section>
-<!-- Lookbook Videos -->
+
 <!-- Lookbook Videos -->
 <section id="lookbook" class="px-4 py-12 sm:py-16 reveal">
   <div class="mx-auto max-w-5xl">
@@ -306,21 +305,22 @@
       </div>
     </div>
   </div>
-  </section>
+</section>
 
 <!-- Social Proof Section -->
 <div class="bg-white dark:bg-text-light/5 py-12 reveal">
-<h2 class="text-text-light dark:text-text-dark text-center text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6" data-i18n="social_proof">زبائننا الراضون</h2>
-<div class="grid grid-cols-3 gap-1 px-4">
-<img class="aspect-square w-full object-cover" alt="نتائج زيت خلطات لولو" src="assets/a_beautiful_photo_of_a_model_with.jpeg" loading="lazy" decoding="async"/>
-<img class="aspect-square w-full object-cover" alt="منتج زيت الشعر" src="assets/a_beautiful_photo_of_the_product_or.jpeg" loading="lazy" decoding="async"/>
-<img class="aspect-square w-full object-cover" alt="علامة خلطات لولو" src="assets/oil_product3.jpeg" loading="lazy" decoding="async"/>
+  <h2 class="text-text-light dark:text-text-dark text-center text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6" data-i18n="social_proof">زبائننا الراضون</h2>
+  <div class="grid grid-cols-3 gap-1 px-4">
+    <img class="aspect-square w-full object-cover" alt="نتائج زيت خلطات لولو" src="assets/a_beautiful_photo_of_a_model_with.jpeg" loading="lazy" decoding="async"/>
+    <img class="aspect-square w-full object-cover" alt="منتج زيت الشعر" src="assets/a_beautiful_photo_of_the_product_or.jpeg" loading="lazy" decoding="async"/>
+    <img class="aspect-square w-full object-cover" alt="علامة خلطات لولو" src="assets/oil_product3.jpeg" loading="lazy" decoding="async"/>
+  </div>
+  <div class="p-4 mt-4 text-center">
+    <p class="text-text-light/80 dark:text-text-dark/80 italic" data-i18n="testimonial_body">"حيت جربتو، لاحظت الفرق فالتساقط من أول أسابيع!"</p>
+    <p class="mt-2 font-bold text-text-light dark:text-text-dark" data-i18n="testimonial_author">- زبونة من كازا</p>
+  </div>
 </div>
-<div class="p-4 mt-4 text-center">
-<p class="text-text-light/80 dark:text-text-dark/80 italic" data-i18n="testimonial_body">"حيت جربتو، لاحظت الفرق فالتساقط من أول أسابيع!"</p>
-<p class="mt-2 font-bold text-text-light dark:text-text-dark" data-i18n="testimonial_author">- زبونة من كازا</p>
-</div>
-</div>
+
 <!-- About & Craft Section -->
 <section id="ingredients" class="px-4 py-12 sm:py-16 bg-background-light/50 dark:bg-background-dark/40 reveal">
   <div class="mx-auto max-w-5xl grid gap-8 sm:grid-cols-2 items-center">
@@ -367,42 +367,53 @@
     </div>
   </div>
 </section>
+
 <!-- Checkout Form -->
 <div id="contact" class="p-4 sm:p-6 lg:p-8 reveal">
-<div class="mx-auto max-w-lg rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-6 shadow-sm">
-<h2 class="text-center text-2xl font-bold text-text-light dark:text-text-dark sm:text-3xl" data-i18n="cta_title">اطلبي الآن</h2>
-<p class="mx-auto mt-2 max-w-md text-center text-text-light/70 dark:text-text-dark/70" data-i18n="cta_sub">املئي النموذج أدناه وسنتصل بك للتأكيد</p>
-<!-- Order Summary (auto-filled) -->
-<div id="orderSummary" class="mt-6 hidden">
-  <h3 class="font-bold mb-2" data-i18n="review_title">مراجعة الطلب</h3>
-  <div class="rounded-md border border-gray-200 dark:border-gray-700 p-3 text-sm text-gray-700 dark:text-gray-300">
-    <ul id="orderSummaryList" class="space-y-1"></ul>
-    <div class="mt-2 flex items-center justify-between font-bold"><span data-i18n="total">الإجمالي</span><span id="orderSummaryTotal">0</span></div>
+  <div class="mx-auto max-w-lg rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-6 shadow-sm">
+    <h2 class="text-center text-2xl font-bold text-text-light dark:text-text-dark sm:text-3xl" data-i18n="cta_title">اطلبي الآن</h2>
+    <p class="mx-auto mt-2 max-w-md text-center text-text-light/70 dark:text-text-dark/70" data-i18n="cta_sub">املئي النموذج أدناه وسنتصل بك للتأكيد</p>
+    
+    <!-- Order Summary -->
+    <div id="orderSummary" class="mt-6 hidden">
+      <h3 class="font-bold mb-2" data-i18n="review_title">مراجعة الطلب</h3>
+      <div class="rounded-md border border-gray-200 dark:border-gray-700 p-3 text-sm text-gray-700 dark:text-gray-300">
+        <ul id="orderSummaryList" class="space-y-1"></ul>
+        <div class="mt-2 flex items-center justify-between font-bold">
+          <span data-i18n="total">الإجمالي</span>
+          <span id="orderSummaryTotal">0</span>
+        </div>
+      </div>
+      <p id="orderSummaryEmpty" class="mt-2 text-xs text-gray-500" data-i18n="summary_empty">لا توجد عناصر مضافة بعد.</p>
+      <hr class="my-4 border-gray-200 dark:border-gray-700"/>
+    </div>
+    
+    <form id="contactForm" action="#" class="mt-8 space-y-4" novalidate>
+      <div>
+        <label class="sr-only" for="name">الاسم الكامل</label>
+        <input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="name" data-i18n-ph="name_ph" placeholder="الاسم الكامل" type="text"/>
+      </div>
+      <div>
+        <label class="sr-only" for="phone">رقم الهاتف</label>
+        <input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="phone" data-i18n-ph="phone_ph" placeholder="رقم الهاتف" type="tel"/>
+      </div>
+      <div>
+        <label class="sr-only" for="email">البريد الإلكتروني</label>
+        <input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="email" data-i18n-ph="email_ph" placeholder="البريد الإلكتروني (اختياري)" type="email"/>
+      </div>
+      <div>
+        <label class="sr-only" for="city">المدينة</label>
+        <input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="city" data-i18n-ph="city_ph" placeholder="المدينة" type="text"/>
+      </div>
+      <div>
+        <label class="sr-only" for="address">العنوان</label>
+        <textarea class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="address" data-i18n-ph="address_ph" placeholder="العنوان" rows="3"></textarea>
+      </div>
+      <button id="orderSubmitBtn" class="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white" type="submit" data-i18n="confirm_order">تأكيد الطلب</button>
+    </form>
   </div>
-  <p id="orderSummaryEmpty" class="mt-2 text-xs text-gray-500" data-i18n="summary_empty">لا توجد عناصر مضافة بعد. اختاري عرضاً أو أضيفي للسلة.</p>
-  <hr class="my-4 border-gray-200 dark:border-gray-700"/>
 </div>
-<form id="contactForm" action="#" class="mt-8 space-y-4" novalidate>
-<div>
-<label class="sr-only" for="name">الاسم الكامل</label>
-<input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="name" placeholder="الاسم الكامل" type="text"/>
-</div>
-<div>
-<label class="sr-only" for="phone">رقم الهاتف</label>
-<input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="phone" placeholder="رقم الهاتف" type="tel"/>
-</div>
-<div>
-<label class="sr-only" for="city">المدينة</label>
-<input class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="city" placeholder="المدينة" type="text"/>
-</div>
-<div>
-<label class="sr-only" for="address">العنوان</label>
-<textarea class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="address" placeholder="العنوان" rows="3"></textarea>
-</div>
-<button id="orderSubmitBtn" class="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white" type="submit" data-i18n="confirm_order">تأكيد الطلب</button>
-</form>
-</div>
-</div>
+
 <!-- Mini-cart Drawer -->
 <aside id="miniCart" class="fixed inset-y-0 left-0 w-[90vw] max-w-md -translate-x-full transition-transform duration-300 ease-out bg-white dark:bg-background-dark border-r border-gray-200 dark:border-gray-800 z-50 shadow-xl">
   <div class="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
@@ -413,599 +424,502 @@
   </div>
   <div class="p-4 space-y-3 overflow-y-auto max-h-[45vh]" id="cartItems"></div>
   <div class="p-4 border-t border-gray-200 dark:border-gray-800 space-y-3">
-    <div class="flex items-center justify-between font-bold"><span data-i18n="total">الإجمالي</span><span id="cartTotal">0</span></div>
+    <div class="flex items-center justify-between font-bold">
+      <span data-i18n="total">الإجمالي</span>
+      <span id="cartTotal">0</span>
+    </div>
     <div class="grid grid-cols-2 gap-2">
-      <a href="#contact" class="h-10 rounded-md border border-gray-200 dark:border-gray-700 grid place-items-center" data-i18n="normal_order">طلب عادي</a>
-      <button id="waOrderBtnCart" class="h-10 rounded-md bg-green-600 text-white font-semibold" data-i18n="order_whatsapp">اطلب واتساب</button>
+      <a href="#contact" class="h-10 rounded-md border border-gray-200 dark:border-gray-700 grid place-items-center text-sm" data-i18n="normal_order">طلب عادي</a>
+      <button id="waOrderBtnCart" class="h-10 rounded-md bg-green-600 text-white font-semibold text-sm" data-i18n="order_whatsapp">واتساب</button>
     </div>
   </div>
 </aside>
 
 <!-- Footer -->
 <footer class="bg-white dark:bg-text-light/5">
-<div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
-<div class="flex flex-col items-center gap-6 text-center">
-<h2 class="text-xl font-bold leading-tight text-text-light dark:text-text-dark" data-i18n="brand">خلطات لولو</h2>
-<p class="max-w-md text-gray-500 dark:text-gray-400" data-i18n="footer_about">زيت طبيعي لتكثيف وإطالة الشعر بخلاصة زيت الباروكة والأعشاب.</p>
-<form class="w-full max-w-md grid grid-cols-[1fr_auto] gap-2">
-  <input type="email" class="rounded-md border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-3 text-sm" placeholder="بريدك الإلكتروني" data-i18n-ph="newsletter_ph"/>
-  <button class="rounded-md bg-primary text-white px-4" type="button" data-i18n="subscribe">اشتركي</button>
-  <p class="col-span-2 text-xs text-gray-500" data-i18n="newsletter_note">لا رسائل إزعاج، فقط جديدنا وأفضل العروض.</p>
- </form>
-<ul class="flex flex-wrap justify-center gap-6 md:gap-8">
-<li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="faq">الأسئلة الشائعة</a></li>
-<li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="shipping">سياسة الشحن</a></li>
-<li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="privacy">سياسة الخصوصية</a></li>
-</ul>
-<div class="flex justify-center gap-4">
-<a class="text-gray-700 dark:text-gray-200 hover:text-primary" href="#"><span class="sr-only">Instagram</span><span class="material-symbols-outlined">photo_camera</span></a>
-<a class="text-gray-700 dark:text-gray-200 hover:text-primary" href="#"><span class="sr-only">Facebook</span><span class="material-symbols-outlined">social_leaderboard</span></a>
-</div>
-<p class="text-xs text-gray-500 dark:text-gray-400">© 2025. <span data-i18n="brand">خلطات لولو</span>. <span data-i18n="rights">كل الحقوق محفوظة.</span></p>
-</div>
-</div>
+  <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center gap-6 text-center">
+      <h2 class="text-xl font-bold leading-tight text-text-light dark:text-text-dark" data-i18n="brand">خلطات لولو</h2>
+      <p class="max-w-md text-gray-500 dark:text-gray-400" data-i18n="footer_about">زيت طبيعي لتكثيف وإطالة الشعر بخلاصة زيت الباروكة والأعشاب.</p>
+      <form class="w-full max-w-md grid grid-cols-[1fr_auto] gap-2">
+        <input type="email" class="rounded-md border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-3 text-sm" data-i18n-ph="newsletter_ph" placeholder="بريدك الإلكتروني"/>
+        <button class="rounded-md bg-primary text-white px-4 text-sm" type="button" data-i18n="subscribe">اشتركي</button>
+        <p class="col-span-2 text-xs text-gray-500" data-i18n="newsletter_note">لا رسائل إزعاج، فقط جديدنا وأفضل العروض.</p>
+      </form>
+      <ul class="flex flex-wrap justify-center gap-6 md:gap-8">
+        <li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#faq" data-i18n="faq">الأسئلة الشائعة</a></li>
+        <li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="shipping">سياسة الشحن</a></li>
+        <li><a class="text-gray-700 dark:text-gray-200 transition hover:text-gray-700/75 dark:hover:text-gray-200/75" href="#" data-i18n="privacy">سياسة الخصوصية</a></li>
+      </ul>
+      <div class="flex justify-center gap-4">
+        <a class="text-gray-700 dark:text-gray-200 hover:text-primary" href="#"><span class="sr-only">Instagram</span><span class="material-symbols-outlined">photo_camera</span></a>
+        <a class="text-gray-700 dark:text-gray-200 hover:text-primary" href="#"><span class="sr-only">Facebook</span><span class="material-symbols-outlined">social_leaderboard</span></a>
+      </div>
+      <p class="text-xs text-gray-500 dark:text-gray-400">© 2025. <span data-i18n="brand">خلطات لولو</span>. <span data-i18n="rights">كل الحقوق محفوظة.</span></p>
+    </div>
+  </div>
 </footer>
-<!-- Scripts: i18n, cart, quick view, animations -->
+
+<!-- Main Script -->
 <script>
-  const $ = (sel, root=document) => root.querySelector(sel);
-  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+const $ = (sel, root=document) => root.querySelector(sel);
+const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
-  // i18n dictionary
-  const i18n = {
-    ar: {
-      brand: 'خلطات لولو',
-      menu: 'القائمة',
-      nav_home: 'الرئيسية',
-      nav_products: 'العروض',
-      nav_benefits: 'الفوائد',
-      nav_how: 'طريقة الاستعمال',
-      nav_contact: 'تواصل',
-      hero_title: 'شعرك، أقوى من أي وقت',
-      hero_sub: 'زيت الباروكة بخلاصة الأعشاب لتكثيف وطول ولمعان',
-      shop_now: 'طلبي الآن',
-      whatsapp: 'سولي عبر واتساب',
-      usp_shipping: 'توصيل لكل المدن',
-      usp_shipping_sub: 'الدفع عند الاستلام',
-      usp_cod: 'منتج طبيعي 100%',
-      usp_cod_sub: 'صنع في المغرب',
-      usp_support: 'دعم 24/7',
-      usp_support_sub: 'نحن هنا للمساعدة',
-      
-      
-      buy_now: 'اشتري الآن',
-      social_proof: 'زبائننا الراضون',
-      testimonial_body: '"جودة رائعة وتصميمات فريدة! وصلتني طلبيتي بسرعة. شكراً لكم."',
-      testimonial_author: '- فاطمة، من الدار البيضاء',
-      lookbook_title: 'فيديوهات العرض',
-      results_title: 'نتائج مجرّبة من زبوناتنا',
-      results_intro: 'بفضل تركيبة زيت الباروكة وخلاصة الأعشاب، عدد كبير من الزبونات لاحظو فرق واضح فالتساقط والفراغات واللمعان من الأسابيع الأولى مع الاستعمال المنتظم.',
-      results_p1: 'انخفاض ملحوظ في التساقط وتقوية الجذور.',
-      results_p2: 'تحفيز نمو الخُلفة وملء الفراغات.',
-      results_p3: 'ترطيب عميق ولمعان طبيعي بدون إثقال الشعر.',
-      results_p4: 'تحسن الكثافة والطول مع الاستعمال جوج مرات فالأسبوع.',
-      results_note: 'ملاحظة: النتائج كتختلف حسب طبيعة الشعر وروتين العناية.',
-      shipping_title: 'التوصيل والدفع داخل المغرب',
-      shipping_cod: 'الدفع عند الاستلام',
-      shipping_cod_desc: 'يمكنك تأكيد الطلب والدفع ملي توصلك القنينة للباب ديال دارك. تواصل سريع وتتبع للطلب حتى يوصل عندك.',
-      shipping_cities_title: 'نغطّيو بزاف ديال المدن',
-      shipping_cities: 'الدار البيضاء، الرباط، طنجة، مراكش، فاس، مكناس، أكادير، وجدة، آسفي، الجديدة، تطوان ومدن أخرى.',
-      quality_title: 'جودة مضمونة وتركيبة طبيعية',
-      quality_p1: 'خالي من السيلكونات والبارابين.',
-      quality_p2: 'مكونات طبيعية وآمنة على فروة الرأس.',
-      quality_p3: 'تصنيع محلي بمعايير نظافة وجودة.',
-      about2_title: 'عن خلطات لولو',
-      about2_body: 'بدينا من وصفات طبيعية مجرّبة داخل المغرب، وطوّرنا تركيبة زيت الباروكة بخلاصة أعشاب باش نقدّمو حل عملي وفعّال لمشكل التساقط والفراغات. كنآمنو أن العناية بالشعر خاصها تكون بسيطة، طبيعية وممتعة.',
-      
-      blog_title: 'من المدونة',
-      blog_1_title: 'فوائد زيت الباروكة لتكثيف الشعر',
-      blog_1_teaser: 'تعرفي على كيفاش كيعاون على ملء الفراغات وتقوية الجذور.',
-      blog_2_title: 'روتين بسيط لعناية يومية بشعرك',
-      blog_2_teaser: 'خطوات سهلة باش ترجعي اللمعان والحيوية لشعرك.',
-      cta_title: 'اطلبي الآن',
-      cta_sub: 'املئي النموذج أدناه وسنتصل بك للتأكيد',
-      confirm_order: 'تأكيد الطلب',
-      cart_title: 'سلة المشتريات',
-      total: 'الإجمالي',
-      place_order: 'تأكيد الطلب',
-      order_received: 'شكراً! تم استلام طلبك. سنعاود الاتصال قريباً.',
-      footer_about: 'زيت طبيعي لتكثيف وإطالة الشعر بخلاصة زيت الباروكة والأعشاب.',
-      faq: 'الأسئلة الشائعة',
-      shipping: 'سياسة الشحن',
-      privacy: 'سياسة الخصوصية',
-      rights: 'كل الحقوق محفوظة.',
-      newsletter_ph: 'بريدك الإلكتروني',
-      subscribe: 'اشترك',
-      newsletter_note: 'غير الجديد والعروض، بلا سبام.',
-      name_ph: 'الاسم الكامل',
-      phone_ph: 'رقم الهاتف',
-      city_ph: 'المدينة',
-      address_ph: 'العنوان',
-      
-      wa_order: 'اطلب عبر واتساب',
-      add_to_cart: 'أضف للسلة',
-      normal_order: 'طلب عادي',
-      required_error: 'يرجى ملء الحقول المطلوبة',
-      phone_error: 'رقم الهاتف غير صالح',
-    },
-    fr: {
-      brand: 'Lolo Blends',
-      menu: 'Menu',
-      nav_home: 'Home',
-      nav_products: 'Bundles',
-      nav_benefits: 'Benefits',
-      nav_how: 'How to use',
-      nav_contact: 'Contact',
-      hero_title: 'Stronger hair, every day',
-      hero_sub: 'Barouka oil + herbs for density, length and shine',
-      shop_now: 'Order Now',
-      whatsapp: 'Ask on WhatsApp',
-      add_to_cart: 'Add to cart',
-      normal_order: 'Normal order',
-      usp_shipping: 'Nationwide delivery',
-      usp_shipping_sub: 'Cash on delivery',
-      usp_cod: '100% Natural',
-      usp_cod_sub: 'Made in Morocco',
-      usp_support: 'Support 24/7',
-      usp_support_sub: 'Nous sommes là pour vous',
-      
-      
-      buy_now: 'Acheter',
-      social_proof: 'Happy Customers',
-      testimonial_body: '“Noticed less shedding in the first weeks!”',
-      testimonial_author: '- Customer from Casa',
-      lookbook_title: 'Lookbook',
-      results_title: 'Proven results',
-      results_intro: 'Grâce à l’huile Barouka et aux extraits d’herbes, nos clientes constatent moins de chute et plus d’éclat dès les premières semaines avec un usage régulier.',
-      results_p1: 'Chute réduite et racines fortifiées.',
-      results_p2: 'Repousse stimulée et comblement des zones clairsemées.',
-      results_p3: 'Hydratation profonde et brillance naturelle sans alourdir.',
-      results_p4: 'Plus de densité et de longueur (2x par semaine).',
-      results_note: 'Note: les résultats varient selon le type de cheveux et la routine.',
-      shipping_title: 'Livraison et paiement au Maroc',
-      shipping_cod: 'Paiement à la livraison',
-      shipping_cod_desc: 'Validez la commande et payez à la réception. Suivi rapide jusqu’à votre porte.',
-      shipping_cities_title: 'Villes couvertes',
-      shipping_cities: 'Casablanca, Rabat, Tanger, Marrakech, Fès, Meknès, Agadir, Oujda, Safi, El Jadida, Tétouan, et plus.',
-      quality_title: 'Qualité garantie, formule naturelle',
-      quality_p1: 'Sans silicones ni parabènes.',
-      quality_p2: 'Ingrédients naturels et sûrs pour le cuir chevelu.',
-      quality_p3: 'Fabrication locale aux normes d’hygiène et qualité.',
-      about2_title: 'À propos de Lolo Blends',
-      about2_body: 'Née de recettes naturelles testées au Maroc, notre huile Barouka + plantes vise des résultats concrets contre la chute et les zones clairsemées, avec une routine simple et agréable.',
-      blog_title: 'Blog',
-      blog_1_title: 'Barouka oil benefits for density',
-      blog_1_teaser: 'How it helps regrowth and strengthens roots.',
-      blog_2_title: 'Simple daily hair care routine',
-      blog_2_teaser: 'Easy steps to restore shine and vitality.',
-      
-      blog_title: 'Du blog',
-      blog_1_title: 'Comment styliser un sac marocain ?',
-      blog_1_teaser: 'Conseils pratiques pour chaque occasion.',
-      blog_2_title: 'Entretenir vos chaussures en cuir',
-      blog_2_teaser: 'Les garder éclatantes plus longtemps.',
-      cta_title: 'Order Now',
-      cta_sub: 'Leave your info and we will call you',
-      confirm_order: 'Confirm',
-      cart_title: 'Cart',
-      total: 'Total',
-      place_order: 'Passer la commande',
-      order_received: 'Merci ! Nous vous contacterons très bientôt.' ,
-      footer_about: 'Des sacs et chaussures faits avec amour au Maroc.',
-      faq: 'FAQ',
-      shipping: 'Livraison',
-      privacy: 'Confidentialité',
-      rights: 'All rights reserved.',
-      newsletter_ph: 'Your email',
-      subscribe: 'Subscribe',
-      newsletter_note: 'No spam — just news and offers.',
-      name_ph: 'Full name',
-      phone_ph: 'Phone',
-      city_ph: 'City',
-      address_ph: 'Address',
-      
-      wa_order: 'Commander via WhatsApp',
-      required_error: 'Veuillez remplir les champs requis',
-      phone_error: 'Numéro de téléphone invalide',
-    }
-  };
-
-  // No catalog grid in this theme
-
-  let currentLang = localStorage.getItem('lang') || document.documentElement.lang || 'ar';
-  const whatsappNumber = '212660928077';
-  const businessEmail = 'intissarbani8@gmail.com';
-  const emailEndpoints = { gas: 'https://script.google.com/macros/s/AKfycbxIwsOtQHS3Qx51Pl8nXj3XuOD7MqJoNkk-cyDlEc37k9bZA9Au1wScPHDWlnw3GlGugA/exec', web3formsKey: '' };
-  let pendingBundle = null; // set when user clicks normal order from a bundle
-
-  function applyI18n(lang) {
-    $$('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (i18n[lang][key]) el.textContent = i18n[lang][key];
-    });
-    $$('[data-i18n-ph]').forEach(el => {
-      const key = el.getAttribute('data-i18n-ph');
-      if (i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
-    });
-    // Direction
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    $('#langToggle').textContent = lang === 'ar' ? 'AR' : 'EN';
-    // No product names to sync in this theme
-    localStorage.setItem('lang', lang);
-    // No grid to render
+const i18n = {
+  ar: {
+    brand: 'خلطات لولو', menu: 'القائمة', nav_home: 'الرئيسية', nav_products: 'العروض', nav_benefits: 'الفوائد',
+    nav_how: 'طريقة الاستعمال', nav_contact: 'تواصل', hero_title: 'شعرك، أقوى من أي وقت',
+    hero_sub: 'زيت الباروكة بخلاصة الأعشاب لتكثيف وطول ولمعان', shop_now: 'طلبي الآن', whatsapp: 'سولي عبر واتساب',
+    usp_shipping: 'توصيل مجاني', usp_shipping_sub: 'على جميع الطلبات', usp_cod: 'الدفع عند الاستلام',
+    usp_cod_sub: 'ادفعي عند وصول طلبك', usp_support: 'دعم 24/7', usp_support_sub: 'نحن هنا للمساعدة',
+    social_proof: 'زبائننا الراضون', testimonial_body: '"حيت جربتو، لاحظت الفرق فالتساقط من أول أسابيع!"',
+    testimonial_author: '- زبونة من كازا', lookbook_title: 'فيديوهات العرض', results_title: 'نتائج مجرّبة من زبوناتنا',
+    results_intro: 'بفضل تركيبة زيت الباروكة وخلاصة الأعشاب، عدد كبير من الزبونات لاحظو فرق واضح فالتساقط والفراغات واللمعان من الأسابيع الأولى مع الاستعمال المنتظم.',
+    results_p1: 'انخفاض ملحوظ في التساقط وتقوية الجذور.', results_p2: 'تحفيز نمو الخُلفة وملء الفراغات.',
+    results_p3: 'ترطيب عميق ولمعان طبيعي بدون إثقال الشعر.', results_p4: 'تحسن الكثافة والطول مع الاستعمال جوج مرات فالأسبوع.',
+    results_note: 'ملاحظة: النتائج كتختلف حسب طبيعة الشعر وروتين العناية.', shipping_title: 'التوصيل والدفع داخل المغرب',
+    shipping_cod: 'الدفع عند الاستلام', shipping_cod_desc: 'يمكنك تأكيد الطلب والدفع ملي توصلك القنينة للباب ديال دارك. تواصل سريع وتتبع للطلب حتى يوصل عندك.',
+    shipping_cities_title: 'نغطّيو بزاف ديال المدن', shipping_cities: 'الدار البيضاء، الرباط، طنجة، مراكش، فاس، مكناس، أكادير، وجدة، آسفي، الجديدة، تطوان ومدن أخرى.',
+    quality_title: 'جودة مضمونة وتركيبة طبيعية', quality_p1: 'خالي من السيلكونات والبارابين.', quality_p2: 'مكونات طبيعية وآمنة على فروة الرأس.',
+    quality_p3: 'تصنيع محلي بمعايير نظافة وجودة.', about2_title: 'عن خلطات لولو',
+    about2_body: 'بدينا من وصفات طبيعية مجرّبة داخل المغرب، وطوّرنا تركيبة زيت الباروكة بخلاصة أعشاب باش نقدّمو حل عملي وفعّال لمشكل التساقط والفراغات. كنآمنو أن العناية بالشعر خاصها تكون بسيطة، طبيعية وممتعة.',
+    blog_title: 'من المدونة', blog_1_title: 'فوائد زيت الباروكة لتكثيف الشعر', blog_1_teaser: 'تعرفي على كيفاش كيعاون على ملء الفراغات وتقوية الجذور.',
+    blog_2_title: 'روتين بسيط لعناية يومية بشعرك', blog_2_teaser: 'خطوات سهلة باش ترجعي اللمعان والحيوية لشعرك.',
+    cta_title: 'اطلبي الآن', cta_sub: 'املئي النموذج أدناه وسنتصل بك للتأكيد', confirm_order: 'تأكيد الطلب',
+    cart_title: 'سلة المشتريات', total: 'الإجمالي', order_received: 'شكراً! تم استلام طلبك. سنعاود الاتصال قريباً.',
+    footer_about: 'زيت طبيعي لتكثيف وإطالة الشعر بخلاصة زيت الباروكة والأعشاب.', faq: 'الأسئلة الشائعة',
+    shipping: 'سياسة الشحن', privacy: 'سياسة الخصوصية', rights: 'كل الحقوق محفوظة.', newsletter_ph: 'بريدك الإلكتروني',
+    subscribe: 'اشترك', newsletter_note: 'غير الجديد والعروض، بلا سبام.', name_ph: 'الاسم الكامل', phone_ph: 'رقم الهاتف',
+    email_ph: 'البريد الإلكتروني (اختياري)', city_ph: 'المدينة', address_ph: 'العنوان', add_to_cart: 'أضف للسلة',
+    normal_order: 'طلب عادي', order_whatsapp: 'واتساب', required_error: 'يرجى ملء الحقول المطلوبة',
+    phone_error: 'رقم الهاتف غير صالح', sending: 'جاري الإرسال...', benefits_title: 'علاش تختاري خلطات لولو؟',
+    b1_title: 'زيت الباروكة', b1_desc: 'كيقوي البصيلات ويوقف التساقط ويحفز نمو الخُلفة.', b2_title: 'خلاصة الأعشاب',
+    b2_desc: 'ترطيب عميق ولمعان وحماية من التقصف.', b3_title: 'كثافة وطول', b3_desc: 'ملء الفراغات وطول ملحوظ مع الاستعمال المنتظم.',
+    bundles_title: 'العروض', bndl1: 'زجاجة واحدة', bndl2: 'عرض: زوج قنينات', bndl3: 'باك 3 قنينات',
+    how_title: 'طريقة الاستعمال', how_1: 'ديري الزيت من الجذور للأطراف مع مساج خفيف.', how_2: 'خليه ساعتين على الأقل قبل الغسيل.',
+    how_3: 'استعمليه جوج المرات فالأسبوع و شاهدي الفرق.', review_title: 'مراجعة الطلب', summary_empty: 'لا توجد عناصر مضافة بعد.'
+  },
+  fr: {
+    brand: 'Lolo Blends', menu: 'Menu', nav_home: 'Accueil', nav_products: 'Offres', nav_benefits: 'Avantages',
+    nav_how: 'Utilisation', nav_contact: 'Contact', hero_title: 'Des cheveux plus forts, chaque jour',
+    hero_sub: 'Huile Barouka + plantes pour densité, longueur et brillance', shop_now: 'Commander', whatsapp: 'Demander via WhatsApp',
+    usp_shipping: 'Livraison nationale', usp_shipping_sub: 'Paiement à la livraison', usp_cod: '100% Naturel',
+    usp_cod_sub: 'Fabriqué au Maroc', usp_support: 'Support 24/7', usp_support_sub: 'Nous sommes là pour vous',
+    social_proof: 'Clients satisfaits', testimonial_body: '"Moins de chute dès les premières semaines!"',
+    testimonial_author: '- Cliente de Casa', lookbook_title: 'Galerie vidéo', results_title: 'Résultats prouvés',
+    results_intro: 'Grâce à l\'huile Barouka et aux extraits de plantes, nos clientes constatent moins de chute et plus d\'éclat dès les premières semaines.',
+    results_p1: 'Chute réduite et racines fortifiées.', results_p2: 'Repousse stimulée et zones clairsemées comblées.',
+    results_p3: 'Hydratation profonde sans alourdir.', results_p4: 'Densité et longueur améliorées (2x/semaine).',
+    results_note: 'Note: résultats variables selon type de cheveux.', shipping_title: 'Livraison et paiement au Maroc',
+    shipping_cod: 'Paiement à la livraison', shipping_cod_desc: 'Confirmez et payez à réception. Suivi rapide.',
+    shipping_cities_title: 'Villes couvertes', shipping_cities: 'Casablanca, Rabat, Tanger, Marrakech, Fès, Meknès, Agadir, Oujda, Safi, El Jadida, Tétouan...',
+    quality_title: 'Qualité garantie, formule naturelle', quality_p1: 'Sans silicones ni parabènes.', quality_p2: 'Ingrédients naturels et sûrs.',
+    quality_p3: 'Fabrication locale certifiée.', about2_title: 'À propos de Lolo Blends',
+    about2_body: 'Née de recettes naturelles marocaines, notre huile vise des résultats concrets contre la chute.',
+    blog_title: 'Blog', blog_1_title: 'Bienfaits de l\'huile Barouka', blog_1_teaser: 'Comment elle stimule la repousse.',
+    blog_2_title: 'Routine capillaire simple', blog_2_teaser: 'Retrouvez brillance et vitalité.',
+    cta_title: 'Commander maintenant', cta_sub: 'Remplissez le formulaire ci-dessous', confirm_order: 'Confirmer',
+    cart_title: 'Panier', total: 'Total', order_received: 'Merci! Nous vous contacterons bientôt.',
+    footer_about: 'Huile naturelle pour densité et longueur.', faq: 'FAQ', shipping: 'Livraison', privacy: 'Confidentialité',
+    rights: 'Tous droits réservés.', newsletter_ph: 'Votre email', subscribe: 'S\'abonner', newsletter_note: 'Seulement nouveautés et offres.',
+    name_ph: 'Nom complet', phone_ph: 'Téléphone', email_ph: 'Email (optionnel)', city_ph: 'Ville', address_ph: 'Adresse',
+    add_to_cart: 'Ajouter au panier', normal_order: 'Commande normale', order_whatsapp: 'WhatsApp', required_error: 'Veuillez remplir les champs requis',
+    phone_error: 'Numéro invalide', sending: 'Envoi en cours...', benefits_title: 'Pourquoi Lolo Blends?',
+    b1_title: 'Huile Barouka', b1_desc: 'Fortifie, stoppe la chute, stimule la repousse.', b2_title: 'Extraits de plantes',
+    b2_desc: 'Hydratation profonde et protection.', b3_title: 'Densité et longueur', b3_desc: 'Résultats visibles avec usage régulier.',
+    bundles_title: 'Offres', bndl1: 'Flacon unique', bndl2: 'Pack 2 flacons', bndl3: 'Pack 3 flacons',
+    how_title: 'Mode d\'emploi', how_1: 'Appliquer des racines aux pointes avec massage léger.', how_2: 'Laisser agir au moins 2 heures.',
+    how_3: 'Utiliser 2x/semaine et voir la différence.', review_title: 'Récapitulatif', summary_empty: 'Aucun article ajouté.'
   }
+};
 
-  $('#langToggle').addEventListener('click', () => {
-    currentLang = currentLang === 'ar' ? 'fr' : 'ar';
-    applyI18n(currentLang);
+let currentLang = localStorage.getItem('lang') || 'ar';
+const whatsappNumber = '212660928077';
+const businessEmail = 'intissarbani8@gmail.com';
+const WEB3FORMS_KEY = 'd2d6a608-1dfc-4e9b-8852-962cb1dc8a20';
+let pendingBundle = null;
+
+const bundles = {
+  b1: { id:'b1', name_ar:'زجاجة واحدة', name_fr:'Flacon unique', price:149 },
+  b2: { id:'b2', name_ar:'عرض: زوج قنينات', name_fr:'Pack 2 flacons', price:279 },
+  b3: { id:'b3', name_ar:'باك 3 قنينات', name_fr:'Pack 3 flacons', price:399 }
+};
+
+const cart = {
+  items: {},
+  add(id){ const b=bundles[id]; if(!b) return; this.items[id]=this.items[id]||{...b, qty:0}; this.items[id].qty++; renderCart(); },
+  remove(id){ delete this.items[id]; renderCart(); },
+  count(){ return Object.values(this.items).reduce((a,b)=>a+b.qty,0); },
+  total(){ return Object.values(this.items).reduce((a,b)=>a+b.qty*b.price,0); }
+};
+
+function currentItems() {
+  const items = Object.values(cart.items);
+  if (items.length === 0 && pendingBundle) {
+    const b = bundles[pendingBundle];
+    if (b) return [{...b, qty: 1}];
+  }
+  return items;
+}
+
+function formatMAD(value) {
+  try {
+    return new Intl.NumberFormat(currentLang === 'ar' ? 'ar-MA' : 'fr-MA', { style: 'currency', currency: 'MAD' }).format(value);
+  } catch (e) {
+    return (currentLang==='ar' ? value + ' د.م' : value + ' MAD');
+  }
+}
+
+function applyI18n(lang) {
+  $$('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (i18n[lang][key]) el.textContent = i18n[lang][key];
   });
+  $$('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if (i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
+  });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  $('#langToggle').textContent = lang === 'ar' ? 'AR' : 'FR';
+  localStorage.setItem('lang', lang);
+}
 
-  // Simple bundle catalog
-  const bundles = {
-    b1: { id:'b1', name_ar:'زجاجة واحدة', name_en:'Single bottle', price:149 },
-    b2: { id:'b2', name_ar:'عرض: زوج قنينات', name_en:'Double pack', price:279 },
-    b3: { id:'b3', name_ar:'باك 3 قنينات', name_en:'3-bottle pack', price:399 },
-  };
+$('#langToggle').addEventListener('click', () => {
+  currentLang = currentLang === 'ar' ? 'fr' : 'ar';
+  applyI18n(currentLang);
+});
 
-  // Currency formatting MAD (for future pricing if needed)
-  function formatMAD(value) {
-    const locale = currentLang === 'ar' ? 'ar-MA' : 'fr-MA';
-    try {
-      return new Intl.NumberFormat(locale, { style: 'currency', currency: 'MAD' }).format(value);
-    } catch (e) {
-      return (currentLang==='ar' ? value + ' د.م' : 'MAD ' + value);
-    }
-  }
-  function formatAllPrices() {
-    $$('.price').forEach(el => {
-      const v = parseFloat(el.dataset.price || '0');
-      el.textContent = formatMAD(v);
-    });
-    $('#qmPrice') && ($('#qmPrice').textContent = $('#qmPrice').dataset.val ? formatMAD(parseFloat($('#qmPrice').dataset.val)) : '');
-    $('#cartTotal') && ($('#cartTotal').textContent = formatMAD(cart.total()));
-  }
+const sidebar = $('#sidebar');
+$('#menuButton')?.addEventListener('click',()=> sidebar && sidebar.classList.remove('translate-x-full'));
+$('#closeSidebar')?.addEventListener('click',()=> sidebar && sidebar.classList.add('translate-x-full'));
+$$('#sidebar a').forEach(a=> a.addEventListener('click',()=> sidebar && sidebar.classList.add('translate-x-full')));
 
-  // Sidebar
-  const sidebar = $('#sidebar');
-  $('#menuButton').addEventListener('click',()=> sidebar.classList.remove('translate-x-full'));
-  $('#closeSidebar').addEventListener('click',()=> sidebar.classList.add('translate-x-full'));
-  $$('#sidebar a').forEach(a=> a.addEventListener('click',()=> sidebar.classList.add('translate-x-full')));
+const miniCart = document.getElementById('miniCart');
+document.getElementById('cartButton')?.addEventListener('click', ()=> miniCart && miniCart.classList.remove('-translate-x-full'));
+document.getElementById('closeCart')?.addEventListener('click', ()=> miniCart && miniCart.classList.add('-translate-x-full'));
 
-  // Mini-cart
-  const miniCart = document.getElementById('miniCart');
-  document.getElementById('cartButton')?.addEventListener('click', ()=> miniCart && miniCart.classList.remove('-translate-x-full'));
-  document.getElementById('closeCart')?.addEventListener('click', ()=> miniCart && miniCart.classList.add('-translate-x-full'));
-
-  // Minimal Cart
-  const cart = {
-    items: {},
-    add(id){ const b=bundles[id]; if(!b) return; this.items[id]=this.items[id]||{...b, qty:0}; this.items[id].qty++; renderCart(); },
-    remove(id){ delete this.items[id]; renderCart(); },
-    count(){ return Object.values(this.items).reduce((a,b)=>a+b.qty,0); },
-    total(){ return Object.values(this.items).reduce((a,b)=>a+b.qty*b.price,0); }
-  };
-
-  function currentItems() {
-    const items = Object.values(cart.items);
-    if (items.length === 0 && pendingBundle) {
-      const b = bundles[pendingBundle];
-      if (b) return [{...b, qty: 1}];
-    }
-    return items;
-  }
-
-  function renderOrderSummary(){
-    const box = document.getElementById('orderSummary');
-    const list = document.getElementById('orderSummaryList');
-    const totalEl = document.getElementById('orderSummaryTotal');
-    const empty = document.getElementById('orderSummaryEmpty');
-    if (!box || !list || !totalEl || !empty) return;
-    const items = currentItems();
-    if (items.length === 0){
-      box.classList.remove('hidden');
-      list.innerHTML = '';
-      totalEl.textContent = formatMAD(0);
-      empty.classList.remove('hidden');
-      return;
-    }
-    empty.classList.add('hidden');
+function renderOrderSummary(){
+  const box = document.getElementById('orderSummary');
+  const list = document.getElementById('orderSummaryList');
+  const totalEl = document.getElementById('orderSummaryTotal');
+  const empty = document.getElementById('orderSummaryEmpty');
+  if (!box || !list || !totalEl || !empty) return;
+  const items = currentItems();
+  if (items.length === 0){
     box.classList.remove('hidden');
-    let total = 0;
-    list.innerHTML = items.map(it=>{
-      total += it.qty*it.price;
-      const title = (document.documentElement.lang==='ar'? it.name_ar : it.name_en);
-      return `<li class="flex items-center justify-between"><span>${title} x${it.qty}</span><span>${formatMAD(it.qty*it.price)}</span></li>`;
-    }).join('');
-    totalEl.textContent = formatMAD(total);
+    list.innerHTML = '';
+    totalEl.textContent = formatMAD(0);
+    empty.classList.remove('hidden');
+    return;
   }
-  function buildOrderPayload(name, phone, city, addr){
-    const items = currentItems();
-    const total = items.reduce((a,b)=> a+b.qty*b.price, 0);
-    const lang = document.documentElement.lang;
-    const subject = lang==='ar' ? `طلب جديد - خلطات لولو - ${name}` : `New Order - Lolo Blends - ${name}`;
-    const lines = items.length ? items.map(it=>{
-      const t = (lang==='ar'? it.name_ar : it.name_en);
-      return `${t} x${it.qty} = ${it.qty*it.price} MAD`;
-    }) : [];
-    const header = lang==='ar' ? 'تفاصيل الزبونة:\n' : 'Customer details:\n';
-    const orderH = lang==='ar' ? 'تفاصيل الطلب:\n' : 'Order:\n';
-    const totalH = lang==='ar' ? 'الإجمالي' : 'Total';
-    const body = `${header}الاسم: ${name}\nالهاتف: ${phone}\nالمدينة: ${city||''}\nالعنوان: ${addr||''}\n\n${orderH}${lines.length? ('\n'+lines.join('\n')) : '\n(no items)'}\n\n${totalH}: ${total} MAD`;
-    return {
-      to: businessEmail,
-      email: businessEmail,
-      replyTo: businessEmail,
-      subject,
-      language: lang,
-      customer: { name, phone, city, address: addr },
-      items: lines,
-      total: `${total} MAD`,
-      message: body
-    };
+  empty.classList.add('hidden');
+  box.classList.remove('hidden');
+  let total = 0;
+  list.innerHTML = items.map(it=>{
+    total += it.qty*it.price;
+    const title = (currentLang==='ar'? it.name_ar : it.name_fr);
+    return `<li class="flex items-center justify-between"><span>${title} x${it.qty}</span><span>${formatMAD(it.qty*it.price)}</span></li>`;
+  }).join('');
+  totalEl.textContent = formatMAD(total);
+}
+
+function formatAdminEmail(payload) {
+  const isAr = payload.language === 'ar';
+  if (isAr) {
+    return `
+━━━━━━━━━━━━━━━━━━━━━━
+🔔 طلب جديد من خلطات لولو
+━━━━━━━━━━━━━━━━━━━━━━
+
+👤 معلومات الزبون:
+الاسم: ${payload.customer.name}
+📱 الهاتف: ${payload.customer.phone}
+📧 البريد: ${payload.customer.email || 'غير محدد'}
+📍 المدينة: ${payload.customer.city || 'غير محدد'}
+🏠 العنوان: ${payload.customer.address || 'غير محدد'}
+
+🛍️ تفاصيل الطلب:
+${payload.items.map((item, i) => `${i+1}. ${item}`).join('\n')}
+
+💰 المجموع: ${payload.total}
+
+⚠️ يرجى الاتصال بالزبون لتأكيد الطلب
+تاريخ: ${new Date().toLocaleString('ar-MA')}
+    `.trim();
+  } else {
+    return `
+━━━━━━━━━━━━━━━━━━━━━━
+🔔 Nouvelle commande Lolo Blends
+━━━━━━━━━━━━━━━━━━━━━━
+
+👤 Client:
+Nom: ${payload.customer.name}
+📱 Tél: ${payload.customer.phone}
+📧 Email: ${payload.customer.email || 'Non spécifié'}
+📍 Ville: ${payload.customer.city || 'Non spécifié'}
+🏠 Adresse: ${payload.customer.address || 'Non spécifié'}
+
+🛍️ Commande:
+${payload.items.map((item, i) => `${i+1}. ${item}`).join('\n')}
+
+💰 Total: ${payload.total}
+
+⚠️ Veuillez contacter le client
+Date: ${new Date().toLocaleString('fr-MA')}
+    `.trim();
   }
-  async function sendOrderEmail(payload){
-    const isFile = (location.protocol === 'file:');
-    // 1) Prefer hidden form POST first to avoid CORS and preflight (especially for file:// testing)
-    if (emailEndpoints.gas){
-      try { const ok = submitViaForm(payload); if (ok) return true; } catch(_){}
-      // 2) If running on http(s) and endpoint allows, try JSON POST
-      if (!isFile){
-        try {
-          const r = await fetch(emailEndpoints.gas, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
-          if (r.ok) return true;
-        } catch(e){ /* ignore */ }
-        // 3) FormData no-cors fallback
-        try {
-          const fd = new FormData();
-          Object.entries(payload.customer).forEach(([k,v])=> fd.append(k, v||''));
-          fd.append('to', payload.to);
-          fd.append('subject', payload.subject);
-          fd.append('language', payload.language);
-          (payload.items.length? payload.items: ['(no items)']).forEach(v=> fd.append('order_items[]', v));
-          fd.append('order_total', payload.total);
-          await fetch(emailEndpoints.gas, { method:'POST', body: fd, mode: 'no-cors' });
-          return true;
-        } catch(e){ /* ignore */ }
-      }
-    }
-    // 4) Web3Forms (if configured)
-    if (emailEndpoints.web3formsKey){
-      const fd = new FormData();
-      fd.append('access_key', emailEndpoints.web3formsKey);
-      fd.append('subject', payload.subject);
-      fd.append('email', businessEmail);
-      fd.append('name', payload.customer.name);
-      fd.append('phone', payload.customer.phone);
-      fd.append('city', payload.customer.city||'');
-      fd.append('address', payload.customer.address||'');
-      (payload.items.length? payload.items: ['(no items)']).forEach(v=> fd.append('order_items[]', v));
-      fd.append('order_total', payload.total);
-      const r = await fetch('https://api.web3forms.com/submit', { method:'POST', body: fd });
-      if (r.ok) return true;
-    }
-    // 5) FormSubmit fallback (requires one‑time email verification)
-    try {
-      const ok = submitViaFormSubmit(payload);
-      if (ok) return true;
-    } catch(_){}
-    throw new Error('send failed');
+}
+
+function formatCustomerEmail(payload) {
+  const isAr = payload.language === 'ar';
+  const c = payload.customer;
+  if (isAr) {
+    return `
+السلام عليكم ${c.name}! 👋
+
+شكراً لطلبك من خلطات لولو 🌿✨
+
+📦 ملخص طلبك:
+${payload.items.map((item, i) => `${i+1}. ${item}`).join('\n')}
+
+💰 المجموع: ${payload.total}
+
+📍 التوصيل:
+${c.city || 'غير محدد'}
+${c.address || 'غير محدد'}
+
+✅ سنتصل بك قريباً للتأكيد
+💳 الدفع عند الاستلام
+🚚 التوصيل خلال 2-4 أيام
+
+📱 واتساب: +${whatsappNumber}
+
+شكراً لثقتك! 💚
+    `.trim();
+  } else {
+    return `
+Bonjour ${c.name}! 👋
+
+Merci pour votre commande Lolo Blends 🌿✨
+
+📦 Résumé:
+${payload.items.map((item, i) => `${i+1}. ${item}`).join('\n')}
+
+💰 Total: ${payload.total}
+
+📍 Livraison:
+${c.city || 'Non spécifié'}
+${c.address || 'Non spécifié'}
+
+✅ Nous vous contacterons bientôt
+💳 Paiement à la livraison
+🚚 Livraison sous 2-4 jours
+
+📱 WhatsApp: +${whatsappNumber}
+
+Merci! 💚
+    `.trim();
   }
+}
 
-  function ensureEmailIframe(){
-    let iframe = document.getElementById('email_iframe');
-    if (!iframe){
-      iframe = document.createElement('iframe');
-      iframe.name = 'email_iframe';
-      iframe.id = 'email_iframe';
-      iframe.style.display = 'none';
-      document.body.appendChild(iframe);
-    }
-    return iframe;
-  }
-  function submitViaForm(payload){
-    if (!emailEndpoints.gas) return false;
-    ensureEmailIframe();
-    const f = document.createElement('form');
-    f.action = emailEndpoints.gas;
-    f.method = 'POST';
-    f.target = 'email_iframe';
-    const add = (n,v)=>{ const i=document.createElement('input'); i.type='hidden'; i.name=n; i.value=v; f.appendChild(i); };
-    add('to', payload.to);
-    add('email', payload.email);
-    add('replyTo', payload.replyTo);
-    add('subject', payload.subject);
-    add('language', payload.language);
-    add('name', payload.customer.name);
-    add('phone', payload.customer.phone);
-    add('city', payload.customer.city||'');
-    add('address', payload.customer.address||'');
-    (payload.items.length? payload.items: ['(no items)']).forEach(v=> add('order_items[]', v));
-    add('order_total', payload.total);
-    add('message', payload.message);
-    document.body.appendChild(f);
-    f.submit();
-    setTimeout(()=>{ try{ document.body.removeChild(f);}catch(_){} }, 2000);
-    return true;
-  }
-
-  function submitViaFormSubmit(payload){
-    // Note: first submission triggers a FormSubmit verification email to businessEmail.
-    // After confirming, subsequent orders arrive automatically.
-    const endpoint = `https://formsubmit.co/${businessEmail}`;
-    const iframe = ensureEmailIframe();
-    const f = document.createElement('form');
-    f.action = endpoint;
-    f.method = 'POST';
-    f.target = iframe.name;
-    const add = (n,v)=>{ const i=document.createElement('input'); i.type='hidden'; i.name=n; i.value=v; f.appendChild(i); };
-    add('_subject', payload.subject);
-    add('_captcha','false');
-    add('name', payload.customer.name);
-    add('phone', payload.customer.phone);
-    add('city', payload.customer.city||'');
-    add('address', payload.customer.address||'');
-    add('language', payload.language);
-    (payload.items.length? payload.items: ['(no items)']).forEach(v=> add('order_items[]', v));
-    add('order_total', payload.total);
-    add('message', payload.message);
-    document.body.appendChild(f);
-    f.submit();
-    setTimeout(()=>{ try{ document.body.removeChild(f);}catch(_){} }, 2000);
-    return true;
-  }
-
-  // No cart persistence in this theme
-
-  // No products/allProducts
-
-  function renderCart(){}
-
-  // No product grid
-
-  // No legacy grid
-
-  // Quick View
-  function renderCart(){
-    const wrap = document.getElementById('cartItems');
-    if (!wrap) return;
-    wrap.innerHTML='';
-    Object.values(cart.items).forEach(it=>{
-      const row=document.createElement('div');
-      row.className='flex items-center justify-between gap-2 border border-gray-200 dark:border-gray-800 rounded-md p-2';
-      const title = (document.documentElement.lang==='ar'? it.name_ar : it.name_en);
-      row.innerHTML = `<div><div class="font-semibold">${title}</div><div class="text-xs text-gray-600 dark:text-gray-300">x${it.qty}</div></div><div class="font-bold">${formatMAD(it.qty*it.price)}</div><button class="h-8 w-8 grid place-items-center rounded-md hover:bg-black/5 dark:hover:bg-white/10" aria-label="remove"><span class="material-symbols-outlined text-[18px]">delete</span></button>`;
-      row.querySelector('button').addEventListener('click', ()=> cart.remove(it.id));
-      wrap.appendChild(row);
-    });
-    const count = cart.count();
-    const badge = document.getElementById('cartCount');
-    if (badge){ if (count>0){ badge.textContent = count; badge.classList.remove('hidden'); } else { badge.classList.add('hidden'); } }
-    const totalEl=document.getElementById('cartTotal'); if(totalEl) totalEl.textContent = formatMAD(cart.total());
-  }
-
-  // Reveal animations
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
-    })
-  }, { threshold: 0.1 });
-  $$('.reveal').forEach(el=> io.observe(el));
-
-  // Filters interactions
-  const filtersWrap = document.getElementById('filters');
-  if (filtersWrap){
-    filtersWrap.addEventListener('click', (e)=>{
-      const btn = e.target.closest('.filter-chip');
-      if(!btn) return;
-      currentFilter = btn.dataset.filter;
-      $$('#filters .filter-chip').forEach(b=> b.classList.remove('bg-primary/20','dark:bg-primary/30','text-primary'));
-      btn.classList.add('bg-primary/20','dark:bg-primary/30','text-primary');
-      
-    });
-  }
-
-  // Hide legacy static products grid and filters (none in this theme)
-  try{
-    const header = document.getElementById('products');
-    const oldFilters = header && header.nextElementSibling;
-    const oldGrid = oldFilters && oldFilters.nextElementSibling;
-    if (oldFilters && oldFilters.classList.contains('flex')) oldFilters.style.display='none';
-    if (oldGrid && oldGrid.classList.contains('grid')) oldGrid.style.display='none';
-  }catch{}
-
-  // Theme persistence + toggle
-  function applyTheme(theme){
-    if(theme==='dark'){ document.documentElement.classList.add('dark'); }
-    else { document.documentElement.classList.remove('dark'); }
-    localStorage.setItem('theme', theme);
-    const icon = document.querySelector('#themeToggle .material-symbols-outlined');
-    if (icon) icon.textContent = theme==='dark' ? 'light_mode' : 'dark_mode';
-  }
-  applyTheme(localStorage.getItem('theme') || 'light');
-  document.getElementById('themeToggle')?.addEventListener('click', ()=>{
-    const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-    applyTheme(next);
+function buildOrderPayload(name, phone, city, addr){
+  const items = currentItems();
+  const total = items.reduce((a,b)=> a+b.qty*b.price, 0);
+  const lang = currentLang;
+  const subject = lang==='ar' ? `طلب جديد - ${name}` : `Nouvelle commande - ${name}`;
+  const lines = items.map(it=>{
+    const t = (lang==='ar'? it.name_ar : it.name_fr);
+    return `${t} x${it.qty} = ${formatMAD(it.qty*it.price)}`;
   });
+  return {
+    subject,
+    language: lang,
+    customer: { name, phone, email: (document.getElementById('email')?.value || '').trim(), city: city||'', address: addr||'' },
+    items: lines.length ? lines : ['Aucun article'],
+    total: formatMAD(total),
+    totalRaw: total
+  };
+}
 
-  // WhatsApp integration
-  function openWhatsApp(message){
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+async function sendOrderEmails(payload) {
+  const adminFD = new FormData();
+  adminFD.append('access_key', WEB3FORMS_KEY);
+  adminFD.append('subject', payload.subject);
+  adminFD.append('from_name', 'Lolo Blends');
+  adminFD.append('email', payload.customer.email || businessEmail);
+  adminFD.append('reply_to', payload.customer.email || '');
+  adminFD.append('message', formatAdminEmail(payload));
+
+  const adminResp = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: adminFD });
+  if (!adminResp.ok) throw new Error('Admin email failed');
+
+  if (payload.customer.email) {
+    const custFD = new FormData();
+    custFD.append('access_key', WEB3FORMS_KEY);
+    custFD.append('subject', payload.language === 'ar' ? 'تأكيد طلبك من خلطات لولو' : 'Confirmation Lolo Blends');
+    custFD.append('from_name', 'Lolo Blends');
+    custFD.append('email', payload.customer.email);
+    custFD.append('message', formatCustomerEmail(payload));
+    await fetch('https://api.web3forms.com/submit', { method: 'POST', body: custFD });
   }
-  function buildCartMessage(){
-    const items = currentItems();
-    if (!items.length) {
-      return currentLang==='ar' ? 'السلام عليكم، بغيت نطلب زيت الشعر من خلطات لولو.' : 'Hello, I want to order Lolo hair oil.';
-    }
-    const lines = items.map(it=>{
-      const t = (document.documentElement.lang==='ar'? it.name_ar : it.name_en);
-      return `- ${t} x${it.qty} = ${it.qty*it.price} MAD`;
-    }).join('\n');
-    const total = items.reduce((a,b)=> a+b.qty*b.price, 0);
-    const header = currentLang==='ar' ? 'طلب عبر واتساب:\n' : 'WhatsApp order:\n';
-    const totalH = currentLang==='ar' ? 'الإجمالي' : 'Total';
-    return `${header}${lines}\n\n${totalH}: ${total} MAD`;
+  return true;
+}
+
+function renderCart(){
+  const wrap = document.getElementById('cartItems');
+  if (!wrap) return;
+  wrap.innerHTML='';
+  Object.values(cart.items).forEach(it=>{
+    const row=document.createElement('div');
+    row.className='flex items-center justify-between gap-2 border border-gray-200 dark:border-gray-800 rounded-md p-2';
+    const title = (currentLang==='ar'? it.name_ar : it.name_fr);
+    row.innerHTML = `<div><div class="font-semibold">${title}</div><div class="text-xs text-gray-600 dark:text-gray-300">x${it.qty}</div></div><div class="font-bold">${formatMAD(it.qty*it.price)}</div><button class="h-8 w-8 grid place-items-center rounded-md hover:bg-black/5 dark:hover:bg-white/10" aria-label="remove"><span class="material-symbols-outlined text-[18px]">delete</span></button>`;
+    row.querySelector('button').addEventListener('click', ()=> cart.remove(it.id));
+    wrap.appendChild(row);
+  });
+  const count = cart.count();
+  const badge = document.getElementById('cartCount');
+  if (badge){ if (count>0){ badge.textContent = count; badge.classList.remove('hidden'); } else { badge.classList.add('hidden'); } }
+  const totalEl=document.getElementById('cartTotal'); if(totalEl) totalEl.textContent = formatMAD(cart.total());
+}
+
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+  })
+}, { threshold: 0.1 });
+$$('.reveal').forEach(el=> io.observe(el));
+
+function applyTheme(theme){
+  if(theme==='dark'){ document.documentElement.classList.add('dark'); }
+  else { document.documentElement.classList.remove('dark'); }
+  localStorage.setItem('theme', theme);
+  const icon = document.querySelector('#themeToggle .material-symbols-outlined');
+  if (icon) icon.textContent = theme==='dark' ? 'light_mode' : 'dark_mode';
+}
+applyTheme(localStorage.getItem('theme') || 'light');
+document.getElementById('themeToggle')?.addEventListener('click', ()=>{
+  const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+  applyTheme(next);
+});
+
+function openWhatsApp(message){
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+function buildCartMessage(){
+  const items = currentItems();
+  if (!items.length) {
+    return currentLang==='ar' ? 'السلام عليكم، بغيت نطلب زيت الشعر من خلطات لولو.' : 'Bonjour, je voudrais commander l\'huile Lolo Blends.';
   }
-  document.getElementById('whatsappCTA')?.addEventListener('click', ()=>{
-    const msg = cart.count()>0 ? buildCartMessage() : (currentLang==='ar' ? 'السلام عليكم، بغيت نسول على زيت الشعر من خلطات لولو.' : 'Hello, I’d like to ask about Lolo hair oil.');
+  const lines = items.map(it=>{
+    const t = (currentLang==='ar'? it.name_ar : it.name_fr);
+    return `- ${t} x${it.qty} = ${formatMAD(it.qty*it.price)}`;
+  }).join('\n');
+  const total = items.reduce((a,b)=> a+b.qty*b.price, 0);
+  const header = currentLang==='ar' ? 'طلب عبر واتساب:\n' : 'Commande WhatsApp:\n';
+  const totalH = currentLang==='ar' ? 'الإجمالي' : 'Total';
+  return `${header}${lines}\n\n${totalH}: ${formatMAD(total)}`;
+}
+
+document.getElementById('whatsappCTA')?.addEventListener('click', ()=>{
+  const msg = cart.count()>0 ? buildCartMessage() : (currentLang==='ar' ? 'السلام عليكم، بغيت نسول على زيت الشعر من خلطات لولو.' : 'Bonjour, j\'aimerais me renseigner sur l\'huile Lolo Blends.');
+  openWhatsApp(msg);
+});
+
+document.querySelectorAll('[data-wa]')?.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const pack = btn.getAttribute('data-wa');
+    const msg = currentLang==='ar' ? `السلام عليكم، بغيت نطلب باك رقم ${pack} من خلطات لولو.` : `Bonjour, je voudrais commander le pack ${pack} de Lolo Blends.`;
     openWhatsApp(msg);
   });
-  // Bundle buttons
-  document.querySelectorAll('[data-wa]')?.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const pack = btn.getAttribute('data-wa');
-      const msg = currentLang==='ar' ? `السلام عليكم، بغيت نطلب باك رقم ${pack} من خلطات لولو.` : `Hello, I want to order bundle ${pack} from Lolo Blends.`;
-      openWhatsApp(msg);
-    });
-  });
-  document.querySelectorAll('[data-normal]')?.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const pack = btn.getAttribute('data-normal');
-      pendingBundle = pack; renderOrderSummary();
-      location.hash = '#contact';
-    });
-  });
-  document.querySelectorAll('[data-add-bundle]')?.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const id = btn.getAttribute('data-add-bundle');
-      pendingBundle = null; cart.add(id); renderOrderSummary();
-      document.getElementById('miniCart')?.classList.remove('-translate-x-full');
-    });
-  });
-  
-  // Basic validation helpers
-  function markInvalid(el){ el.classList.add('ring-2','ring-red-500'); }
-  function clearInvalid(el){ el.classList.remove('ring-2','ring-red-500'); }
-  function validPhone(v){ return /^(?:\+?212|0)(?:6|7)\d{8}$/.test(v.trim()); }
+});
 
-  // Contact form validation + automatic email submit (no mail client)
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm){
-    contactForm.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const name=document.getElementById('name'), phone=document.getElementById('phone'), city=document.getElementById('city'), addr=document.getElementById('address');
-      [name,phone,city,addr].forEach(clearInvalid);
-      if(!name.value || !phone.value){ if(!name.value) markInvalid(name); if(!phone.value) markInvalid(phone); alert(i18n[currentLang].required_error); return; }
-      if(!validPhone(phone.value)){ markInvalid(phone); alert(i18n[currentLang].phone_error); return; }
-      const payload = buildOrderPayload(name.value, phone.value, city.value, addr.value);
-      const btn = document.getElementById('orderSubmitBtn'); if (btn){ btn.disabled = true; btn.style.opacity = '0.7'; }
-      try {
-        await sendOrderEmail(payload);
-        alert(i18n[currentLang].order_received);
-        contactForm.reset(); pendingBundle=null; cart.items={}; renderCart(); renderOrderSummary();
-      } catch (err){
-        alert(currentLang==='ar' ? 'تعذر إرسال الطلب عبر البريد. جربي واتساب أو أعيدي المحاولة.' : 'Could not send email order. Try WhatsApp or retry.');
-      } finally { if (btn){ btn.disabled=false; btn.style.opacity='1'; } }
-    });
-  }
+document.querySelectorAll('[data-normal]')?.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const pack = btn.getAttribute('data-normal');
+    pendingBundle = pack; 
+    renderOrderSummary();
+    location.hash = '#contact';
+  });
+});
 
-  // Initial
-  applyI18n(currentLang);
-  formatAllPrices();
-  renderOrderSummary();
-  // No grid/cart to init
+document.querySelectorAll('[data-add-bundle]')?.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const id = btn.getAttribute('data-add-bundle');
+    pendingBundle = null; 
+    cart.add(id); 
+    renderOrderSummary();
+    miniCart?.classList.remove('-translate-x-full');
+  });
+});
 
-  // No COD inline submit (using main form and WhatsApp)
+document.getElementById('waOrderBtnCart')?.addEventListener('click', ()=>{
+  openWhatsApp(buildCartMessage());
+  miniCart?.classList.add('-translate-x-full');
+});
+
+function markInvalid(el){ el.classList.add('ring-2','ring-red-500'); }
+function clearInvalid(el){ el.classList.remove('ring-2','ring-red-500'); }
+function validPhone(v){ return /^(?:\+?212|0)(?:6|7)\d{8}$/.test(v.trim()); }
+
+const contactForm = document.getElementById('contactForm');
+if (contactForm){
+  contactForm.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const name = document.getElementById('name');
+    const phone = document.getElementById('phone');
+    const city = document.getElementById('city');
+    const addr = document.getElementById('address');
+    
+    [name,phone,city,addr].forEach(clearInvalid);
+    
+    if(!name.value || !phone.value){ 
+      if(!name.value) markInvalid(name); 
+      if(!phone.value) markInvalid(phone); 
+      alert(i18n[currentLang].required_error); 
+      return; 
+    }
+    
+    if(!validPhone(phone.value)){ 
+      markInvalid(phone); 
+      alert(i18n[currentLang].phone_error); 
+      return; 
+    }
+    
+    const payload = buildOrderPayload(name.value, phone.value, city.value, addr.value);
+    const btn = document.getElementById('orderSubmitBtn'); 
+    
+    if (btn){ 
+      btn.disabled = true; 
+      btn.textContent = i18n[currentLang].sending;
+    }
+    
+    try {
+      await sendOrderEmails(payload);
+      alert(i18n[currentLang].order_received);
+      contactForm.reset(); 
+      pendingBundle = null; 
+      cart.items = {}; 
+      renderCart(); 
+      renderOrderSummary();
+    } catch (err){
+      console.error(err);
+      alert(currentLang==='ar' ? 'تعذر إرسال الطلب. جربي واتساب أو أعيدي المحاولة.' : 'Erreur d\'envoi. Essayez WhatsApp ou réessayez.');
+    } finally { 
+      if (btn){ 
+        btn.disabled = false; 
+        btn.textContent = i18n[currentLang].confirm_order;
+      } 
+    }
+  });
+}
+
+applyI18n(currentLang);
+renderOrderSummary();
 </script>
+
 </div>
-</body></html>
+</body>
+</html>
