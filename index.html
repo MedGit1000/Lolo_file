@@ -77,7 +77,10 @@
     <button id="langToggle" class="flex items-center justify-center h-9 px-3 rounded-full bg-white/80 dark:bg-white/10 text-sm font-semibold border border-gray-200 dark:border-gray-700">
       AR
     </button>
-    <!-- Cart removed for WhatsApp ordering -->
+    <button id="cartButton" class="relative flex items-center justify-center h-10 w-10 rounded-md hover:bg-black/5 dark:hover:bg-white/10">
+      <span class="material-symbols-outlined text-text-light dark:text-text-dark">shopping_bag</span>
+      <span id="cartCount" class="absolute -top-1 -left-1 text-[11px] px-1.5 py-0.5 rounded-full bg-primary text-white hidden">0</span>
+    </button>
   </div>
 </div>
 
@@ -237,7 +240,11 @@
       <div class="p-4 text-center">
         <h3 class="font-bold" data-i18n="bndl1">زجاجة واحدة</h3>
         <p class="font-extrabold text-primary text-lg">149 د.م</p>
-        <button class="mt-3 w-full h-10 rounded-md bg-primary text-white font-semibold" data-wa="1" data-i18n="order_whatsapp">اطلبي عبر واتساب</button>
+        <div class="mt-3 grid grid-cols-3 gap-2">
+          <button class="h-10 rounded-md bg-primary text-white font-semibold" data-add-bundle="b1" data-i18n="add_to_cart">أضف للسلة</button>
+          <button class="h-10 rounded-md border border-gray-200 dark:border-gray-700" data-normal="b1" data-i18n="normal_order">طلب عادي</button>
+          <button class="h-10 rounded-md bg-green-600 text-white font-semibold" data-wa="1" data-i18n="order_whatsapp">اطلبي واتساب</button>
+        </div>
       </div>
     </div>
     <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 shadow-sm">
@@ -245,7 +252,11 @@
       <div class="p-4 text-center">
         <h3 class="font-bold" data-i18n="bndl2">عرض: زوج قنينات</h3>
         <p class="font-extrabold text-primary text-lg">279 د.م</p>
-        <button class="mt-3 w-full h-10 rounded-md bg-primary text-white font-semibold" data-wa="2" data-i18n="order_whatsapp">اطلبي عبر واتساب</button>
+        <div class="mt-3 grid grid-cols-3 gap-2">
+          <button class="h-10 rounded-md bg-primary text-white font-semibold" data-add-bundle="b2" data-i18n="add_to_cart">أضف للسلة</button>
+          <button class="h-10 rounded-md border border-gray-200 dark:border-gray-700" data-normal="b2" data-i18n="normal_order">طلب عادي</button>
+          <button class="h-10 rounded-md bg-green-600 text-white font-semibold" data-wa="2" data-i18n="order_whatsapp">اطلبي واتساب</button>
+        </div>
       </div>
     </div>
     <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 shadow-sm">
@@ -253,7 +264,11 @@
       <div class="p-4 text-center">
         <h3 class="font-bold" data-i18n="bndl3">باك 3 قنينات</h3>
         <p class="font-extrabold text-primary text-lg">399 د.م</p>
-        <button class="mt-3 w-full h-10 rounded-md bg-primary text-white font-semibold" data-wa="3" data-i18n="order_whatsapp">اطلبي عبر واتساب</button>
+        <div class="mt-3 grid grid-cols-3 gap-2">
+          <button class="h-10 rounded-md bg-primary text-white font-semibold" data-add-bundle="b3" data-i18n="add_to_cart">أضف للسلة</button>
+          <button class="h-10 rounded-md border border-gray-200 dark:border-gray-700" data-normal="b3" data-i18n="normal_order">طلب عادي</button>
+          <button class="h-10 rounded-md bg-green-600 text-white font-semibold" data-wa="3" data-i18n="order_whatsapp">اطلبي واتساب</button>
+        </div>
       </div>
     </div>
   </div>
@@ -357,6 +372,16 @@
 <div class="mx-auto max-w-lg rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-text-light/5 p-6 shadow-sm">
 <h2 class="text-center text-2xl font-bold text-text-light dark:text-text-dark sm:text-3xl" data-i18n="cta_title">اطلبي الآن</h2>
 <p class="mx-auto mt-2 max-w-md text-center text-text-light/70 dark:text-text-dark/70" data-i18n="cta_sub">املئي النموذج أدناه وسنتصل بك للتأكيد</p>
+<!-- Order Summary (auto-filled) -->
+<div id="orderSummary" class="mt-6 hidden">
+  <h3 class="font-bold mb-2" data-i18n="review_title">مراجعة الطلب</h3>
+  <div class="rounded-md border border-gray-200 dark:border-gray-700 p-3 text-sm text-gray-700 dark:text-gray-300">
+    <ul id="orderSummaryList" class="space-y-1"></ul>
+    <div class="mt-2 flex items-center justify-between font-bold"><span data-i18n="total">الإجمالي</span><span id="orderSummaryTotal">0</span></div>
+  </div>
+  <p id="orderSummaryEmpty" class="mt-2 text-xs text-gray-500" data-i18n="summary_empty">لا توجد عناصر مضافة بعد. اختاري عرضاً أو أضيفي للسلة.</p>
+  <hr class="my-4 border-gray-200 dark:border-gray-700"/>
+</div>
 <form id="contactForm" action="#" class="mt-8 space-y-4" novalidate>
 <div>
 <label class="sr-only" for="name">الاسم الكامل</label>
@@ -374,11 +399,27 @@
 <label class="sr-only" for="address">العنوان</label>
 <textarea class="w-full rounded-lg border-gray-200 dark:border-gray-600 bg-background-light dark:bg-background-dark p-3 text-sm shadow-sm dark:text-text-dark" id="address" placeholder="العنوان" rows="3"></textarea>
 </div>
-<button class="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white" type="submit" data-i18n="confirm_order">تأكيد الطلب</button>
+<button id="orderSubmitBtn" class="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white" type="submit" data-i18n="confirm_order">تأكيد الطلب</button>
 </form>
 </div>
 </div>
-<!-- Mini-cart and Quick View removed for WhatsApp-first flow -->
+<!-- Mini-cart Drawer -->
+<aside id="miniCart" class="fixed inset-y-0 left-0 w-[90vw] max-w-md -translate-x-full transition-transform duration-300 ease-out bg-white dark:bg-background-dark border-r border-gray-200 dark:border-gray-800 z-50 shadow-xl">
+  <div class="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
+    <h3 class="font-bold" data-i18n="cart_title">سلة المشتريات</h3>
+    <button id="closeCart" class="h-9 w-9 grid place-items-center rounded-md hover:bg-black/5 dark:hover:bg-white/10">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div class="p-4 space-y-3 overflow-y-auto max-h-[45vh]" id="cartItems"></div>
+  <div class="p-4 border-t border-gray-200 dark:border-gray-800 space-y-3">
+    <div class="flex items-center justify-between font-bold"><span data-i18n="total">الإجمالي</span><span id="cartTotal">0</span></div>
+    <div class="grid grid-cols-2 gap-2">
+      <a href="#contact" class="h-10 rounded-md border border-gray-200 dark:border-gray-700 grid place-items-center" data-i18n="normal_order">طلب عادي</a>
+      <button id="waOrderBtnCart" class="h-10 rounded-md bg-green-600 text-white font-semibold" data-i18n="order_whatsapp">اطلب واتساب</button>
+    </div>
+  </div>
+</aside>
 
 <!-- Footer -->
 <footer class="bg-white dark:bg-text-light/5">
@@ -481,6 +522,8 @@
       address_ph: 'العنوان',
       
       wa_order: 'اطلب عبر واتساب',
+      add_to_cart: 'أضف للسلة',
+      normal_order: 'طلب عادي',
       required_error: 'يرجى ملء الحقول المطلوبة',
       phone_error: 'رقم الهاتف غير صالح',
     },
@@ -496,6 +539,8 @@
       hero_sub: 'Barouka oil + herbs for density, length and shine',
       shop_now: 'Order Now',
       whatsapp: 'Ask on WhatsApp',
+      add_to_cart: 'Add to cart',
+      normal_order: 'Normal order',
       usp_shipping: 'Nationwide delivery',
       usp_shipping_sub: 'Cash on delivery',
       usp_cod: '100% Natural',
@@ -567,7 +612,10 @@
   // No catalog grid in this theme
 
   let currentLang = localStorage.getItem('lang') || document.documentElement.lang || 'ar';
-  const whatsappNumber = '212600000000';
+  const whatsappNumber = '212660928077';
+  const businessEmail = 'intissarbani8@gmail.com';
+  const emailEndpoints = { gas: 'https://script.google.com/macros/s/AKfycbxIwsOtQHS3Qx51Pl8nXj3XuOD7MqJoNkk-cyDlEc37k9bZA9Au1wScPHDWlnw3GlGugA/exec', web3formsKey: '' };
+  let pendingBundle = null; // set when user clicks normal order from a bundle
 
   function applyI18n(lang) {
     $$('[data-i18n]').forEach(el => {
@@ -591,6 +639,13 @@
     currentLang = currentLang === 'ar' ? 'fr' : 'ar';
     applyI18n(currentLang);
   });
+
+  // Simple bundle catalog
+  const bundles = {
+    b1: { id:'b1', name_ar:'زجاجة واحدة', name_en:'Single bottle', price:149 },
+    b2: { id:'b2', name_ar:'عرض: زوج قنينات', name_en:'Double pack', price:279 },
+    b3: { id:'b3', name_ar:'باك 3 قنينات', name_en:'3-bottle pack', price:399 },
+  };
 
   // Currency formatting MAD (for future pricing if needed)
   function formatMAD(value) {
@@ -617,7 +672,187 @@
   $$('#sidebar a').forEach(a=> a.addEventListener('click',()=> sidebar.classList.add('translate-x-full')));
 
   // Mini-cart
-  const miniCart = null;
+  const miniCart = document.getElementById('miniCart');
+  document.getElementById('cartButton')?.addEventListener('click', ()=> miniCart && miniCart.classList.remove('-translate-x-full'));
+  document.getElementById('closeCart')?.addEventListener('click', ()=> miniCart && miniCart.classList.add('-translate-x-full'));
+
+  // Minimal Cart
+  const cart = {
+    items: {},
+    add(id){ const b=bundles[id]; if(!b) return; this.items[id]=this.items[id]||{...b, qty:0}; this.items[id].qty++; renderCart(); },
+    remove(id){ delete this.items[id]; renderCart(); },
+    count(){ return Object.values(this.items).reduce((a,b)=>a+b.qty,0); },
+    total(){ return Object.values(this.items).reduce((a,b)=>a+b.qty*b.price,0); }
+  };
+
+  function currentItems() {
+    const items = Object.values(cart.items);
+    if (items.length === 0 && pendingBundle) {
+      const b = bundles[pendingBundle];
+      if (b) return [{...b, qty: 1}];
+    }
+    return items;
+  }
+
+  function renderOrderSummary(){
+    const box = document.getElementById('orderSummary');
+    const list = document.getElementById('orderSummaryList');
+    const totalEl = document.getElementById('orderSummaryTotal');
+    const empty = document.getElementById('orderSummaryEmpty');
+    if (!box || !list || !totalEl || !empty) return;
+    const items = currentItems();
+    if (items.length === 0){
+      box.classList.remove('hidden');
+      list.innerHTML = '';
+      totalEl.textContent = formatMAD(0);
+      empty.classList.remove('hidden');
+      return;
+    }
+    empty.classList.add('hidden');
+    box.classList.remove('hidden');
+    let total = 0;
+    list.innerHTML = items.map(it=>{
+      total += it.qty*it.price;
+      const title = (document.documentElement.lang==='ar'? it.name_ar : it.name_en);
+      return `<li class="flex items-center justify-between"><span>${title} x${it.qty}</span><span>${formatMAD(it.qty*it.price)}</span></li>`;
+    }).join('');
+    totalEl.textContent = formatMAD(total);
+  }
+  function buildOrderPayload(name, phone, city, addr){
+    const items = currentItems();
+    const total = items.reduce((a,b)=> a+b.qty*b.price, 0);
+    const lang = document.documentElement.lang;
+    const subject = lang==='ar' ? `طلب جديد - خلطات لولو - ${name}` : `New Order - Lolo Blends - ${name}`;
+    const lines = items.length ? items.map(it=>{
+      const t = (lang==='ar'? it.name_ar : it.name_en);
+      return `${t} x${it.qty} = ${it.qty*it.price} MAD`;
+    }) : [];
+    const header = lang==='ar' ? 'تفاصيل الزبونة:\n' : 'Customer details:\n';
+    const orderH = lang==='ar' ? 'تفاصيل الطلب:\n' : 'Order:\n';
+    const totalH = lang==='ar' ? 'الإجمالي' : 'Total';
+    const body = `${header}الاسم: ${name}\nالهاتف: ${phone}\nالمدينة: ${city||''}\nالعنوان: ${addr||''}\n\n${orderH}${lines.length? ('\n'+lines.join('\n')) : '\n(no items)'}\n\n${totalH}: ${total} MAD`;
+    return {
+      to: businessEmail,
+      email: businessEmail,
+      replyTo: businessEmail,
+      subject,
+      language: lang,
+      customer: { name, phone, city, address: addr },
+      items: lines,
+      total: `${total} MAD`,
+      message: body
+    };
+  }
+  async function sendOrderEmail(payload){
+    const isFile = (location.protocol === 'file:');
+    // 1) Prefer hidden form POST first to avoid CORS and preflight (especially for file:// testing)
+    if (emailEndpoints.gas){
+      try { const ok = submitViaForm(payload); if (ok) return true; } catch(_){}
+      // 2) If running on http(s) and endpoint allows, try JSON POST
+      if (!isFile){
+        try {
+          const r = await fetch(emailEndpoints.gas, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+          if (r.ok) return true;
+        } catch(e){ /* ignore */ }
+        // 3) FormData no-cors fallback
+        try {
+          const fd = new FormData();
+          Object.entries(payload.customer).forEach(([k,v])=> fd.append(k, v||''));
+          fd.append('to', payload.to);
+          fd.append('subject', payload.subject);
+          fd.append('language', payload.language);
+          (payload.items.length? payload.items: ['(no items)']).forEach(v=> fd.append('order_items[]', v));
+          fd.append('order_total', payload.total);
+          await fetch(emailEndpoints.gas, { method:'POST', body: fd, mode: 'no-cors' });
+          return true;
+        } catch(e){ /* ignore */ }
+      }
+    }
+    // 4) Web3Forms (if configured)
+    if (emailEndpoints.web3formsKey){
+      const fd = new FormData();
+      fd.append('access_key', emailEndpoints.web3formsKey);
+      fd.append('subject', payload.subject);
+      fd.append('email', businessEmail);
+      fd.append('name', payload.customer.name);
+      fd.append('phone', payload.customer.phone);
+      fd.append('city', payload.customer.city||'');
+      fd.append('address', payload.customer.address||'');
+      (payload.items.length? payload.items: ['(no items)']).forEach(v=> fd.append('order_items[]', v));
+      fd.append('order_total', payload.total);
+      const r = await fetch('https://api.web3forms.com/submit', { method:'POST', body: fd });
+      if (r.ok) return true;
+    }
+    // 5) FormSubmit fallback (requires one‑time email verification)
+    try {
+      const ok = submitViaFormSubmit(payload);
+      if (ok) return true;
+    } catch(_){}
+    throw new Error('send failed');
+  }
+
+  function ensureEmailIframe(){
+    let iframe = document.getElementById('email_iframe');
+    if (!iframe){
+      iframe = document.createElement('iframe');
+      iframe.name = 'email_iframe';
+      iframe.id = 'email_iframe';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+    }
+    return iframe;
+  }
+  function submitViaForm(payload){
+    if (!emailEndpoints.gas) return false;
+    ensureEmailIframe();
+    const f = document.createElement('form');
+    f.action = emailEndpoints.gas;
+    f.method = 'POST';
+    f.target = 'email_iframe';
+    const add = (n,v)=>{ const i=document.createElement('input'); i.type='hidden'; i.name=n; i.value=v; f.appendChild(i); };
+    add('to', payload.to);
+    add('email', payload.email);
+    add('replyTo', payload.replyTo);
+    add('subject', payload.subject);
+    add('language', payload.language);
+    add('name', payload.customer.name);
+    add('phone', payload.customer.phone);
+    add('city', payload.customer.city||'');
+    add('address', payload.customer.address||'');
+    (payload.items.length? payload.items: ['(no items)']).forEach(v=> add('order_items[]', v));
+    add('order_total', payload.total);
+    add('message', payload.message);
+    document.body.appendChild(f);
+    f.submit();
+    setTimeout(()=>{ try{ document.body.removeChild(f);}catch(_){} }, 2000);
+    return true;
+  }
+
+  function submitViaFormSubmit(payload){
+    // Note: first submission triggers a FormSubmit verification email to businessEmail.
+    // After confirming, subsequent orders arrive automatically.
+    const endpoint = `https://formsubmit.co/${businessEmail}`;
+    const iframe = ensureEmailIframe();
+    const f = document.createElement('form');
+    f.action = endpoint;
+    f.method = 'POST';
+    f.target = iframe.name;
+    const add = (n,v)=>{ const i=document.createElement('input'); i.type='hidden'; i.name=n; i.value=v; f.appendChild(i); };
+    add('_subject', payload.subject);
+    add('_captcha','false');
+    add('name', payload.customer.name);
+    add('phone', payload.customer.phone);
+    add('city', payload.customer.city||'');
+    add('address', payload.customer.address||'');
+    add('language', payload.language);
+    (payload.items.length? payload.items: ['(no items)']).forEach(v=> add('order_items[]', v));
+    add('order_total', payload.total);
+    add('message', payload.message);
+    document.body.appendChild(f);
+    f.submit();
+    setTimeout(()=>{ try{ document.body.removeChild(f);}catch(_){} }, 2000);
+    return true;
+  }
 
   // No cart persistence in this theme
 
@@ -630,9 +865,23 @@
   // No legacy grid
 
   // Quick View
-  const qm = null, qmc = null;
-  function openQuick(id){}
-  function closeQuick(){}
+  function renderCart(){
+    const wrap = document.getElementById('cartItems');
+    if (!wrap) return;
+    wrap.innerHTML='';
+    Object.values(cart.items).forEach(it=>{
+      const row=document.createElement('div');
+      row.className='flex items-center justify-between gap-2 border border-gray-200 dark:border-gray-800 rounded-md p-2';
+      const title = (document.documentElement.lang==='ar'? it.name_ar : it.name_en);
+      row.innerHTML = `<div><div class="font-semibold">${title}</div><div class="text-xs text-gray-600 dark:text-gray-300">x${it.qty}</div></div><div class="font-bold">${formatMAD(it.qty*it.price)}</div><button class="h-8 w-8 grid place-items-center rounded-md hover:bg-black/5 dark:hover:bg-white/10" aria-label="remove"><span class="material-symbols-outlined text-[18px]">delete</span></button>`;
+      row.querySelector('button').addEventListener('click', ()=> cart.remove(it.id));
+      wrap.appendChild(row);
+    });
+    const count = cart.count();
+    const badge = document.getElementById('cartCount');
+    if (badge){ if (count>0){ badge.textContent = count; badge.classList.remove('hidden'); } else { badge.classList.add('hidden'); } }
+    const totalEl=document.getElementById('cartTotal'); if(totalEl) totalEl.textContent = formatMAD(cart.total());
+  }
 
   // Reveal animations
   const io = new IntersectionObserver((entries)=>{
@@ -684,7 +933,18 @@
     window.open(url, '_blank');
   }
   function buildCartMessage(){
-    return currentLang==='ar' ? 'السلام عليكم، بغيت نطلب زيت الشعر من خلطات لولو.' : 'Hello, I want to order Lolo hair oil.';
+    const items = currentItems();
+    if (!items.length) {
+      return currentLang==='ar' ? 'السلام عليكم، بغيت نطلب زيت الشعر من خلطات لولو.' : 'Hello, I want to order Lolo hair oil.';
+    }
+    const lines = items.map(it=>{
+      const t = (document.documentElement.lang==='ar'? it.name_ar : it.name_en);
+      return `- ${t} x${it.qty} = ${it.qty*it.price} MAD`;
+    }).join('\n');
+    const total = items.reduce((a,b)=> a+b.qty*b.price, 0);
+    const header = currentLang==='ar' ? 'طلب عبر واتساب:\n' : 'WhatsApp order:\n';
+    const totalH = currentLang==='ar' ? 'الإجمالي' : 'Total';
+    return `${header}${lines}\n\n${totalH}: ${total} MAD`;
   }
   document.getElementById('whatsappCTA')?.addEventListener('click', ()=>{
     const msg = cart.count()>0 ? buildCartMessage() : (currentLang==='ar' ? 'السلام عليكم، بغيت نسول على زيت الشعر من خلطات لولو.' : 'Hello, I’d like to ask about Lolo hair oil.');
@@ -698,41 +958,54 @@
       openWhatsApp(msg);
     });
   });
-
+  document.querySelectorAll('[data-normal]')?.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const pack = btn.getAttribute('data-normal');
+      pendingBundle = pack; renderOrderSummary();
+      location.hash = '#contact';
+    });
+  });
+  document.querySelectorAll('[data-add-bundle]')?.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const id = btn.getAttribute('data-add-bundle');
+      pendingBundle = null; cart.add(id); renderOrderSummary();
+      document.getElementById('miniCart')?.classList.remove('-translate-x-full');
+    });
+  });
+  
   // Basic validation helpers
   function markInvalid(el){ el.classList.add('ring-2','ring-red-500'); }
   function clearInvalid(el){ el.classList.remove('ring-2','ring-red-500'); }
   function validPhone(v){ return /^(?:\+?212|0)(?:6|7)\d{8}$/.test(v.trim()); }
 
-  // Contact form validation
+  // Contact form validation + automatic email submit (no mail client)
   const contactForm = document.getElementById('contactForm');
   if (contactForm){
-    contactForm.addEventListener('submit', (e)=>{
+    contactForm.addEventListener('submit', async (e)=>{
       e.preventDefault();
       const name=document.getElementById('name'), phone=document.getElementById('phone'), city=document.getElementById('city'), addr=document.getElementById('address');
       [name,phone,city,addr].forEach(clearInvalid);
       if(!name.value || !phone.value){ if(!name.value) markInvalid(name); if(!phone.value) markInvalid(phone); alert(i18n[currentLang].required_error); return; }
       if(!validPhone(phone.value)){ markInvalid(phone); alert(i18n[currentLang].phone_error); return; }
-      alert(i18n[currentLang].order_received); contactForm.reset();
+      const payload = buildOrderPayload(name.value, phone.value, city.value, addr.value);
+      const btn = document.getElementById('orderSubmitBtn'); if (btn){ btn.disabled = true; btn.style.opacity = '0.7'; }
+      try {
+        await sendOrderEmail(payload);
+        alert(i18n[currentLang].order_received);
+        contactForm.reset(); pendingBundle=null; cart.items={}; renderCart(); renderOrderSummary();
+      } catch (err){
+        alert(currentLang==='ar' ? 'تعذر إرسال الطلب عبر البريد. جربي واتساب أو أعيدي المحاولة.' : 'Could not send email order. Try WhatsApp or retry.');
+      } finally { if (btn){ btn.disabled=false; btn.style.opacity='1'; } }
     });
   }
 
   // Initial
   applyI18n(currentLang);
   formatAllPrices();
+  renderOrderSummary();
   // No grid/cart to init
 
-  // Submit COD (demo + validation)
-  $('#submitCOD').addEventListener('click', ()=> {
-    const fields = Array.from($('#codForm').querySelectorAll('input,textarea'));
-    fields.forEach(clearInvalid);
-    const [n,p,c,a] = fields;
-    if(!n.value || !p.value){ if(!n.value) markInvalid(n); if(!p.value) markInvalid(p); alert(i18n[currentLang].required_error); return; }
-    if(!validPhone(p.value)){ markInvalid(p); alert(i18n[currentLang].phone_error); return; }
-    alert(i18n[currentLang].order_received);
-    
-    cart.items = {}; renderCart();
-  });
+  // No COD inline submit (using main form and WhatsApp)
 </script>
 </div>
 </body></html>
