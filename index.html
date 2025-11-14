@@ -242,12 +242,20 @@ html { scroll-behavior: smooth; }
   border-width: 0;
 }
 
-/* Auto-hide header on scroll down */
-.header-autohide {
-  transition: transform 0.3s;
+/* Navbar hide on scroll (down) / show on scroll (up) */
+#navbar {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
-.header-autohide.is-hidden {
+#navbar.hide {
   transform: translateY(-100%);
+}
+#navbar.scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background-color: rgba(255, 255, 255, 0.98);
+}
+.dark #navbar.scrolled {
+  background-color: rgba(17, 24, 39, 0.98); /* gray-900 */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Anchor scroll offset so sections are not hidden behind header */
@@ -370,7 +378,7 @@ html { scroll-behavior: smooth; }
   <div id="overlay" class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none transition-opacity duration-200 z-40" aria-hidden="true"></div>
 
 <!-- Header -->
-<header class="header-autohide sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800" role="banner">
+<header id="navbar" class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800" role="banner">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
     <!-- Left: logo + mobile menu -->
     <div class="flex items-center gap-3 flex-1 md:flex-none">
@@ -2012,36 +2020,32 @@ if (heroVideo) {
   }
 }
 
-// Auto-hide header on scroll down / show on scroll up
+// Simple navbar hide on scroll down / show on scroll up
 let lastScrollY = window.scrollY;
-const headerEl = $('.header-autohide');
 
-function handleScroll() {
-  if (!headerEl) return;
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
+
   const current = window.scrollY;
 
-  // Always show near top of page
-  if (current <= 80) {
-    headerEl.classList.remove('is-hidden');
-    lastScrollY = current;
-    return;
+  // Apply "scrolled" effect (shadow / solid bg) once we leave the very top
+  if (current > 10) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
   }
 
+  // Hide on scroll down, show on scroll up
   if (current > lastScrollY) {
-    // Scrolling down
-    if (current - lastScrollY > 3) {
-      headerEl.classList.add('is-hidden');
-    }
+    // scrolling DOWN → hide navbar
+    navbar.classList.add('hide');
   } else if (current < lastScrollY) {
-    // Any upward scroll reveals header
-    headerEl.classList.remove('is-hidden');
+    // scrolling UP → show navbar
+    navbar.classList.remove('hide');
   }
 
   lastScrollY = current;
-}
-
-window.addEventListener('scroll', () => {
-  window.requestAnimationFrame(handleScroll);
 });
 
 // Initialize
