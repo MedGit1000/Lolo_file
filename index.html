@@ -365,22 +365,41 @@ html { scroll-behavior: smooth; }
   <div id="overlay" class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none transition-opacity duration-200 z-40" aria-hidden="true"></div>
 
 <!-- Header -->
-<header class="header-autohide sticky top-0 z-50 flex items-center bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-4 py-3 justify-between border-b border-gray-200 dark:border-gray-800" role="banner">
-  <button id="menuButton" class="flex items-center justify-center h-11 w-11 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="فتح القائمة" aria-expanded="false" aria-controls="sidebar">
-    <span class="material-symbols-outlined text-gray-900 dark:text-gray-100">menu</span>
-  </button>
-  <div class="flex-1 flex justify-center">
-    <img src="assets/Lolo-1/lolo-fac-icon.png" alt="خلطات لولو" class="h-10 sm:h-12 object-contain"/>
-  </div>
-  <div class="flex items-center gap-2">
-    <button id="themeToggle" class="flex items-center justify-center h-11 w-11 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" title="تبديل الوضع الليلي" aria-label="تبديل الوضع الليلي">
-      <span class="material-symbols-outlined text-gray-900 dark:text-gray-100">dark_mode</span>
-    </button>
-    <button id="langToggle" class="flex items-center justify-center h-11 px-4 rounded-full bg-gray-100 dark:bg-gray-800 text-sm font-semibold border border-gray-200 dark:border-gray-700" aria-label="تبديل اللغة إلى الفرنسية" aria-pressed="false">AR</button>
-    <button id="cartButton" class="relative flex items-center justify-center h-11 w-11 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="عرض سلة المشتريات">
-      <span class="material-symbols-outlined text-gray-900 dark:text-gray-100">shopping_bag</span>
-      <span id="cartCount" class="badge absolute -top-1 -left-1 hidden" aria-live="polite">0</span>
-    </button>
+<header class="header-autohide sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800" role="banner">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
+    <!-- Left: logo + mobile menu -->
+    <div class="flex items-center gap-3 flex-1 md:flex-none">
+      <button id="menuButton" class="flex md:hidden items-center justify-center h-11 w-11 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="فتح القائمة" aria-expanded="false" aria-controls="sidebar">
+        <span class="material-symbols-outlined text-gray-900 dark:text-gray-100">menu</span>
+      </button>
+      <a href="#hero" class="flex items-center gap-2">
+        <img src="assets/Lolo-1/lolo-fac-icon.png" alt="خلطات لولو" class="h-9 sm:h-10 object-contain"/>
+        <span class="hidden sm:inline text-sm font-extrabold text-gray-900 dark:text-gray-100 tracking-tight" data-i18n="brand">خلطات لولو</span>
+      </a>
+    </div>
+
+    <!-- Center: desktop nav -->
+    <nav class="hidden md:flex md:flex-1 items-center justify-center gap-6 text-sm font-semibold text-gray-700 dark:text-gray-200">
+      <a href="#bundles" class="hover:text-primary-600 dark:hover:text-primary-400" data-i18n="nav_products">🎁 العروض</a>
+      <a href="#benefits" class="hover:text-primary-600 dark:hover:text-primary-400" data-i18n="nav_benefits">✨ الفوائد</a>
+      <a href="#howto" class="hover:text-primary-600 dark:hover:text-primary-400" data-i18n="nav_how">📖 الطريقة</a>
+      <a href="#faq" class="hover:text-primary-600 dark:hover:text-primary-400" data-i18n="nav_faq">❓ الأسئلة</a>
+    </nav>
+
+    <!-- Right: actions -->
+    <div class="flex items-center gap-2">
+      <a href="#contact" class="hidden md:inline-flex btn btn-primary text-xs px-4 py-2" data-i18n="nav_contact">
+        📞 اطلبِي الآن
+      </a>
+      <button id="themeToggle" class="flex items-center justify-center h-11 w-11 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" title="تبديل الوضع الليلي" aria-label="تبديل الوضع الليلي">
+        <span class="material-symbols-outlined text-gray-900 dark:text-gray-100">dark_mode</span>
+      </button>
+      <button id="langToggle" class="flex items-center justify-center h-9 px-3 rounded-full bg-gray-100 dark:bg-gray-800 text-xs sm:text-sm font-semibold border border-gray-200 dark:border-gray-700" aria-label="تبديل اللغة إلى الفرنسية" aria-pressed="false">AR</button>
+      <button id="cartButton" class="relative flex items-center justify-center h-11 w-11 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="عرض سلة المشتريات">
+        <span class="material-symbols-outlined text-gray-900 dark:text-gray-100">shopping_bag</span>
+        <span id="cartCount" class="badge absolute -top-1 -left-1 hidden" aria-live="polite">0</span>
+      </button>
+    </div>
   </div>
 </header>
 
