@@ -624,145 +624,500 @@ function renderOrderSummary(){
   totalEl.textContent = formatMAD(total);
 }
 
+// ✅ Helper function to get product images (LOCAL PATHS)
+function getProductImage(bundleId) {
+  const images = {
+    b1: 'assets/oil_product1.jpeg',
+    b2: 'assets/lolo_1st_post.png',
+    b3: 'assets/a_beautiful_photo_of_a_model_with.jpeg'
+  };
+  return images[bundleId] || 'assets/oil_product1.jpeg';
+}
+
+// ✅ FORMAT ADMIN EMAIL - Enhanced with product images
 function formatAdminEmail(payload) {
   const isAr = payload.language === 'ar';
+  
+  // Get product images as base64 or use cid (Content-ID) for attachments
+  const itemsWithImages = payload.itemsDetailed.map((item, i) => {
+    const imgUrl = getProductImage(item.id);
+    if (isAr) {
+      return `
+<tr>
+  <td style="padding: 10px; border-bottom: 1px solid #eee;">
+    <div style="width: 60px; height: 60px; background: #f3f4f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🌿</div>
+  </td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee;">${item.name}</td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">×${item.qty}</td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">${formatMAD(item.qty * item.price)}</td>
+</tr>`;
+    } else {
+      return `
+<tr>
+  <td style="padding: 10px; border-bottom: 1px solid #eee;">
+    <div style="width: 60px; height: 60px; background: #f3f4f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🌿</div>
+  </td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee;">${item.name}</td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">×${item.qty}</td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">${formatMAD(item.qty * item.price)}</td>
+</tr>`;
+    }
+  }).join('');
+  
   if (isAr) {
     return `
-━━━━━━━━━━━━━━━━━━━━━━
-🔔 طلب جديد من خلطات لولو
-━━━━━━━━━━━━━━━━━━━━━━
-
-👤 معلومات الزبون:
-الاسم: ${payload.customer.name}
-📱 الهاتف: ${payload.customer.phone}
-📧 البريد: ${payload.customer.email || 'غير محدد'}
-📍 المدينة: ${payload.customer.city || 'غير محدد'}
-🏠 العنوان: ${payload.customer.address || 'غير محدد'}
-
-🛍️ تفاصيل الطلب:
-${payload.items.map((item, i) => `${i+1}. ${item}`).join('\n')}
-
-💰 المجموع: ${payload.total}
-
-⚠️ يرجى الاتصال بالزبون لتأكيد الطلب
-تاريخ: ${new Date().toLocaleString('ar-MA')}
-    `.trim();
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden;">
+  
+  <!-- Header -->
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; padding: 30px 20px; text-align: center;">
+    <h1 style="margin: 0; font-size: 24px; font-weight: bold;">🔔 طلب جديد من خلطات لولو</h1>
+    <p style="margin: 10px 0 0 0; opacity: 0.9; font-size: 14px;">تم استلام طلب جديد - يرجى المتابعة</p>
+  </div>
+  
+  <!-- Customer Info -->
+  <div style="padding: 30px 20px; background: #f9fafb;">
+    <h2 style="color: #16a34a; margin: 0 0 20px 0; font-size: 18px; border-bottom: 2px solid #16a34a; padding-bottom: 10px;">👤 معلومات الزبون</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280; width: 100px;">الاسم:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;">${payload.customer.name}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280;">📱 الهاتف:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;"><a href="tel:${payload.customer.phone}" style="color: #16a34a; text-decoration: none;">${payload.customer.phone}</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280;">📧 البريد:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;">${payload.customer.email || 'غير محدد'}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280;">📍 المدينة:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;">${payload.customer.city || 'غير محدد'}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280; vertical-align: top;">🏠 العنوان:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;">${payload.customer.address || 'غير محدد'}</td>
+      </tr>
+    </table>
+  </div>
+  
+  <!-- Order Details -->
+  <div style="padding: 30px 20px;">
+    <h2 style="color: #16a34a; margin: 0 0 20px 0; font-size: 18px; border-bottom: 2px solid #16a34a; padding-bottom: 10px;">🛍️ تفاصيل الطلب</h2>
+    <table style="width: 100%; border-collapse: collapse; background: #f9fafb; border-radius: 8px; overflow: hidden;">
+      <thead>
+        <tr style="background: #16a34a; color: white;">
+          <th style="padding: 12px; text-align: right;">المنتج</th>
+          <th style="padding: 12px; text-align: right;">الاسم</th>
+          <th style="padding: 12px; text-align: center;">الكمية</th>
+          <th style="padding: 12px; text-align: right;">السعر</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${itemsWithImages}
+      </tbody>
+      <tfoot>
+        <tr style="background: #16a34a; color: white; font-weight: bold;">
+          <td colspan="3" style="padding: 15px; text-align: right; font-size: 16px;">💰 المجموع الكلي:</td>
+          <td style="padding: 15px; text-align: right; font-size: 18px;">${payload.total}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  
+  <!-- Action Required -->
+  <div style="padding: 20px; background: #fef3c7; border-right: 4px solid #f59e0b; margin: 0 20px 20px 20px; border-radius: 8px;">
+    <p style="margin: 0; color: #92400e; font-weight: 600;">⚠️ إجراء مطلوب:</p>
+    <p style="margin: 10px 0 0 0; color: #78350f;">يرجى الاتصال بالزبون لتأكيد الطلب والعنوان في أقرب وقت ممكن.</p>
+  </div>
+  
+  <!-- Footer -->
+  <div style="padding: 20px; text-align: center; background: #f9fafb; color: #6b7280; font-size: 12px; border-top: 1px solid #e5e7eb;">
+    <p style="margin: 0;">📅 تاريخ الطلب: ${new Date().toLocaleString('ar-MA', { dateStyle: 'full', timeStyle: 'short' })}</p>
+    <p style="margin: 10px 0 0 0;">خلطات لولو - زيت الباروكة الطبيعي 🌿</p>
+  </div>
+  
+</div>`;
   } else {
     return `
-━━━━━━━━━━━━━━━━━━━━━━
-🔔 Nouvelle commande Lolo Blends
-━━━━━━━━━━━━━━━━━━━━━━
-
-👤 Client:
-Nom: ${payload.customer.name}
-📱 Tél: ${payload.customer.phone}
-📧 Email: ${payload.customer.email || 'Non spécifié'}
-📍 Ville: ${payload.customer.city || 'Non spécifié'}
-🏠 Adresse: ${payload.customer.address || 'Non spécifié'}
-
-🛍️ Commande:
-${payload.items.map((item, i) => `${i+1}. ${item}`).join('\n')}
-
-💰 Total: ${payload.total}
-
-⚠️ Veuillez contacter le client
-Date: ${new Date().toLocaleString('fr-MA')}
-    `.trim();
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden;">
+  
+  <!-- Header -->
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; padding: 30px 20px; text-align: center;">
+    <h1 style="margin: 0; font-size: 24px; font-weight: bold;">🔔 Nouvelle Commande Lolo Blends</h1>
+    <p style="margin: 10px 0 0 0; opacity: 0.9; font-size: 14px;">Nouvelle commande reçue - Action requise</p>
+  </div>
+  
+  <!-- Customer Info -->
+  <div style="padding: 30px 20px; background: #f9fafb;">
+    <h2 style="color: #16a34a; margin: 0 0 20px 0; font-size: 18px; border-bottom: 2px solid #16a34a; padding-bottom: 10px;">👤 Informations Client</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280; width: 100px;">Nom:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;">${payload.customer.name}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280;">📱 Téléphone:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;"><a href="tel:${payload.customer.phone}" style="color: #16a34a; text-decoration: none;">${payload.customer.phone}</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280;">📧 Email:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;">${payload.customer.email || 'Non spécifié'}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280;">📍 Ville:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;">${payload.customer.city || 'Non spécifié'}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280; vertical-align: top;">🏠 Adresse:</td>
+        <td style="padding: 8px 0; font-weight: 600; color: #111827;">${payload.customer.address || 'Non spécifié'}</td>
+      </tr>
+    </table>
+  </div>
+  
+  <!-- Order Details -->
+  <div style="padding: 30px 20px;">
+    <h2 style="color: #16a34a; margin: 0 0 20px 0; font-size: 18px; border-bottom: 2px solid #16a34a; padding-bottom: 10px;">🛍️ Détails de la Commande</h2>
+    <table style="width: 100%; border-collapse: collapse; background: #f9fafb; border-radius: 8px; overflow: hidden;">
+      <thead>
+        <tr style="background: #16a34a; color: white;">
+          <th style="padding: 12px; text-align: left;">Produit</th>
+          <th style="padding: 12px; text-align: left;">Nom</th>
+          <th style="padding: 12px; text-align: center;">Qté</th>
+          <th style="padding: 12px; text-align: right;">Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${itemsWithImages}
+      </tbody>
+      <tfoot>
+        <tr style="background: #16a34a; color: white; font-weight: bold;">
+          <td colspan="3" style="padding: 15px; text-align: right; font-size: 16px;">💰 Total:</td>
+          <td style="padding: 15px; text-align: right; font-size: 18px;">${payload.total}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  
+  <!-- Action Required -->
+  <div style="padding: 20px; background: #fef3c7; border-left: 4px solid #f59e0b; margin: 0 20px 20px 20px; border-radius: 8px;">
+    <p style="margin: 0; color: #92400e; font-weight: 600;">⚠️ Action Requise:</p>
+    <p style="margin: 10px 0 0 0; color: #78350f;">Veuillez contacter le client pour confirmer la commande et l'adresse dès que possible.</p>
+  </div>
+  
+  <!-- Footer -->
+  <div style="padding: 20px; text-align: center; background: #f9fafb; color: #6b7280; font-size: 12px; border-top: 1px solid #e5e7eb;">
+    <p style="margin: 0;">📅 Date: ${new Date().toLocaleString('fr-MA', { dateStyle: 'full', timeStyle: 'short' })}</p>
+    <p style="margin: 10px 0 0 0;">Lolo Blends - Huile Naturelle Barouka 🌿</p>
+  </div>
+  
+</div>`;
   }
 }
 
+// ✅ FORMAT CUSTOMER CONFIRMATION EMAIL - Enhanced
 function formatCustomerEmail(payload) {
   const isAr = payload.language === 'ar';
   const c = payload.customer;
+  
+  const itemsWithImages = payload.itemsDetailed.map((item, i) => {
+    if (isAr) {
+      return `
+<tr>
+  <td style="padding: 10px; border-bottom: 1px solid #eee;">
+    <div style="width: 50px; height: 50px; background: #f3f4f6; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🌿</div>
+  </td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee;">${item.name}</td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">×${item.qty}</td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">${formatMAD(item.qty * item.price)}</td>
+</tr>`;
+    } else {
+      return `
+<tr>
+  <td style="padding: 10px; border-bottom: 1px solid #eee;">
+    <div style="width: 50px; height: 50px; background: #f3f4f6; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🌿</div>
+  </td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee;">${item.name}</td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">×${item.qty}</td>
+  <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">${formatMAD(item.qty * item.price)}</td>
+</tr>`;
+    }
+  }).join('');
+  
   if (isAr) {
     return `
-السلام عليكم ${c.name}! 👋
-
-شكراً لطلبك من خلطات لولو 🌿✨
-
-📦 ملخص طلبك:
-${payload.items.map((item, i) => `${i+1}. ${item}`).join('\n')}
-
-💰 المجموع: ${payload.total}
-
-📍 التوصيل:
-${c.city || 'غير محدد'}
-${c.address || 'غير محدد'}
-
-✅ سنتصل بك قريباً للتأكيد
-💳 الدفع عند الاستلام
-🚚 التوصيل خلال 2-4 أيام
-
-📱 واتساب: +${whatsappNumber}
-
-شكراً لثقتك! 💚
-    `.trim();
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden;">
+  
+  <!-- Header -->
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; padding: 30px 20px; text-align: center;">
+    <h1 style="margin: 0; font-size: 24px; font-weight: bold;">✅ تأكيد طلبك</h1>
+    <p style="margin: 10px 0 0 0; opacity: 0.9;">خلطات لولو - زيت الباروكة الطبيعي 🌿</p>
+  </div>
+  
+  <!-- Greeting -->
+  <div style="padding: 30px 20px; text-align: center;">
+    <h2 style="color: #16a34a; margin: 0 0 10px 0; font-size: 22px;">مرحباً ${c.name}! 👋</h2>
+    <p style="color: #6b7280; margin: 0; font-size: 16px;">شكراً لطلبك من خلطات لولو</p>
+  </div>
+  
+  <!-- Order Summary -->
+  <div style="padding: 0 20px 30px 20px;">
+    <h3 style="color: #16a34a; margin: 0 0 15px 0; font-size: 18px; border-bottom: 2px solid #16a34a; padding-bottom: 10px;">📦 ملخص طلبك</h3>
+    <table style="width: 100%; border-collapse: collapse; background: #f9fafb; border-radius: 8px; overflow: hidden;">
+      <tbody>
+        ${itemsWithImages}
+      </tbody>
+      <tfoot>
+        <tr style="background: #16a34a; color: white; font-weight: bold;">
+          <td colspan="3" style="padding: 15px; text-align: right;">💰 المجموع:</td>
+          <td style="padding: 15px; text-align: right; font-size: 18px;">${payload.total}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  
+  <!-- Delivery Info -->
+  <div style="padding: 0 20px 20px 20px;">
+    <div style="background: #f0fdf4; border: 1px solid #16a34a; border-radius: 8px; padding: 20px;">
+      <h3 style="color: #16a34a; margin: 0 0 15px 0; font-size: 16px;">📍 عنوان التوصيل</h3>
+      <p style="margin: 5px 0; color: #374151;"><strong>المدينة:</strong> ${c.city || 'غير محدد'}</p>
+      <p style="margin: 5px 0; color: #374151;"><strong>العنوان:</strong> ${c.address || 'غير محدد'}</p>
+    </div>
+  </div>
+  
+  <!-- Next Steps -->
+  <div style="padding: 0 20px 30px 20px;">
+    <div style="background: #eff6ff; border-right: 4px solid #3b82f6; border-radius: 8px; padding: 20px;">
+      <h3 style="color: #1e40af; margin: 0 0 15px 0; font-size: 16px;">📋 الخطوات التالية</h3>
+      <ul style="margin: 0; padding-right: 20px; color: #374151; line-height: 1.8;">
+        <li>✅ سنتصل بك خلال 24 ساعة لتأكيد الطلب</li>
+        <li>💳 الدفع عند الاستلام (COD)</li>
+        <li>🚚 التوصيل خلال 2-4 أيام عمل</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Contact Info -->
+  <div style="padding: 20px; background: #f9fafb; text-align: center; border-top: 1px solid #e5e7eb;">
+    <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">لأي استفسار، تواصل معنا:</p>
+    <p style="margin: 5px 0;">
+      <a href="https://wa.me/${whatsappNumber}" style="display: inline-block; background: #25d366; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">📱 واتساب: +${whatsappNumber}</a>
+    </p>
+    <p style="margin: 10px 0 0 0; color: #6b7280; font-size: 12px;">📧 ${businessEmail}</p>
+  </div>
+  
+  <!-- Footer -->
+  <div style="padding: 20px; text-align: center; background: #16a34a; color: white;">
+    <p style="margin: 0; font-size: 16px; font-weight: 600;">شكراً لثقتك في خلطات لولو! 💚</p>
+    <p style="margin: 10px 0 0 0; font-size: 12px; opacity: 0.9;">نتمنى لك تجربة رائعة مع منتجاتنا 🌿</p>
+  </div>
+  
+</div>`;
   } else {
     return `
-Bonjour ${c.name}! 👋
-
-Merci pour votre commande Lolo Blends 🌿✨
-
-📦 Résumé:
-${payload.items.map((item, i) => `${i+1}. ${item}`).join('\n')}
-
-💰 Total: ${payload.total}
-
-📍 Livraison:
-${c.city || 'Non spécifié'}
-${c.address || 'Non spécifié'}
-
-✅ Nous vous contacterons bientôt
-💳 Paiement à la livraison
-🚚 Livraison sous 2-4 jours
-
-📱 WhatsApp: +${whatsappNumber}
-
-Merci! 💚
-    `.trim();
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden;">
+  
+  <!-- Header -->
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; padding: 30px 20px; text-align: center;">
+    <h1 style="margin: 0; font-size: 24px; font-weight: bold;">✅ Confirmation de Commande</h1>
+    <p style="margin: 10px 0 0 0; opacity: 0.9;">Lolo Blends - Huile Naturelle Barouka 🌿</p>
+  </div>
+  
+  <!-- Greeting -->
+  <div style="padding: 30px 20px; text-align: center;">
+    <h2 style="color: #16a34a; margin: 0 0 10px 0; font-size: 22px;">Bonjour ${c.name}! 👋</h2>
+    <p style="color: #6b7280; margin: 0; font-size: 16px;">Merci pour votre commande Lolo Blends</p>
+  </div>
+  
+  <!-- Order Summary -->
+  <div style="padding: 0 20px 30px 20px;">
+    <h3 style="color: #16a34a; margin: 0 0 15px 0; font-size: 18px; border-bottom: 2px solid #16a34a; padding-bottom: 10px;">📦 Résumé de la Commande</h3>
+    <table style="width: 100%; border-collapse: collapse; background: #f9fafb; border-radius: 8px; overflow: hidden;">
+      <tbody>
+        ${itemsWithImages}
+      </tbody>
+      <tfoot>
+        <tr style="background: #16a34a; color: white; font-weight: bold;">
+          <td colspan="3" style="padding: 15px; text-align: right;">💰 Total:</td>
+          <td style="padding: 15px; text-align: right; font-size: 18px;">${payload.total}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  
+  <!-- Delivery Info -->
+  <div style="padding: 0 20px 20px 20px;">
+    <div style="background: #f0fdf4; border: 1px solid #16a34a; border-radius: 8px; padding: 20px;">
+      <h3 style="color: #16a34a; margin: 0 0 15px 0; font-size: 16px;">📍 Adresse de Livraison</h3>
+      <p style="margin: 5px 0; color: #374151;"><strong>Ville:</strong> ${c.city || 'Non spécifié'}</p>
+      <p style="margin: 5px 0; color: #374151;"><strong>Adresse:</strong> ${c.address || 'Non spécifié'}</p>
+    </div>
+  </div>
+  
+  <!-- Next Steps -->
+  <div style="padding: 0 20px 30px 20px;">
+    <div style="background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 20px;">
+      <h3 style="color: #1e40af; margin: 0 0 15px 0; font-size: 16px;">📋 Prochaines Étapes</h3>
+      <ul style="margin: 0; padding-left: 20px; color: #374151; line-height: 1.8;">
+        <li>✅ Nous vous contacterons sous 24h pour confirmer</li>
+        <li>💳 Paiement à la livraison (COD)</li>
+        <li>🚚 Livraison sous 2-4 jours ouvrés</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Contact Info -->
+  <div style="padding: 20px; background: #f9fafb; text-align: center; border-top: 1px solid #e5e7eb;">
+    <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">Pour toute question, contactez-nous:</p>
+    <p style="margin: 5px 0;">
+      <a href="https://wa.me/${whatsappNumber}" style="display: inline-block; background: #25d366; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">📱 WhatsApp: +${whatsappNumber}</a>
+    </p>
+    <p style="margin: 10px 0 0 0; color: #6b7280; font-size: 12px;">📧 ${businessEmail}</p>
+  </div>
+  
+  <!-- Footer -->
+  <div style="padding: 20px; text-align: center; background: #16a34a; color: white;">
+    <p style="margin: 0; font-size: 16px; font-weight: 600;">Merci de votre confiance en Lolo Blends! 💚</p>
+    <p style="margin: 10px 0 0 0; font-size: 12px; opacity: 0.9;">Nous vous souhaitons une excellente expérience 🌿</p>
+  </div>
+  
+</div>`;
   }
 }
 
+// ✅ UPDATE buildOrderPayload to include detailed items
 function buildOrderPayload(name, phone, city, addr){
   const items = currentItems();
   const total = items.reduce((a,b)=> a+b.qty*b.price, 0);
   const lang = currentLang;
   const subject = lang==='ar' ? `طلب جديد - ${name}` : `Nouvelle commande - ${name}`;
+  
   const lines = items.map(it=>{
     const t = (lang==='ar'? it.name_ar : it.name_fr);
     return `${t} x${it.qty} = ${formatMAD(it.qty*it.price)}`;
   });
+  
+  // Add detailed items for email template
+  const itemsDetailed = items.map(it => ({
+    id: it.id,
+    name: (lang==='ar'? it.name_ar : it.name_fr),
+    qty: it.qty,
+    price: it.price
+  }));
+  
   return {
     subject,
     language: lang,
-    customer: { name, phone, email: (document.getElementById('email')?.value || '').trim(), city: city||'', address: addr||'' },
+    customer: { 
+      name, 
+      phone, 
+      email: (document.getElementById('email')?.value || '').trim(), 
+      city: city||'', 
+      address: addr||'' 
+    },
     items: lines.length ? lines : ['Aucun article'],
+    itemsDetailed: itemsDetailed, // NEW: for rendering
     total: formatMAD(total),
     totalRaw: total
   };
 }
 
+// ✅ Plain-text email formatters to avoid "code"/box characters
+function formatAdminEmailPlain(payload){
+  const isAr = payload.language === 'ar';
+  const lines = payload.items.length ? payload.items.map((l, i) => `${i+1}. ${l}`).join('\n') : (isAr ? 'لا عناصر' : 'Aucun article');
+  const date = new Date().toLocaleString(isAr ? 'ar-MA' : 'fr-MA');
+  if (isAr) {
+    return [
+      'طلب جديد - خلطات لولو',
+      `الاسم: ${payload.customer.name}`,
+      `الهاتف: ${payload.customer.phone}`,
+      `البريد: ${payload.customer.email || '-'}`,
+      `المدينة: ${payload.customer.city || '-'}`,
+      `العنوان: ${payload.customer.address || '-'}`,
+      '', 'تفاصيل الطلب:', lines, '',
+      `الإجمالي: ${payload.total}`,
+      `التاريخ: ${date}`
+    ].join('\n');
+  } else {
+    return [
+      'Nouvelle commande - Lolo Blends',
+      `Nom: ${payload.customer.name}`,
+      `Téléphone: ${payload.customer.phone}`,
+      `Email: ${payload.customer.email || '-'}`,
+      `Ville: ${payload.customer.city || '-'}`,
+      `Adresse: ${payload.customer.address || '-'}`,
+      '', 'Détails de la commande:', lines, '',
+      `Total: ${payload.total}`,
+      `Date: ${date}`
+    ].join('\n');
+  }
+}
+
+function formatCustomerEmailPlain(payload){
+  const isAr = payload.language === 'ar';
+  const c = payload.customer;
+  const lines = payload.items.length ? payload.items.map((l, i) => `${i+1}. ${l}`).join('\n') : (isAr ? 'لا عناصر' : 'Aucun article');
+  const date = new Date().toLocaleString(isAr ? 'ar-MA' : 'fr-MA');
+  if (isAr) {
+    return [
+      `السلام عليكم ${c.name}`,
+      'شكراً على طلبك من خلطات لولو',
+      '', 'ملخص الطلب:', lines, '',
+      `المجموع: ${payload.total}`,
+      '', 'عنوان التوصيل:', `${c.city || '-'}`, `${c.address || '-'}`,
+      '', 'سنتصل بك قريباً لتأكيد الطلب. الدفع عند الاستلام.',
+      `التاريخ: ${date}`
+    ].join('\n');
+  } else {
+    return [
+      `Bonjour ${c.name}`,
+      'Merci pour votre commande Lolo Blends',
+      '', 'Résumé de la commande:', lines, '',
+      `Total: ${payload.total}`,
+      '', 'Adresse de livraison:', `${c.city || '-'}`, `${c.address || '-'}`,
+      '', 'Nous vous contacterons bientôt pour confirmer. Paiement à la livraison.',
+      `Date: ${date}`
+    ].join('\n');
+  }
+}
+
+// ✅ SEND EMAILS USING WEB3FORMS (plain text)
 async function sendOrderEmails(payload) {
+  // Send to ADMIN
   const adminFD = new FormData();
   adminFD.append('access_key', WEB3FORMS_KEY);
   adminFD.append('subject', payload.subject);
-  adminFD.append('from_name', 'Lolo Blends');
-  adminFD.append('email', payload.customer.email || businessEmail);
+  adminFD.append('from_name', 'Lolo Blends - خلطات لولو');
+  adminFD.append('email', businessEmail);
   adminFD.append('reply_to', payload.customer.email || '');
-  adminFD.append('message', formatAdminEmail(payload));
+  adminFD.append('message', formatAdminEmailPlain(payload));
 
-  const adminResp = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: adminFD });
+  const adminResp = await fetch('https://api.web3forms.com/submit', { 
+    method: 'POST', 
+    body: adminFD 
+  });
+  
   if (!adminResp.ok) throw new Error('Admin email failed');
 
+  // Send confirmation to CUSTOMER (only if email provided)
   if (payload.customer.email) {
     const custFD = new FormData();
     custFD.append('access_key', WEB3FORMS_KEY);
-    custFD.append('subject', payload.language === 'ar' ? 'تأكيد طلبك من خلطات لولو' : 'Confirmation Lolo Blends');
-    custFD.append('from_name', 'Lolo Blends');
+    custFD.append('subject', payload.language === 'ar' 
+      ? 'تأكيد طلبك من خلطات لولو' 
+      : 'Confirmation de commande Lolo Blends');
+    custFD.append('from_name', 'خلطات لولو - Lolo Blends');
     custFD.append('email', payload.customer.email);
-    custFD.append('message', formatCustomerEmail(payload));
-    await fetch('https://api.web3forms.com/submit', { method: 'POST', body: custFD });
+    custFD.append('reply_to', businessEmail);
+    custFD.append('message', formatCustomerEmailPlain(payload));
+    
+    await fetch('https://api.web3forms.com/submit', { 
+      method: 'POST', 
+      body: custFD 
+    });
   }
+  
   return true;
 }
 
