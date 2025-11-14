@@ -249,6 +249,11 @@ html { scroll-behavior: smooth; }
 .header-autohide.is-hidden {
   transform: translateY(-100%);
 }
+
+/* Anchor scroll offset so sections are not hidden behind header */
+.scroll-section {
+  scroll-margin-top: 88px;
+}
 </style>
 
 <!-- JSON-LD Structured Data -->
@@ -482,7 +487,7 @@ html { scroll-behavior: smooth; }
 </div>
 
 <!-- Benefits Section -->
-<section id="benefits" class="px-4 py-16 reveal" aria-labelledby="benefits-heading">
+<section id="benefits" class="scroll-section px-4 py-16 reveal" aria-labelledby="benefits-heading">
   <div class="max-w-5xl mx-auto">
     <h2 id="benefits-heading" class="text-center text-3xl font-extrabold mb-10" data-i18n="benefits_title">علاش تختاري خلطات لولو؟</h2>
     <div class="grid gap-6 sm:grid-cols-3">
@@ -543,7 +548,7 @@ html { scroll-behavior: smooth; }
 </section>
 
 <!-- Bundles Section -->
-<section id="bundles" class="px-4 py-16 reveal" aria-labelledby="bundles-heading">
+<section id="bundles" class="scroll-section px-4 py-16 reveal" aria-labelledby="bundles-heading">
   <div class="max-w-5xl mx-auto">
     <!-- Flash sale urgency bar -->
     <div class="mb-6 rounded-xl bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -644,7 +649,7 @@ html { scroll-behavior: smooth; }
 </section>
 
 <!-- How To Use -->
-<section id="howto" class="px-4 py-16 reveal bg-gray-50 dark:bg-gray-800/50" aria-labelledby="howto-heading">
+<section id="howto" class="scroll-section px-4 py-16 reveal bg-gray-50 dark:bg-gray-800/50" aria-labelledby="howto-heading">
   <div class="max-w-4xl mx-auto">
     <h2 id="howto-heading" class="text-center text-3xl font-extrabold mb-10" data-i18n="how_title">طريقة الاستعمال</h2>
     <div class="grid gap-6 sm:grid-cols-3">
@@ -706,7 +711,7 @@ html { scroll-behavior: smooth; }
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="px-4 py-16 reveal bg-gray-50 dark:bg-gray-800/50" aria-labelledby="faq-heading">
+<section id="faq" class="scroll-section px-4 py-16 reveal bg-gray-50 dark:bg-gray-800/50" aria-labelledby="faq-heading">
   <div class="max-w-3xl mx-auto">
     <h2 id="faq-heading" class="text-center text-3xl font-extrabold mb-10">الأسئلة الشائعة</h2>
     <div class="space-y-4">
@@ -755,7 +760,7 @@ html { scroll-behavior: smooth; }
 </section>
 
 <!-- Contact Form -->
-<section id="contact" class="px-4 py-16 reveal" aria-labelledby="contact-heading">
+<section id="contact" class="scroll-section px-4 py-16 reveal" aria-labelledby="contact-heading">
   <div class="max-w-lg mx-auto">
     <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 shadow-sm">
       <h2 id="contact-heading" class="text-center text-3xl font-bold mb-2" data-i18n="cta_title">اطلبي الآن</h2>
@@ -1366,11 +1371,9 @@ document.addEventListener('keydown', (e) => {
     if (sidebar && !sidebar.classList.contains('translate-x-full')) {
       sidebar.classList.add('translate-x-full');
       menuButton?.setAttribute('aria-expanded', 'false');
-      menuButton?.focus();
     }
     if (miniCart && !miniCart.classList.contains('-translate-x-full')) {
       miniCart.classList.add('-translate-x-full');
-      $('#cartButton')?.focus();
     }
     updateOverlayVisibility(sidebar, miniCart, overlay);
   }
@@ -1389,7 +1392,6 @@ $('#cartButton')?.addEventListener('click', () => {
 });
 $('#closeCart')?.addEventListener('click', () => {
   miniCart?.classList.add('-translate-x-full');
-  $('#cartButton')?.focus();
   updateOverlayVisibility(sidebar, miniCart, overlay);
 });
 
@@ -2010,22 +2012,36 @@ if (heroVideo) {
   }
 }
 
-// Auto-hide header on scroll down
+// Auto-hide header on scroll down / show on scroll up
 let lastScrollY = window.scrollY;
-const header = $('header');
+const headerEl = $('.header-autohide');
+
+function handleScroll() {
+  if (!headerEl) return;
+  const current = window.scrollY;
+
+  // Always show near top of page
+  if (current <= 80) {
+    headerEl.classList.remove('is-hidden');
+    lastScrollY = current;
+    return;
+  }
+
+  if (current > lastScrollY) {
+    // Scrolling down
+    if (current - lastScrollY > 3) {
+      headerEl.classList.add('is-hidden');
+    }
+  } else if (current < lastScrollY) {
+    // Any upward scroll reveals header
+    headerEl.classList.remove('is-hidden');
+  }
+
+  lastScrollY = current;
+}
 
 window.addEventListener('scroll', () => {
-  const currentScrollY = window.scrollY;
-  
-  if (currentScrollY > lastScrollY && currentScrollY > 100) {
-    // Scrolling down
-    header?.classList.add('is-hidden');
-  } else {
-    // Scrolling up
-    header?.classList.remove('is-hidden');
-  }
-  
-  lastScrollY = currentScrollY;
+  window.requestAnimationFrame(handleScroll);
 });
 
 // Initialize
