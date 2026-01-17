@@ -586,26 +586,30 @@
       </section>
 
       <!-- Trust Bar -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-4 py-8 max-w-5xl mx-auto reveal">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 py-8 max-w-6xl mx-auto reveal">
         <div
           class="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
-          <span class="text-4xl mb-3">🚚</span>
-          <p class="font-semibold text-gray-900 dark:text-gray-100" data-i18n="usp_shipping">توصيل مجاني</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="usp_shipping_sub">على جميع الطلبات داخل
-            المغرب</p>
+          <span class="text-4xl mb-3">🌍</span>
+          <p class="font-semibold text-gray-900 dark:text-gray-100" data-i18n="usp_worldwide">شحن عالمي</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="usp_worldwide_sub">نوصل لجميع دول العالم</p>
         </div>
         <div
           class="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
           <span class="text-4xl mb-3">💵</span>
           <p class="font-semibold text-gray-900 dark:text-gray-100" data-i18n="usp_cod">الدفع عند الاستلام</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="usp_cod_sub">ادفعي عند وصول طلبك</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="usp_cod_sub">للمغرب + دفع آمن للعالم</p>
         </div>
         <div
           class="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
           <span class="text-4xl mb-3">🇲🇦</span>
           <p class="font-semibold text-gray-900 dark:text-gray-100" data-i18n="usp_local">صُنع في المغرب</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="usp_local_sub">جودة مضمونة ومكونات طبيعية
-          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="usp_local_sub">جودة مضمونة ومكونات طبيعية</p>
+        </div>
+        <div
+          class="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+          <span class="text-4xl mb-3">✅</span>
+          <p class="font-semibold text-gray-900 dark:text-gray-100" data-i18n="usp_guarantee">ضمان 14 يوم</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n="usp_guarantee_sub">استرجاع المال بدون أسئلة</p>
         </div>
       </div>
 
@@ -797,161 +801,169 @@
 
           <h2 id="bundles-heading" class="text-center text-3xl font-extrabold mb-10" data-i18n="bundles_title">العروض
           </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
 
-            <!-- Bundle 1: Hair Oil -->
+            <!-- Bundle 1: زيت الباروكة - Hair Oil -->
             <div
-              class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm card-hover">
-              <div class="h-64 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+              class="rounded-lg sm:rounded-xl overflow-hidden border-2 border-primary-500 bg-white dark:bg-gray-800 shadow-lg card-hover relative">
+              <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-primary-500 text-white text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 rounded-full z-10"
+                data-i18n="badge_popular">🔥 الأكثر مبيعاً</div>
+              <div class="aspect-square sm:aspect-[4/5] bg-gray-100 dark:bg-gray-700 overflow-hidden">
                 <img src="assets/New_lolo_images/WhatsApp Image 2026-01-16 at 20.02.10.jpeg"
-                  alt="زيت الباروكة للشعر من خلطات لولو" class="w-full h-full object-cover"
+                  alt="زيت الباروكة للشعر من خلطات لولو" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   loading="lazy" />
               </div>
-              <div class="p-5">
-                <h3 class="font-bold text-xl mb-2" data-i18n="bndl1">زيت الباروكة</h3>
-                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3" data-i18n="bndl1_desc">للشعر • كفاية شهر</p>
-                <p class="text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-4">
-                  199 <span class="text-base">د.م</span>
+              <div class="p-4 sm:p-5">
+                <h3 class="font-bold text-lg sm:text-xl mb-1 sm:mb-2" data-i18n="bndl1">زيت الباروكة</h3>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3" data-i18n="bndl1_desc">للشعر • تقوية وتكثيف</p>
+                <p class="text-2xl sm:text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-3 sm:mb-4">
+                  190 <span class="text-sm sm:text-base" data-i18n="currency">د.م</span>
                 </p>
                 <div class="space-y-2">
-                  <button class="btn btn-primary w-full text-sm" data-add-bundle="b1" data-i18n="add_to_cart">🛒 أضف
-                    للسلة</button>
+                  <button class="btn btn-primary w-full text-sm py-3 sm:py-2" data-add-bundle="b1" data-i18n="add_to_cart">🛒 أضف للسلة</button>
                   <div class="grid grid-cols-2 gap-2">
-                    <button class="btn btn-secondary text-xs py-2" data-normal="b1" data-i18n="normal_order">طلب
-                      عادي</button>
-                    <button class="btn btn-whatsapp text-xs py-2" data-wa="1" data-i18n="order_whatsapp">واتساب</button>
+                    <button class="btn btn-secondary text-xs py-3 sm:py-2" data-normal="b1" data-i18n="normal_order">طلب عادي</button>
+                    <button class="btn btn-whatsapp text-xs py-3 sm:py-2" data-wa="1" data-i18n="order_whatsapp">واتساب</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Bundle 2: Body Scrub (MOST POPULAR) -->
+            <!-- Bundle 2: سكراب - Body Scrub -->
             <div
-              class="rounded-xl overflow-hidden border-2 border-primary-500 bg-white dark:bg-gray-800 shadow-lg card-hover relative">
-              <div class="absolute top-3 left-3 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10"
-                data-i18n="badge_popular">🔥 الأكثر مبيعاً</div>
-              <div class="h-64 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+              class="rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm card-hover">
+              <div class="aspect-square sm:aspect-[4/5] bg-gray-100 dark:bg-gray-700 overflow-hidden">
                 <img src="assets/New_lolo_images/WhatsApp Image 2026-01-16 at 20.02.08 (1).jpeg"
-                  alt="سكراب البرتقال للجسم من خلطات لولو" class="w-full h-full object-cover" loading="lazy" />
+                  alt="سكراب للجسم من خلطات لولو" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
               </div>
-              <div class="p-5">
-                <h3 class="font-bold text-xl mb-2" data-i18n="bndl2">سكراب البرتقال</h3>
-                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3" data-i18n="bndl2_desc">للجسم • تقشير طبيعي</p>
-                <p class="text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-4">
-                  149 <span class="text-base">د.م</span>
+              <div class="p-4 sm:p-5">
+                <h3 class="font-bold text-lg sm:text-xl mb-1 sm:mb-2" data-i18n="bndl2">سكراب</h3>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3" data-i18n="bndl2_desc">للجسم • تقشير طبيعي</p>
+                <p class="text-2xl sm:text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-3 sm:mb-4">
+                  99 <span class="text-sm sm:text-base" data-i18n="currency">د.م</span>
                 </p>
                 <div class="space-y-2">
-                  <button class="btn btn-primary w-full text-sm" data-add-bundle="b2" data-i18n="add_to_cart">🛒 أضف
-                    للسلة</button>
+                  <button class="btn btn-primary w-full text-sm py-3 sm:py-2" data-add-bundle="b2" data-i18n="add_to_cart">🛒 أضف للسلة</button>
                   <div class="grid grid-cols-2 gap-2">
-                    <button class="btn btn-secondary text-xs py-2" data-normal="b2" data-i18n="normal_order">طلب
-                      عادي</button>
-                    <button class="btn btn-whatsapp text-xs py-2" data-wa="2" data-i18n="order_whatsapp">واتساب</button>
+                    <button class="btn btn-secondary text-xs py-3 sm:py-2" data-normal="b2" data-i18n="normal_order">طلب عادي</button>
+                    <button class="btn btn-whatsapp text-xs py-3 sm:py-2" data-wa="2" data-i18n="order_whatsapp">واتساب</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Bundle 3: Pinky Soft Feet -->
+            <!-- Bundle 3: كريم القدمين توريد - Foot Cream -->
             <div
-              class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm card-hover">
-              <div class="h-64 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+              class="rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm card-hover">
+              <div class="aspect-square sm:aspect-[4/5] bg-gray-100 dark:bg-gray-700 overflow-hidden">
                 <img src="assets/New_lolo_images/WhatsApp Image 2026-01-16 at 20.02.13.jpeg"
-                  alt="كريم القدمين الوردي من خلطات لولو" class="w-full h-full object-cover" loading="lazy" />
+                  alt="كريم القدمين توريد من خلطات لولو" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
               </div>
-              <div class="p-5">
-                <h3 class="font-bold text-xl mb-2" data-i18n="bndl3">كريم القدمين</h3>
-                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3" data-i18n="bndl3_desc">للعناية بالقدمين • نعومة فائقة</p>
-                <p class="text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-1">
-                  99 <span class="text-base">د.م</span>
+              <div class="p-4 sm:p-5">
+                <h3 class="font-bold text-lg sm:text-xl mb-1 sm:mb-2" data-i18n="bndl3">كريم القدمين توريد</h3>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3" data-i18n="bndl3_desc">للقدمين • نعومة وتوريد</p>
+                <p class="text-2xl sm:text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-3 sm:mb-4">
+                  80 <span class="text-sm sm:text-base" data-i18n="currency">د.م</span>
                 </p>
-                <p id="stockB3" class="text-xs font-semibold text-red-600 dark:text-red-400 mb-4"></p>
                 <div class="space-y-2">
-                  <button class="btn btn-primary w-full text-sm" data-add-bundle="b3" data-i18n="add_to_cart">🛒 أضف
-                    للسلة</button>
+                  <button class="btn btn-primary w-full text-sm py-3 sm:py-2" data-add-bundle="b3" data-i18n="add_to_cart">🛒 أضف للسلة</button>
                   <div class="grid grid-cols-2 gap-2">
-                    <button class="btn btn-secondary text-xs py-2" data-normal="b3" data-i18n="normal_order">طلب
-                      عادي</button>
-                    <button class="btn btn-whatsapp text-xs py-2" data-wa="3" data-i18n="order_whatsapp">واتساب</button>
+                    <button class="btn btn-secondary text-xs py-3 sm:py-2" data-normal="b3" data-i18n="normal_order">طلب عادي</button>
+                    <button class="btn btn-whatsapp text-xs py-3 sm:py-2" data-wa="3" data-i18n="order_whatsapp">واتساب</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Bundle 4: Complete Set -->
+            <!-- Bundle 4: مسك للجسم - Body Musk -->
             <div
-              class="rounded-xl overflow-hidden border-2 border-amber-500 bg-white dark:bg-gray-800 shadow-lg card-hover relative">
-              <div class="absolute top-3 left-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10"
-                data-i18n="badge_best_value">💎 أفضل قيمة</div>
-              <div class="h-64 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+              class="rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm card-hover">
+              <div class="aspect-square sm:aspect-[4/5] bg-gray-100 dark:bg-gray-700 overflow-hidden">
                 <img src="assets/New_lolo_images/WhatsApp Image 2026-01-16 at 20.02.11.jpeg"
-                  alt="باك كامل من خلطات لولو" class="w-full h-full object-cover" loading="lazy" />
+                  alt="مسك للجسم من خلطات لولو" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
               </div>
-              <div class="p-5">
-                <h3 class="font-bold text-xl mb-2" data-i18n="bndl4">الباك الكامل</h3>
-                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3" data-i18n="bndl4_desc">زيت + سكراب + كريم القدمين + ماسك</p>
-                <p class="text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-1">
-                  399 <span class="text-base">د.م</span>
-                  <span class="text-sm text-gray-400 line-through mr-2">496 د.م</span>
+              <div class="p-4 sm:p-5">
+                <h3 class="font-bold text-lg sm:text-xl mb-1 sm:mb-2" data-i18n="bndl4">مسك للجسم</h3>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3" data-i18n="bndl4_desc">للجسم • عطر فاخر يدوم</p>
+                <p class="text-2xl sm:text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-3 sm:mb-4">
+                  150 <span class="text-sm sm:text-base" data-i18n="currency">د.م</span>
                 </p>
-                <p class="text-xs font-semibold text-amber-600 dark:text-amber-400 mb-4" data-i18n="save_text">وفري 97 د.م!</p>
                 <div class="space-y-2">
-                  <button class="btn btn-primary w-full text-sm" data-add-bundle="b4" data-i18n="add_to_cart">🛒 أضف
-                    للسلة</button>
+                  <button class="btn btn-primary w-full text-sm py-3 sm:py-2" data-add-bundle="b4" data-i18n="add_to_cart">🛒 أضف للسلة</button>
                   <div class="grid grid-cols-2 gap-2">
-                    <button class="btn btn-secondary text-xs py-2" data-normal="b4" data-i18n="normal_order">طلب
-                      عادي</button>
-                    <button class="btn btn-whatsapp text-xs py-2" data-wa="4" data-i18n="order_whatsapp">واتساب</button>
+                    <button class="btn btn-secondary text-xs py-3 sm:py-2" data-normal="b4" data-i18n="normal_order">طلب عادي</button>
+                    <button class="btn btn-whatsapp text-xs py-3 sm:py-2" data-wa="4" data-i18n="order_whatsapp">واتساب</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Bundle 5: Orange Soap Mask -->
+            <!-- Bundle 5: كريم للجسم - Body Cream -->
             <div
-              class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm card-hover">
-              <div class="h-64 bg-gray-100 dark:bg-gray-700 overflow-hidden">
-                <img src="assets/New_lolo_images/WhatsApp Image 2026-01-16 at 20.02.08 (3).jpeg"
-                  alt="ماسك البرتقال للوجه من خلطات لولو" class="w-full h-full object-cover" loading="lazy" />
-              </div>
-              <div class="p-5">
-                <h3 class="font-bold text-xl mb-2" data-i18n="bndl5">ماسك البرتقال</h3>
-                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3" data-i18n="bndl5_desc">للوجه • تنظيف عميق</p>
-                <p class="text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-4">
-                  129 <span class="text-base">د.م</span>
-                </p>
-                <div class="space-y-2">
-                  <button class="btn btn-primary w-full text-sm" data-add-bundle="b5" data-i18n="add_to_cart">🛒 أضف
-                    للسلة</button>
-                  <div class="grid grid-cols-2 gap-2">
-                    <button class="btn btn-secondary text-xs py-2" data-normal="b5" data-i18n="normal_order">طلب
-                      عادي</button>
-                    <button class="btn btn-whatsapp text-xs py-2" data-wa="5" data-i18n="order_whatsapp">واتساب</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Bundle 6: Smooth & White Cream -->
-            <div
-              class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm card-hover">
-              <div class="h-64 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+              class="rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm card-hover">
+              <div class="aspect-square sm:aspect-[4/5] bg-gray-100 dark:bg-gray-700 overflow-hidden">
                 <img src="assets/New_lolo_images/WhatsApp Image 2026-01-16 at 20.02.11 (4).jpeg"
-                  alt="كريم التبييض للبشرة من خلطات لولو" class="w-full h-full object-cover" loading="lazy" />
+                  alt="كريم للجسم من خلطات لولو" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
               </div>
-              <div class="p-5">
-                <h3 class="font-bold text-xl mb-2" data-i18n="bndl6">كريم التبييض</h3>
-                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3" data-i18n="bndl6_desc">للبشرة • نضارة وتوحيد اللون</p>
-                <p class="text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-4">
-                  149 <span class="text-base">د.م</span>
+              <div class="p-4 sm:p-5">
+                <h3 class="font-bold text-lg sm:text-xl mb-1 sm:mb-2" data-i18n="bndl5">كريم للجسم</h3>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3" data-i18n="bndl5_desc">للجسم • ترطيب عميق</p>
+                <p class="text-2xl sm:text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-3 sm:mb-4">
+                  150 <span class="text-sm sm:text-base" data-i18n="currency">د.م</span>
                 </p>
                 <div class="space-y-2">
-                  <button class="btn btn-primary w-full text-sm" data-add-bundle="b6" data-i18n="add_to_cart">🛒 أضف
-                    للسلة</button>
+                  <button class="btn btn-primary w-full text-sm py-3 sm:py-2" data-add-bundle="b5" data-i18n="add_to_cart">🛒 أضف للسلة</button>
                   <div class="grid grid-cols-2 gap-2">
-                    <button class="btn btn-secondary text-xs py-2" data-normal="b6" data-i18n="normal_order">طلب
-                      عادي</button>
-                    <button class="btn btn-whatsapp text-xs py-2" data-wa="6" data-i18n="order_whatsapp">واتساب</button>
+                    <button class="btn btn-secondary text-xs py-3 sm:py-2" data-normal="b5" data-i18n="normal_order">طلب عادي</button>
+                    <button class="btn btn-whatsapp text-xs py-3 sm:py-2" data-wa="5" data-i18n="order_whatsapp">واتساب</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bundle 6: صابونة البرتقال - Orange Soap -->
+            <div
+              class="rounded-lg sm:rounded-xl overflow-hidden border-2 border-amber-500 bg-white dark:bg-gray-800 shadow-lg card-hover relative">
+              <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-amber-500 text-white text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 rounded-full z-10"
+                data-i18n="badge_best_value">💎 أفضل قيمة</div>
+              <div class="aspect-square sm:aspect-[4/5] bg-gray-100 dark:bg-gray-700 overflow-hidden">
+                <img src="assets/New_lolo_images/WhatsApp Image 2026-01-16 at 20.02.08 (3).jpeg"
+                  alt="صابونة البرتقال من خلطات لولو" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </div>
+              <div class="p-4 sm:p-5">
+                <h3 class="font-bold text-lg sm:text-xl mb-1 sm:mb-2" data-i18n="bndl6">صابونة البرتقال</h3>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3" data-i18n="bndl6_desc">للبشرة • تنظيف وتفتيح</p>
+                <p class="text-2xl sm:text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-3 sm:mb-4">
+                  200 <span class="text-sm sm:text-base" data-i18n="currency">د.م</span>
+                </p>
+                <div class="space-y-2">
+                  <button class="btn btn-primary w-full text-sm py-3 sm:py-2" data-add-bundle="b6" data-i18n="add_to_cart">🛒 أضف للسلة</button>
+                  <div class="grid grid-cols-2 gap-2">
+                    <button class="btn btn-secondary text-xs py-3 sm:py-2" data-normal="b6" data-i18n="normal_order">طلب عادي</button>
+                    <button class="btn btn-whatsapp text-xs py-3 sm:py-2" data-wa="6" data-i18n="order_whatsapp">واتساب</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bundle 7: صابونة البرتقال (صغيرة) - Orange Soap Mini -->
+            <div
+              class="rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm card-hover">
+              <div class="aspect-square sm:aspect-[4/5] bg-gray-100 dark:bg-gray-700 overflow-hidden">
+                <img src="assets/New_lolo_images/WhatsApp Image 2026-01-16 at 20.02.09.jpeg"
+                  alt="صابونة البرتقال الصغيرة من خلطات لولو" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </div>
+              <div class="p-4 sm:p-5">
+                <h3 class="font-bold text-lg sm:text-xl mb-1 sm:mb-2" data-i18n="bndl7">صابونة البرتقال (صغيرة)</h3>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3" data-i18n="bndl7_desc">للبشرة • حجم السفر</p>
+                <p class="text-2xl sm:text-3xl font-extrabold text-primary-600 dark:text-primary-400 mb-3 sm:mb-4">
+                  100 <span class="text-sm sm:text-base" data-i18n="currency">د.م</span>
+                </p>
+                <div class="space-y-2">
+                  <button class="btn btn-primary w-full text-sm py-3 sm:py-2" data-add-bundle="b7" data-i18n="add_to_cart">🛒 أضف للسلة</button>
+                  <div class="grid grid-cols-2 gap-2">
+                    <button class="btn btn-secondary text-xs py-3 sm:py-2" data-normal="b7" data-i18n="normal_order">طلب عادي</button>
+                    <button class="btn btn-whatsapp text-xs py-3 sm:py-2" data-wa="7" data-i18n="order_whatsapp">واتساب</button>
                   </div>
                 </div>
               </div>
@@ -1217,7 +1229,7 @@
               </summary>
               <div class="mt-4 text-gray-600 dark:text-gray-300 space-y-2">
                 <p data-i18n="faq8_a">يمكنك التواصل معنا عبر:</p>
-                <p>📱 واتساب: <a href="https://wa.me/212660928077" class="text-primary-600 dark:text-primary-400 hover:underline">+212 660 928 077</a></p>
+                <p>📱 واتساب: <a href="https://wa.me/212660928077" class="text-primary-600 dark:text-primary-400 hover:underline" dir="ltr">+212 660 928 077</a></p>
                 <p>📧 البريد الإلكتروني: <a href="mailto:intissarbani8@gmail.com" class="text-primary-600 dark:text-primary-400 hover:underline">intissarbani8@gmail.com</a></p>
                 <p>📸 انستغرام: @loloblends.ma</p>
                 <p class="text-sm text-gray-500">نرد على جميع الرسائل خلال 24 ساعة 💚</p>
@@ -1416,7 +1428,7 @@
               <li class="flex items-center gap-2">
                 <span>📱</span>
                 <a href="https://wa.me/212660928077"
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600">+212 660 928 077</a>
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-600" dir="ltr">+212 660 928 077</a>
               </li>
               <li class="flex items-center gap-2">
                 <span>📧</span>

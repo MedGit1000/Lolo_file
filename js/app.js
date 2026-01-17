@@ -33,6 +33,11 @@
     whatsappNumber: '212660928077',
     businessEmail: 'intissarbani8@gmail.com',
     web3formsKey: 'd2d6a608-1dfc-4e9b-8852-962cb1dc8a20',
+    // EmailJS config for customer confirmation emails (free: 200 emails/month)
+    // Sign up at https://www.emailjs.com/ and create a service + template
+    emailjsServiceId: 'service_1uroc3y',
+    emailjsTemplateId: 'template_xcatgtn',
+    emailjsPublicKey: '9naipsLKZSGRq91PY',
     dailyStockB3: 7,
     stockKeyB3: 'lolo_stock_b3',
     stockDateKeyB3: 'lolo_stock_b3_date',
@@ -58,12 +63,15 @@
       whatsapp: '📲 اطلبي عبر واتساب (مجاناً)',
       form_cta: 'أو املئي النموذج السريع ↓',
       social_proof_micro: '⭐ 4.8/5 من +1,200 زبونة راضية في المغرب',
-      usp_shipping: 'توصيل مجاني',
-      usp_shipping_sub: 'على جميع الطلبات داخل المغرب',
+      usp_worldwide: 'شحن عالمي',
+      usp_worldwide_sub: 'نوصل لجميع دول العالم',
       usp_cod: 'الدفع عند الاستلام',
-      usp_cod_sub: 'ادفعي عند وصول طلبك',
+      usp_cod_sub: 'للمغرب + دفع آمن للعالم',
       usp_local: 'صُنع في المغرب',
       usp_local_sub: 'جودة مضمونة ومكونات طبيعية',
+      usp_guarantee: 'ضمان 14 يوم',
+      usp_guarantee_sub: 'استرجاع المال بدون أسئلة',
+      currency: 'د.م',
       benefits_title: 'علاش تختاري خلطات لولو؟',
       b1_title: 'زيت الباروكة',
       b1_desc: 'يقوي البصيلات ويوقف التساقط ويحفز نمو الخُلفة من الجذور',
@@ -100,17 +108,19 @@
       faq_sub: 'كل ما تحتاجين معرفته عن منتجاتنا',
       bundles_title: 'العروض',
       bndl1: 'زيت الباروكة',
-      bndl1_desc: 'للشعر • كفاية شهر',
-      bndl2: 'سكراب البرتقال',
+      bndl1_desc: 'للشعر • تقوية وتكثيف',
+      bndl2: 'سكراب',
       bndl2_desc: 'للجسم • تقشير طبيعي',
-      bndl3: 'كريم القدمين',
-      bndl3_desc: 'للعناية بالقدمين • نعومة فائقة',
-      bndl4: 'الباك الكامل',
-      bndl4_desc: 'زيت + سكراب + كريم القدمين + ماسك',
-      bndl5: 'ماسك البرتقال',
-      bndl5_desc: 'للوجه • تنظيف عميق',
-      bndl6: 'كريم التبييض',
-      bndl6_desc: 'للبشرة • نضارة وتوحيد اللون',
+      bndl3: 'كريم القدمين توريد',
+      bndl3_desc: 'للقدمين • نعومة وتوريد',
+      bndl4: 'مسك للجسم',
+      bndl4_desc: 'للجسم • عطر فاخر يدوم',
+      bndl5: 'كريم للجسم',
+      bndl5_desc: 'للجسم • ترطيب عميق',
+      bndl6: 'صابونة البرتقال',
+      bndl6_desc: 'للبشرة • تنظيف وتفتيح',
+      bndl7: 'صابونة البرتقال (صغيرة)',
+      bndl7_desc: 'للبشرة • حجم السفر',
       badge_popular: '🔥 الأكثر مبيعاً',
       badge_best_value: '💎 أفضل قيمة',
       save_text: 'وفري 97 د.م!',
@@ -171,12 +181,15 @@
       whatsapp: '📲 Commander sur WhatsApp (gratuit)',
       form_cta: 'Ou remplir le formulaire rapide ↓',
       social_proof_micro: '⭐ 4.8/5 de +1,200 clientes satisfaites au Maroc',
-      usp_shipping: 'Livraison gratuite',
-      usp_shipping_sub: 'Sur toutes les commandes au Maroc',
+      usp_worldwide: 'Livraison mondiale',
+      usp_worldwide_sub: 'Nous livrons partout dans le monde',
       usp_cod: 'Paiement à la livraison',
-      usp_cod_sub: 'Payez à réception',
+      usp_cod_sub: 'Maroc + paiement sécurisé mondial',
       usp_local: 'Made in Morocco',
       usp_local_sub: 'Qualité garantie et ingrédients naturels',
+      usp_guarantee: 'Garantie 14 jours',
+      usp_guarantee_sub: 'Remboursement sans questions',
+      currency: 'MAD',
       benefits_title: 'Pourquoi Lolo Blends?',
       b1_title: 'Huile Barouka',
       b1_desc: 'Fortifie les racines, stoppe la chute et stimule la repousse',
@@ -213,17 +226,19 @@
       faq_sub: 'Tout ce que vous devez savoir sur nos produits',
       bundles_title: 'Offres',
       bndl1: 'Huile Barouka',
-      bndl1_desc: 'Pour cheveux • 1 mois',
-      bndl2: 'Gommage Orange',
+      bndl1_desc: 'Pour cheveux • Fortifiant',
+      bndl2: 'Gommage Corps',
       bndl2_desc: 'Pour corps • Exfoliation naturelle',
-      bndl3: 'Crème Pieds',
-      bndl3_desc: 'Soin des pieds • Douceur extrême',
-      bndl4: 'Pack Complet',
-      bndl4_desc: 'Huile + Gommage + Crème pieds + Masque',
-      bndl5: 'Masque Orange',
-      bndl5_desc: 'Pour visage • Nettoyage profond',
-      bndl6: 'Crème Éclaircissante',
-      bndl6_desc: 'Pour peau • Éclat et uniformité',
+      bndl3: 'Crème Pieds Rosée',
+      bndl3_desc: 'Pour pieds • Douceur et éclat',
+      bndl4: 'Musc Corps',
+      bndl4_desc: 'Pour corps • Parfum luxueux',
+      bndl5: 'Crème Corps',
+      bndl5_desc: 'Pour corps • Hydratation intense',
+      bndl6: 'Savon Orange',
+      bndl6_desc: 'Pour peau • Nettoyage et éclat',
+      bndl7: 'Savon Orange (Mini)',
+      bndl7_desc: 'Pour peau • Format voyage',
       badge_popular: '🔥 Best-seller',
       badge_best_value: '💎 Meilleur rapport',
       save_text: 'Économisez 97 MAD!',
@@ -282,12 +297,13 @@
 
   // Bundle data
   const bundles = {
-    b1: { id: 'b1', name_ar: 'زيت الباروكة', name_fr: 'Huile Barouka', price: 199 },
-    b2: { id: 'b2', name_ar: 'سكراب البرتقال', name_fr: 'Gommage Orange', price: 149 },
-    b3: { id: 'b3', name_ar: 'كريم القدمين', name_fr: 'Crème Pieds', price: 99 },
-    b4: { id: 'b4', name_ar: 'الباك الكامل', name_fr: 'Pack Complet', price: 399 },
-    b5: { id: 'b5', name_ar: 'ماسك البرتقال', name_fr: 'Masque Orange', price: 129 },
-    b6: { id: 'b6', name_ar: 'كريم التبييض', name_fr: 'Crème Éclaircissante', price: 149 }
+    b1: { id: 'b1', name_ar: 'زيت الباروكة', name_fr: 'Huile Barouka', price: 190 },
+    b2: { id: 'b2', name_ar: 'سكراب', name_fr: 'Gommage Corps', price: 99 },
+    b3: { id: 'b3', name_ar: 'كريم القدمين توريد', name_fr: 'Crème Pieds Rosée', price: 80 },
+    b4: { id: 'b4', name_ar: 'مسك للجسم', name_fr: 'Musc Corps', price: 150 },
+    b5: { id: 'b5', name_ar: 'كريم للجسم', name_fr: 'Crème Corps', price: 150 },
+    b6: { id: 'b6', name_ar: 'صابونة البرتقال', name_fr: 'Savon Orange', price: 200 },
+    b7: { id: 'b7', name_ar: 'صابونة البرتقال (صغيرة)', name_fr: 'Savon Orange (Mini)', price: 100 }
   };
 
   // Cart state
@@ -526,26 +542,83 @@
 
   function openWhatsApp(message) {
     window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    // Mark that user has contacted via WhatsApp
+    localStorage.setItem('lolo_wa_contacted', 'true');
   }
+
+  // WhatsApp message templates
+  const waTemplates = {
+    ar: {
+      greeting: `السلام عليكم 👋
+أنا مهتمة بمنتجات خلطات لولو 🌿
+بغيت نعرف أكثر على المنتجات والأسعار.`,
+
+      orderHeader: `🛒 *طلب جديد من الموقع*
+━━━━━━━━━━━━━━━━`,
+
+      orderFooter: `━━━━━━━━━━━━━━━━
+📍 *معلومات التوصيل:*
+الاسم:
+المدينة:
+العنوان:
+📱 الهاتف:
+
+💳 الدفع عند الاستلام ✅
+🚚 التوصيل: 2-4 أيام`,
+
+      productInquiry: (productName) => `السلام عليكم 👋
+بغيت نسول على *${productName}* 🌿
+شنو الثمن ومدة التوصيل؟`
+    },
+    fr: {
+      greeting: `Bonjour 👋
+Je suis intéressée par les produits Lolo Blends 🌿
+Je voudrais en savoir plus sur les produits et les prix.`,
+
+      orderHeader: `🛒 *Nouvelle commande du site*
+━━━━━━━━━━━━━━━━`,
+
+      orderFooter: `━━━━━━━━━━━━━━━━
+📍 *Informations de livraison:*
+Nom:
+Ville:
+Adresse:
+📱 Téléphone:
+
+💳 Paiement à la livraison ✅
+🚚 Livraison: 2-4 jours`,
+
+      productInquiry: (productName) => `Bonjour 👋
+Je voudrais me renseigner sur *${productName}* 🌿
+Quel est le prix et le délai de livraison?`
+    }
+  };
 
   function buildCartMessage() {
     const items = currentItems();
+    const tpl = waTemplates[currentLang];
+
+    // If no items, send greeting message
     if (!items.length) {
-      return currentLang === 'ar'
-        ? 'السلام عليكم، بغيت نسول على زيت الشعر من خلطات لولو.'
-        : 'Bonjour, je voudrais me renseigner sur l\'huile Lolo Blends.';
+      return tpl.greeting;
     }
 
+    // Build order message with template
     const lines = items.map(it => {
       const t = (currentLang === 'ar' ? it.name_ar : it.name_fr);
-      return `- ${t} ×${it.qty} = ${formatMAD(it.qty * it.price)}`;
+      return `▪️ ${t} ×${it.qty} = ${formatMAD(it.qty * it.price)}`;
     }).join('\n');
 
     const total = items.reduce((a, b) => a + b.qty * b.price, 0);
-    const header = currentLang === 'ar' ? 'طلب عبر واتساب:\n' : 'Commande WhatsApp:\n';
-    const totalH = currentLang === 'ar' ? 'الإجمالي' : 'Total';
+    const totalLabel = currentLang === 'ar' ? '💰 *المجموع*' : '💰 *Total*';
 
-    return `${header}${lines}\n\n${totalH}: ${formatMAD(total)}`;
+    return `${tpl.orderHeader}
+
+${lines}
+
+${totalLabel}: ${formatMAD(total)}
+
+${tpl.orderFooter}`;
   }
 
   // ============================================
@@ -664,7 +737,7 @@
         `📅 تاريخ الطلب: ${date}`,
         '',
         'لأي استفسار، تواصل معنا:',
-        `📱 واتساب: +${CONFIG.whatsappNumber}`,
+        `📱 واتساب: \u200E+212 660 928 077`,
         `📧 البريد: ${CONFIG.businessEmail}`,
         '',
         'شكراً لثقتك في خلطات لولو! 🌿',
@@ -705,14 +778,19 @@
   // ============================================
 
   async function sendOrderEmails(payload) {
-    // Send to admin
+    // 1. Send order notification to admin via Web3Forms
     const adminFD = new FormData();
     adminFD.append('access_key', CONFIG.web3formsKey);
     adminFD.append('subject', payload.subject);
-    adminFD.append('from_name', 'Lolo Blends - خلطات لولو');
-    adminFD.append('email', CONFIG.businessEmail);
-    adminFD.append('reply_to', payload.customer.email || '');
+    adminFD.append('from_name', payload.customer.name || 'Lolo Blends Customer');
+    adminFD.append('email', payload.customer.email || 'no-reply@loloblends.com');
     adminFD.append('message', formatAdminEmailPlain(payload));
+
+    // Additional fields for admin reference
+    adminFD.append('Customer Name', payload.customer.name);
+    adminFD.append('Customer Phone', payload.customer.phone);
+    adminFD.append('Customer City', payload.customer.city || '-');
+    adminFD.append('Order Total', payload.total);
 
     const adminResp = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -721,25 +799,59 @@
 
     if (!adminResp.ok) throw new Error('Admin email failed');
 
-    // Send confirmation to customer (if email provided)
-    if (payload.customer.email) {
-      const custFD = new FormData();
-      custFD.append('access_key', CONFIG.web3formsKey);
-      custFD.append('subject', payload.language === 'ar'
-        ? 'تأكيد طلبك من خلطات لولو'
-        : 'Confirmation de commande Lolo Blends');
-      custFD.append('from_name', 'خلطات لولو - Lolo Blends');
-      custFD.append('email', payload.customer.email);
-      custFD.append('reply_to', CONFIG.businessEmail);
-      custFD.append('message', formatCustomerEmailPlain(payload));
+    // 2. Send confirmation email to customer via EmailJS (if configured and email provided)
+    if (payload.customer.email && CONFIG.emailjsServiceId && CONFIG.emailjsTemplateId && CONFIG.emailjsPublicKey) {
+      try {
+        // Load EmailJS SDK if not already loaded
+        if (typeof emailjs === 'undefined') {
+          await loadEmailJS();
+        }
 
-      await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: custFD
-      });
+        // Send customer confirmation email
+        await emailjs.send(
+          CONFIG.emailjsServiceId,
+          CONFIG.emailjsTemplateId,
+          {
+            to_email: payload.customer.email,
+            to_name: payload.customer.name,
+            subject: payload.language === 'ar'
+              ? 'تأكيد طلبك من خلطات لولو 💚'
+              : 'Confirmation de commande Lolo Blends 💚',
+            message: formatCustomerEmailPlain(payload),
+            order_total: payload.total,
+            order_items: payload.items.join('\n'),
+            customer_city: payload.customer.city || '-',
+            customer_address: payload.customer.address || '-',
+            reply_to: CONFIG.businessEmail
+          },
+          CONFIG.emailjsPublicKey
+        );
+        console.log('Customer confirmation email sent successfully');
+      } catch (e) {
+        console.warn('Customer confirmation email failed:', e);
+        // Don't throw - admin notification is the critical path
+      }
     }
 
     return true;
+  }
+
+  // Helper to load EmailJS SDK dynamically
+  function loadEmailJS() {
+    return new Promise((resolve, reject) => {
+      if (typeof emailjs !== 'undefined') {
+        resolve();
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+      script.onload = () => {
+        emailjs.init(CONFIG.emailjsPublicKey);
+        resolve();
+      };
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
   }
 
   // ============================================
@@ -788,6 +900,201 @@
     // Send to Segment if available
     if (typeof analytics !== 'undefined') {
       analytics.track(eventName, properties);
+    }
+  }
+
+  // ============================================
+  // WHATSAPP AUTO-POPUP FOR FIRST-TIME VISITORS
+  // ============================================
+
+  function initWhatsAppPopup() {
+    // Check if user has already interacted with WhatsApp or dismissed popup
+    const hasContacted = localStorage.getItem('lolo_wa_contacted');
+    const hasDismissed = localStorage.getItem('lolo_wa_popup_dismissed');
+
+    if (hasContacted || hasDismissed) return;
+
+    // Show popup after 15 seconds for first-time visitors
+    setTimeout(() => {
+      showWhatsAppPopup();
+    }, 15000);
+  }
+
+  function showWhatsAppPopup() {
+    // Don't show if already dismissed or contacted
+    if (localStorage.getItem('lolo_wa_contacted') || localStorage.getItem('lolo_wa_popup_dismissed')) {
+      return;
+    }
+
+    // Create popup element
+    const popup = document.createElement('div');
+    popup.id = 'waPopup';
+    popup.className = 'fixed bottom-24 z-50 animate-slide-up';
+    popup.style.cssText = currentLang === 'ar'
+      ? 'left: 1rem; right: auto;'
+      : 'right: 1rem; left: auto;';
+
+    const isAr = currentLang === 'ar';
+
+    popup.innerHTML = `
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 max-w-[320px] overflow-hidden">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-green-500 to-green-600 px-4 py-3 flex items-center gap-3">
+          <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="text-white font-semibold text-sm">${isAr ? 'خلطات لولو' : 'Lolo Blends'}</div>
+            <div class="text-green-100 text-xs">${isAr ? 'متاحين للرد الآن' : 'En ligne maintenant'}</div>
+          </div>
+          <button id="waPopupClose" class="text-white/80 hover:text-white p-1" aria-label="${isAr ? 'إغلاق' : 'Fermer'}">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Message -->
+        <div class="p-4">
+          <div class="bg-gray-100 dark:bg-gray-700 rounded-lg rounded-tl-none p-3 mb-3">
+            <p class="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+              ${isAr
+                ? 'مرحبا! 👋 كيفاش نقدر نعاونك اليوم؟ عندنا عروض خاصة على زيت الباروكة 🌿'
+                : 'Bonjour! 👋 Comment puis-je vous aider? Nous avons des offres spéciales sur l\'huile Barouka 🌿'}
+            </p>
+          </div>
+
+          <!-- Quick replies -->
+          <div class="space-y-2 mb-3">
+            <button class="wa-quick-reply w-full text-start px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 hover:bg-green-50 dark:hover:bg-green-900/30 border border-gray-200 dark:border-gray-600 rounded-lg transition-colors text-gray-700 dark:text-gray-300" data-msg="products">
+              ${isAr ? '🛍️ بغيت نشوف المنتجات' : '🛍️ Voir les produits'}
+            </button>
+            <button class="wa-quick-reply w-full text-start px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 hover:bg-green-50 dark:hover:bg-green-900/30 border border-gray-200 dark:border-gray-600 rounded-lg transition-colors text-gray-700 dark:text-gray-300" data-msg="prices">
+              ${isAr ? '💰 شنو الأثمنة؟' : '💰 Quels sont les prix?'}
+            </button>
+            <button class="wa-quick-reply w-full text-start px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 hover:bg-green-50 dark:hover:bg-green-900/30 border border-gray-200 dark:border-gray-600 rounded-lg transition-colors text-gray-700 dark:text-gray-300" data-msg="delivery">
+              ${isAr ? '🚚 كيفاش التوصيل؟' : '🚚 Comment se fait la livraison?'}
+            </button>
+          </div>
+
+          <!-- CTA Button -->
+          <button id="waPopupChat" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            ${isAr ? 'تواصلي معنا' : 'Discuter maintenant'}
+          </button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    // Add animation styles if not already present
+    if (!document.getElementById('waPopupStyles')) {
+      const style = document.createElement('style');
+      style.id = 'waPopupStyles';
+      style.textContent = `
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-slide-up {
+          animation: slideUp 0.3s ease-out forwards;
+        }
+        @keyframes slideDown {
+          from {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          to {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+        }
+        .animate-slide-down {
+          animation: slideDown 0.2s ease-in forwards;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Close button handler
+    popup.querySelector('#waPopupClose').addEventListener('click', () => {
+      closeWhatsAppPopup(popup, true);
+    });
+
+    // Chat button handler
+    popup.querySelector('#waPopupChat').addEventListener('click', () => {
+      openWhatsApp(waTemplates[currentLang].greeting);
+      closeWhatsAppPopup(popup, false);
+    });
+
+    // Quick reply handlers
+    popup.querySelectorAll('.wa-quick-reply').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const msgType = btn.getAttribute('data-msg');
+        let message = '';
+
+        if (currentLang === 'ar') {
+          switch(msgType) {
+            case 'products':
+              message = 'السلام عليكم 👋\nبغيت نشوف المنتجات ديالكم 🛍️';
+              break;
+            case 'prices':
+              message = 'السلام عليكم 👋\nبغيت نعرف الأثمنة ديال المنتجات 💰';
+              break;
+            case 'delivery':
+              message = 'السلام عليكم 👋\nكيفاش كيوصل التوصيل؟ وشحال كياخذ من الوقت؟ 🚚';
+              break;
+          }
+        } else {
+          switch(msgType) {
+            case 'products':
+              message = 'Bonjour 👋\nJe voudrais voir vos produits 🛍️';
+              break;
+            case 'prices':
+              message = 'Bonjour 👋\nJe voudrais connaître les prix des produits 💰';
+              break;
+            case 'delivery':
+              message = 'Bonjour 👋\nComment se fait la livraison et combien de temps? 🚚';
+              break;
+          }
+        }
+
+        openWhatsApp(message);
+        closeWhatsAppPopup(popup, false);
+      });
+    });
+
+    // Auto-hide after 30 seconds if not interacted
+    setTimeout(() => {
+      if (document.getElementById('waPopup')) {
+        closeWhatsAppPopup(popup, true);
+      }
+    }, 30000);
+  }
+
+  function closeWhatsAppPopup(popup, wasDismissed) {
+    if (!popup) return;
+
+    popup.classList.remove('animate-slide-up');
+    popup.classList.add('animate-slide-down');
+
+    setTimeout(() => {
+      popup.remove();
+    }, 200);
+
+    if (wasDismissed) {
+      localStorage.setItem('lolo_wa_popup_dismissed', 'true');
     }
   }
 
@@ -934,20 +1241,20 @@
     $('#whatsappCTA')?.addEventListener('click', () => {
       const msg = cart.count() > 0
         ? buildCartMessage()
-        : (currentLang === 'ar'
-          ? 'السلام عليكم، بغيت نسول على زيت الباروكة من خلطات لولو.'
-          : 'Bonjour, je voudrais me renseigner sur l\'huile Barouka Lolo Blends.');
+        : waTemplates[currentLang].greeting;
       openWhatsApp(msg);
     });
 
-    // Bundle WhatsApp buttons
+    // Bundle WhatsApp buttons - use product-specific inquiry template
     $$('[data-wa]')?.forEach(btn => {
       btn.addEventListener('click', () => {
-        const pack = btn.getAttribute('data-wa');
-        const msg = currentLang === 'ar'
-          ? `السلام عليكم، بغيت نطلب الباك رقم ${pack} من خلطات لولو.`
-          : `Bonjour, je voudrais commander le pack ${pack} de Lolo Blends.`;
-        openWhatsApp(msg);
+        const bundleId = 'b' + btn.getAttribute('data-wa');
+        const bundle = bundles[bundleId];
+        if (bundle) {
+          const productName = currentLang === 'ar' ? bundle.name_ar : bundle.name_fr;
+          const msg = waTemplates[currentLang].productInquiry(productName);
+          openWhatsApp(msg);
+        }
       });
     });
 
@@ -1159,6 +1466,9 @@
     // Initialize i18n and order summary
     applyI18n(currentLang);
     renderOrderSummary();
+
+    // WhatsApp auto-greeting popup for first-time visitors
+    initWhatsAppPopup();
 
     // Track page view
     trackEvent('page_view', {
